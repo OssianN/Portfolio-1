@@ -1,0 +1,98 @@
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(#00e4be, #fbffc9);
+}
+
+.backgroundColumn6 {
+  z-index: 0;
+  position: fixed;
+  min-height: 100%;
+  width: 100%;
+  background-color: #ffffff00;
+  background-image: radial-gradient(circle, #ffffff38 60%, transparent 0%);
+  background-size: 150px 150px
+}
+
+.profileImage {
+  z-index: 15;
+  position: fixed;
+  object-fit: cover;
+  margin: 20vh 0 0 40vw;
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  animation-name: profileImage;
+  animation-duration: 2s;
+}
+
+@keyframes profileImage {
+  from {
+    transform: rotate(180deg);
+    margin-left: -20vw;
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profileImageBig {
+  z-index: 10;
+  position: fixed;
+  object-fit: cover;
+  margin: 60vh 0 0 60vw;
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  transform: scale(4);
+  transition: ease-in-out 1s;
+}
+
+.title {
+  height: 65%;
+  min-height: 65%;
+  width: 30%;
+  min-width: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: center;
+  margin: 20vh 0 0 25vw;
+  z-index: 10;
+  color: #ffffff;
+}
+
+.titleHeading {
+  animation-name: title;
+  animation-duration: 2s;
+  text-align: right;
+  margin: 1px 0;
+  font-size: 6em;
+  border-radius: 2px;
+  padding: 0;
+  color: #ffffff;
+  text-shadow: #053a00 -1px -1px;
+}
+
+.titleDescription {
+  text-align: right;
+  padding: 10px;
+  background-color: #00e4be;
+  border-radius: 2px;
+  width: 95%;
+  margin: 1px 0;
+  animation-name: title;
+  animation-duration: 2s;
+}
+
+@keyframes title {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

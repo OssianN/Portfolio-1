@@ -1,0 +1,215 @@
+.Todo {
+  font-family: 'Delius', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #effffa;
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (max-width: 400px) {
+  .toDoForm form {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .toDoForm input {
+    margin: 10px 10px;
+    width: 80%;
+  }
+
+  .toDoForm button{
+    height: 40px;
+    width: 40px;
+    margin: 20px 0 0 0;
+    border: solid 1px #00754e;
+    border-radius: 50%;
+  }
+
+  .textField h2 {
+    font-size: 24px !important;
+  }
+
+  .textField p {
+    font-size: 16px;
+  }
+
+  .cardsList input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+    margin: 0 25px 0 0;
+  }
+
+  .checkedtrue span {
+    margin: 0;
+    font-size: 25px;
+  }
+
+  .textField {
+    width: 70%;
+  }
+
+  .cardsList button {
+    margin: 0;
+    font-size: 15px;
+  }
+}
+
+.header  {
+  font-size: 50px;
+  font-weight: 100;
+  color: #00754e;
+}
+
+.toDoForm {
+  position: relative;
+  margin: 8em 0 2em 0;
+  width: 80%;
+  max-width: 600px;
+}
+.toDoForm form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.toDoForm input {
+  height: 3em;
+  padding: 0 5px;
+  margin: 0 25px;
+  background-color: transparent;
+  border: none;
+  min-width: 35%;
+  border-bottom: solid 1px #00754e;
+}
+
+.toDoForm input:focus {
+  outline: none;
+}
+
+.toDoForm button {
+  background-color: transparent;
+  color: #00754e;
+  border: none;
+  margin: auto 0;
+  max-height: 2em;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cardsList {
+  color: #00754e;
+  background-color: #67ffcc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  max-width: 600px;
+  min-height: 20em;
+  margin: 1em 0 6em 0;
+  padding: 0 40px 40px 40px;
+  border-radius: 5px;
+}
+
+.cardsList ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardsList li {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  width: 80%;
+  pointer-events: none;
+}
+
+.textField h2, p {
+  width: 85%;
+  margin: 0;
+  font-size: 24px;
+}
+
+.textField h2 {
+  padding: 5px 0;
+  font-size: 30px;
+}
+
+.cardsList button {
+  border: none;
+  padding: 0;
+  margin: 0 10px;
+  font-size: 30px;
+  background: transparent;
+  color: rgb(138, 138, 138);
+  cursor: pointer;
+}
+
+.cardsList input[type="checkbox"] {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 25px;
+  margin: 0 35px 0 0;
+  border-radius: 50%;
+  border: none;
+  pointer-events: none;
+}
+
+.checkedfalse input[type="checkbox"] {
+  background-color: #00c28162;
+}
+
+.checkedfalse span {
+  display: none;
+}
+
+.checkedtrue input[type="checkbox"] {
+  background-color: #67ffcc;
+}
+
+.checkedtrue span {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 100;
+  margin: 0 5px;
+  pointer-events: none;
+}
+
+.checkedfalse {
+  order: 0;
+  background-color: #ffffff98;
+}
+
+.checkedtrue {
+  order: 10;
+  background-color: #ffffff5b;
+}
+
+.checkedtrue h2 {
+  text-decoration: line-through;
+}

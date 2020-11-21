@@ -1,0 +1,232 @@
+html, body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.wineIndex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.wineIndex .header {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  margin: 60px;
+}
+
+.doNotDisplay {
+  display: none;
+}
+
+.addWineForm {
+  position: relative;
+  margin: 3% 0;
+  width: 50%;
+  height: 350px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px gray;
+  border-radius: 20px;
+  overflow: hidden;
+  animation: addWineForm 1s;
+}
+
+@keyframes addWineForm {
+  from {
+    height: 1px;
+    opacity: 0;
+  }
+  to {
+    height: 350px;
+    opacity: 1;
+  }
+}
+
+.hideWineForm {
+  position: relative;
+  margin: 0;
+  width: 50%;
+  height: 0px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px gray;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+  animation: hideWineForm 1s;
+}
+
+@keyframes hideWineForm {
+  from {
+    height: 350px;
+    opacity: 1;
+    margin: 2% 0 5% 0;
+    padding-bottom: 50px;
+  }
+  to {
+    height: 0px;
+    opacity: 0;
+    margin: 0;
+    padding-bottom: 0;
+  }
+}
+
+.wineIndex form input, button {
+  width: 50%;
+  border-radius: 20px;
+  margin: 10px;
+  height: 35px;
+}
+
+.wineIndex form input {
+  padding: 0 10px;
+  border: solid 1px grey;
+}
+
+.wineIndex form button[type="submit"] {
+  width: 20%;
+  background-color: #e2e2e2;
+  border: none;
+}
+
+.cancelButton {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+  align-self: flex-end;
+  background-color: transparent;
+  color: #550000;
+  border: solid 1px grey;
+}
+
+.wineGrid {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 2%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.showForm {
+  position: relative;
+  width: 10%;
+  max-width: 10%;
+  height: 250px;
+  max-height: 250px;
+  margin: .25%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: .5%;
+  background: linear-gradient(#ebebeb, #ececec);
+  animation-name: showForm;
+  animation-duration: 1s;
+}
+
+@keyframes showForm {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.showForm:hover {
+  background: linear-gradient(#dfdfdf, #d3d3d3);
+}
+
+.showForm button {
+  width: 90%;
+  height: 90%;
+  background-color: transparent;
+  border: none;
+  font-size: 50px;
+  color: #ffffff;
+}
+
+.card {
+  position: relative;
+  width: 10%;
+  max-width: 10%;
+  height: 250px;
+  max-height: 250px;
+  margin: .25%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: .5%;
+  background:linear-gradient(#7c0000, #550000);
+  animation-name: card;
+  animation-duration: 1s;
+}
+
+@keyframes card {
+  from {
+    opacity: .3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card h1 {
+  font-size: 25px;
+  margin: 40px 0 5px 0;
+}
+
+.card h4 {
+  font-size: 20px;
+  margin: 5px 0 5px 0;
+}
+
+.card p {
+  font-size: 18px;
+  margin: 5px 0 10px 0;
+}
+
+.cardPosition {
+  align-self: flex-start;
+  padding: 0 0 0 10px;
+  color: #ffffff9f;
+}
+
+.removeButton {
+  position: absolute;
+  align-self: flex-end;
+  justify-self: flex-start;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  margin: 5px 5px 0 0;
+  padding: 0;
+  font-size: 20px;
+  color: #ffffff9f;
+}
+
+.removeButton:hover {
+  color: white;
+}

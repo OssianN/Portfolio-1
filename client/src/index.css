@@ -1,0 +1,54 @@
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.navList {
+  z-index: 100;
+  position: absolute;
+  list-style: none;
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  animation-name: navList;
+  animation-duration: 2s;
+}
+
+@keyframes navList {
+  from {
+    margin-left: 2vw;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+.navList a {
+  color: #00000067;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.homeLink {
+  margin-left: 6vw;
+}
+
+.todoLink {
+  margin-right: 10vw;
+}
+
+.wineLink {
+  margin-right: 16vw;
+}
