@@ -1,22 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'
 
-const Nav = () => {
-  const [navShow, setNavShow] = useState({display: 'none'});
+const Nav = props => {
+  const [navShow, setNavShow] = useState('hide');
+  const location = useLocation();
 
   const handleNavTransition = () => {
-    setTimeout(() => {
-      setNavShow({display: 'flex'});
-    }, 3000);
+    if(location.pathname === '/') {
+      setTimeout(() => {
+        changeNavBar();
+        setNavShow('navBar');
+      }, 1100);
+    };
   };
 
-  useEffect(() => {
-    handleNavTransition();
-  })
+  const changeNavBar = () => {
+    if(location.pathname !== '/') {
+      props.setNavStyle('tapNavStyle')
+    } else {
+      props.setNavStyle('navList')
+    };
+  };
+
+  handleNavTransition();
 
     return (
-      <nav style={navShow}>
-        <ul className='navList'>
+      <nav className={navShow}>
+        <ul className={props.navStyle} >
           <Link to='/' >
             <li className='homeLink'>Home</li>
           </Link>

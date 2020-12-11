@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './home.css';
 
-const name = "Ossian Nörthen";
-const desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+const firstName = 'Ossian ';
+const lastName = 'Nörthen';
+const desc = 'Software · Technology · People';
 
 const Title = () => {
-  const [titleShow, setTitleShow] = useState({display: 'none'});
+  const [titleShow, setTitleShow] = useState('hide');
 
   const handleTitleTransition = () => {
-    setTimeout(() => {
-      setTitleShow({display: 'flex'});
-    }, 3000);
+    return setTimeout(() => {
+      return setTitleShow('title');
+    }, 1000);
   };
-
-  useEffect(() => {
-    handleTitleTransition();
-  })
+  
+  handleTitleTransition();
 
   return (
-    <div className='title'>
-      <h1 className="titleHeading" style={ titleShow }>{ name }</h1>
-      <p className="titleDescription" style={ titleShow }>{ desc }</p>
+    <div className={titleShow}>
+      <h1 className="titleHeading">{ firstName }<span>  &#8226; </span>{ lastName }</h1>
+      <p className="titleDescription">{ desc }</p>
     </div>
   );
 };
