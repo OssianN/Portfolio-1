@@ -1,91 +1,85 @@
+/* colors
+yellow: #fbffc9
+*/
+
+
 .home {
   height: 100%;
+  max-height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  background: linear-gradient(#00e4be, #fbffc9);
+  background: linear-gradient(#fcdfa6 2%, #a8ffdf 98%);
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
 }
 
 .backgroundColumn6 {
   z-index: 0;
-  position: fixed;
+  position: absolute;
   min-height: 100%;
   width: 100%;
   background-color: #ffffff00;
-  background-image: radial-gradient(circle, #ffffff38 60%, transparent 0%);
-  background-size: 150px 150px
-}
-
-.profileImage {
-  z-index: 15;
-  position: fixed;
-  object-fit: cover;
-  margin: 20vh 0 0 40vw;
-  width: 390px;
-  height: 390px;
-  border-radius: 50%;
-  animation-name: profileImage;
-  animation-duration: 2s;
-}
-
-@keyframes profileImage {
-  from {
-    transform: rotate(180deg);
-    margin-left: -20vw;
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-image: radial-gradient(circle, #ffffff38 10%, transparent 0%);
+  background-size: 30px 30px
 }
 
 .profileImageBig {
   z-index: 10;
   position: fixed;
+  float: right;
   object-fit: cover;
-  margin: 60vh 0 0 60vw;
-  width: 390px;
-  height: 390px;
-  border-radius: 50%;
-  transform: scale(4);
-  transition: ease-in-out 1s;
+  margin: 0 0 0 50%;
+  width: 50%;
+  min-height: 100%;
+  animation-name: profileImageBig;
+  animation-duration: 1s;
+  overflow: hidden;
+}
+
+@keyframes profileImageBig {
+  from {
+    margin-left: 100%;
+  }
 }
 
 .title {
-  height: 65%;
-  min-height: 65%;
-  width: 30%;
-  min-width: 30%;
-  position: relative;
+  z-index: 10;
+  width: 60%;
+  margin: auto auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  align-self: center;
-  margin: 20vh 0 0 25vw;
-  z-index: 10;
-  color: #ffffff;
+  align-items: center;
+  background-image: linear-gradient(90deg, #3b524900 50%, #161f1b50 50%);
+  background-repeat: no-repeat;
+  animation-name: title;
+  animation-duration: 2s;
 }
 
 .titleHeading {
-  animation-name: title;
-  animation-duration: 2s;
-  text-align: right;
-  margin: 1px 0;
-  font-size: 6em;
-  border-radius: 2px;
+  font-size: 5em;
+  margin: 0;
   padding: 0;
-  color: #ffffff;
-  text-shadow: #053a00 -1px -1px;
+  padding-left: .5em;
+  background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 1%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
 }
 
 .titleDescription {
-  text-align: right;
-  padding: 10px;
-  background-color: #00e4be;
-  border-radius: 2px;
-  width: 95%;
-  margin: 1px 0;
-  animation-name: title;
-  animation-duration: 2s;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 50%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
 }
 
 @keyframes title {
@@ -95,4 +89,23 @@
   to {
     opacity: 1;
   }
+}
+
+.externalLinksContainer {
+  position: fixed;
+  align-self: flex-end;
+  width: 100%;
+  height: 10%;
+  margin-left: 2em;
+}
+
+.externalLinksContainer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  opacity: .5;
+}
+
+.externalLinksContainer img:hover {
+  opacity: 1;
 }

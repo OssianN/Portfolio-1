@@ -7,24 +7,27 @@ html, body, #root, .App {
   overflow-x: hidden;
 }
 
-.navList {
+.navBar {
   z-index: 100;
-  position: absolute;
-  list-style: none;
-  margin: 0 auto;
-  width: 30%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-content: space-between;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  animation-name: navList;
-  animation-duration: 2s;
+  position: fixed;
+  width: 50%;
+  animation: navBar;
+  animation-duration: 1s;
 }
 
-@keyframes navList {
+.navList {
+  z-index: 100;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 2em;
+}
+
+@keyframes navBar {
   from {
     margin-left: 2vw;
     opacity: 0;
@@ -36,19 +39,17 @@ html, body, #root, .App {
 }
 
 .navList a {
-  color: #00000067;
+  color: #3b5249;
+  border-top: 5px solid transparent;
+  padding-top: 10px;
   text-decoration: none;
-  font-size: 30px;
+  text-align: center;
+  min-width: 80px;
+  font-size: 20px;
+  margin: 0 20px;
 }
 
-.homeLink {
-  margin-left: 6vw;
-}
-
-.todoLink {
-  margin-right: 10vw;
-}
-
-.wineLink {
-  margin-right: 16vw;
+.navList a:hover {
+  border-top: 5px solid #3b5249;
+  transition: .2s;
 }
