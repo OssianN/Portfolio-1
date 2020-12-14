@@ -1,63 +1,87 @@
 import React, { useEffect, useState } from 'react';
 import './wine.css';
+import axios from 'axios';
 import WineGrid from './wineGrid/WineGrid';
-import AddWine from './addWine/AddWine';
+import AddWine from './wineForm/AddWine';
+import EditWine from './wineForm/EditWine';
 
-const WineIndex = () => {
+function App() {
   const [cardArr, setCardArr] = useState([]);
-  const [title, setTitle] = useState(null);
-  const [displayForm, setDisplayForm] = useState('none');
   const [position, setPosition] = useState(null);
-  const [updateOnPost, setUpdateOnPost] = useState(false)
+  const [updateOnPost, setUpdateOnPost] = useState(0);
+  const [showAddModal, setShowAddModal] = useState({display: 'none'});
+  const [showEditModal, setShowEditModal] = useState({display: 'none'});
+  const [pickedCard, setPickedCard] = useState({});
 
-
-  const getBackend = async () => {
-    const title = await fetch('http://localhost:5000')
-      .then(res => res.json());
-    setTitle(title);
-  }
+  const [titleValue, setTitleValue] = useState('');
+  const [countryValue, setCountryValue] = useState('');
+  const [yearValue, setYearValue] = useState('');
+  const [checkedValue, setCheckedValue] = useState(false);
 
   const getWines = async () => {
     try {
-      const response = await fetch('http://localhost:5000/wines', {
-        headers: { 'Content-Type': 'application/json' },
-      });
-      const resData = await response.json();
-      const wineArr = resData.wineArr;
-      setCardArr(wineArr);
+      const response = await axios.get('/wines');
+      console.log(response.data, 'data')
+      const data = await response.data;
+      setCardArr(data);
     } catch (err) {
-      console.error(err, 'getWines error')
+      console.error(err, 'could not fetch wines list')
     }
   }
 
   useEffect(() => {
-    getBackend();
     getWines();
-    console.log('updated!')
-  }, [title, updateOnPost]);
+  }, [updateOnPost]);
 
   return (
-    <div className="wineIndex">
-      <h1 className="header">{title}</h1>
+    <div className="wineApp">
+      <h1 className="header">This is the wine we whine about</h1>
       <AddWine
         setCardArr={setCardArr}
-        setDisplayForm={setDisplayForm}
-        displayForm={displayForm}
         position={position}
         updateOnPost={updateOnPost}
         setUpdateOnPost={setUpdateOnPost}
+        showAddModal={showAddModal}
+        setShowAddModal={setShowAddModal}
+        titleValue={titleValue}
+        setTitleValue={setTitleValue}
+        countryValue={countryValue}
+        setCountryValue={setCountryValue}
+        yearValue={yearValue}
+        setYearValue={setYearValue}
+        checkedValue={checkedValue}
+        setCheckedValue={setCheckedValue}
+      />
+      <EditWine
+        showEditModal={showEditModal}
+        setShowEditModal={setShowEditModal}
+        updateOnPost={updateOnPost}
+        setUpdateOnPost={setUpdateOnPost}
+        position={position}
+        pickedCard={pickedCard}
+        titleValue={titleValue}
+        setTitleValue={setTitleValue}
+        countryValue={countryValue}
+        setCountryValue={setCountryValue}
+        yearValue={yearValue}
+        setYearValue={setYearValue}
+        checkedValue={checkedValue}
+        setCheckedValue={setCheckedValue}
       />
       <WineGrid
         cardArr={cardArr}
         setCardArr={setCardArr}
-        setDisplayForm={setDisplayForm}
-        displayForm={displayForm}
         setPosition={setPosition}
         updateOnPost={updateOnPost}
         setUpdateOnPost={setUpdateOnPost}
+        showAddModal={showAddModal}
+        setShowAddModal={setShowAddModal}
+        showEditModal={showEditModal}
+        setShowEditModal={setShowEditModal}
+        setPickedCard={setPickedCard}
       />
     </div>
   );
 }
 
-export default WineIndex;
+export default App;

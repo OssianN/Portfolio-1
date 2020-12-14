@@ -31,12 +31,11 @@ app.get('/', (req, res) => {
   }
 });
 
-
-app.get('/wines', async (req, res) => {
+app.get('/wines', (req, res) => {
   try {
     const data = readData();
     const parsedData = JSON.parse(data);
-    res.status(200).send(JSON.stringify(parsedData));
+    res.status(200).send(JSON.stringify(parsedData.wineArr));
   } catch (err) {
     console.error(err, 'IN GET /WINES');
     res.status(500).send('IN GET /WINES');
@@ -64,10 +63,31 @@ app.delete('/wines', (req, res) => {
     const data = readData();
     const parsedData = JSON.parse(data);
     const wineArr = parsedData.wineArr;
-    const id = req.body.id;
+    const id = req.body;
     wineArr.forEach( (wine, i) => {
-      if(`${wine.shelf}:${wine.row}` === id) {
+      if(wine.shelf === id.shelf && wine.row === id.row) {
         wineArr.splice(i, 1);
+      }
+    })
+    const finishedJson = { "wineArr": wineArr };
+    const jsonWine = JSON.stringify(finishedJson);
+    writeData(jsonWine);
+    res.status(204).send();
+  } catch (err) {
+    console.error(err, 'IN DELETE /WINES');
+    res.status(500).send(err, 'IN DELETE /WINES');
+  }
+});
+
+app.put('/wines', (req, res) => {
+  try {
+    const data = readData();
+    const parsedData = JSON.parse(data);
+    const wineArr = parsedData.wineArr;
+    const newWine = req.body;
+    wineArr.forEach( (wine, i) => {
+      if(wine.shelf === newWine.shelf && wine.row === newWine.row) {
+        wineArr.splice(i, 1, newWine);
       }
     })
     const finishedJson = { "wineArr": wineArr };

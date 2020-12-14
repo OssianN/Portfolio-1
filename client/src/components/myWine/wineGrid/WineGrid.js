@@ -2,13 +2,15 @@ import React from 'react';
 import Card from '../card/Card.js';
 
 const WineGrid = props => {
-
   const createButton = (i, j) => {
     return (
       <div 
         className="showForm"
         key={`${i}:${j}`}
         id={`${i}:${j}`} >
+        <div className='cardHeader'>
+          <p className='cardPosition'>{`${i + 1}:${j + 1}`}</p>
+        </div>
         <button 
           onClick={handleClick}>
           &#43;
@@ -23,11 +25,15 @@ const WineGrid = props => {
         key={`${i}:${j}`}
         title={card.title}
         country={card.country}
-        desc={card.desc}
+        year={card.year}
         x={card.shelf}
         y={card.row}
+        setPosition={props.setPosition}
         updateOnPost={props.updateOnPost}
         setUpdateOnPost={props.setUpdateOnPost}
+        setShowEditModal={props.setShowEditModal}
+        showEditModal={props.showEditModal}
+        setPickedCard={props.setPickedCard}
       />
     );
   };
@@ -47,8 +53,8 @@ const WineGrid = props => {
   const renderCards = () => {
     const cardArr = props.cardArr;
     const renderedCards = [];
-    for (let i = 0; i < 8; i ++) {
-      for (let j = 0; j < 4; j++) {
+    for (let i = 0; i < 5; i ++) {
+      for (let j = 0; j < 8; j++) {
         orderCards(cardArr, renderedCards, i, j);
       }
     }
@@ -61,12 +67,13 @@ const WineGrid = props => {
   };
 
   const handleClick = e => {
-    props.setDisplayForm('flex');
+    props.setShowAddModal({display: 'flex'});
     props.setPosition(breakOutXY(e.target.parentElement.id));
+    props.setPickedCard({});
   };
 
   return (
-    <div className="wineGrid">
+    <div className='wineGrid'>
       {renderCards()}
     </div>
   )

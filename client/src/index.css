@@ -16,7 +16,7 @@ html, body, #root, .App {
   animation-duration: 1s;
 }
 
-.navList {
+.defaultNav {
   z-index: 100;
   list-style: none;
   display: flex;
@@ -38,18 +38,34 @@ html, body, #root, .App {
   }
 }
 
-.navList a {
-  color: #3b5249;
-  border-top: 5px solid transparent;
-  padding-top: 10px;
+.defaultNav a {
+  border-top: 3px solid #3b524900;
+  padding: 20px 0 10px 0;
   text-decoration: none;
   text-align: center;
   min-width: 80px;
   font-size: 20px;
   margin: 0 20px;
+  transition: .5s;
 }
 
-.navList a:hover {
-  border-top: 5px solid #3b5249;
-  transition: .2s;
+.defaultNav a:hover {
+  padding: 20px 0 10px 0;
+  transition: .5s;
+}
+
+.homeNav a {
+  color: #3b5249;
+}
+
+.notHomeNav a {
+  color: #000;
+}
+
+.homeNav a:hover {
+  border-top: 3px solid #3b5249;
+}
+
+.notHomeNav a:hover {
+  border-top: 3px solid #000;
 }
