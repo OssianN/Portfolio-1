@@ -6,26 +6,15 @@ import Todo from './components/todo/todoIndex';
 import Wine from './components/myWine/wineIndex';
 
 const App = () => {
-  const [background, setBackground] = useState({
-    backgroundPositionX: 0,
-    backgroundPositionY: 0
-  });
-  const [navStyle, setNavStyle] = useState('navList1');
-
-  const moveBackground = (e) => {
-    setBackground({
-      backgroundPositionX: `${-e.clientX * .1}px`,
-      backgroundPositionY: `${-e.clientY * .1}px`,
-    });
-  };
-
+  const [navStyle, setNavStyle] = useState('homeNav');
+  
   return (
     <Router>
-      <div className="App" onMouseMove={moveBackground} >
+      <div className="App" >
         <Nav navStyle={navStyle} setNavStyle={setNavStyle} />
         <Switch>
           <Route path="/" exact >
-            <Home background={background} />
+            <Home />
           </Route>
           <Route path="/todo" component={Todo}/>
           <Route path="/wine" component={Wine}/>

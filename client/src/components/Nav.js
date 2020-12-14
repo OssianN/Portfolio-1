@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 
 const Nav = props => {
@@ -6,27 +6,32 @@ const Nav = props => {
   const location = useLocation();
 
   const handleNavTransition = () => {
-    if(location.pathname === '/') {
+    if (location.pathname === '/') {
       setTimeout(() => {
-        changeNavBar();
         setNavShow('navBar');
       }, 1100);
+    } else {
+      setNavShow('navBar');
     };
   };
 
   const changeNavBar = () => {
-    if(location.pathname !== '/') {
-      props.setNavStyle('tapNavStyle')
+    if (location.pathname !== '/') {
+      props.setNavStyle('notHomeNav');
     } else {
-      props.setNavStyle('navList')
+      props.setNavStyle('homeNav');
     };
   };
 
-  handleNavTransition();
+  useEffect(() => {
+    handleNavTransition();
+    changeNavBar();
+  });
+
 
     return (
       <nav className={navShow}>
-        <ul className={props.navStyle} >
+        <ul className={`defaultNav ${props.navStyle}`} >
           <Link to='/' >
             <li className='homeLink'>Home</li>
           </Link>
