@@ -3,6 +3,17 @@ const app = express();
 const cors = require('cors');
 const port = 5000;
 const fs = require('fs');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const { postGuestMessage } = require('./mongoDB/postGuestMessage');
+const { getGuestMessages } = require('./mongoDB/getGuestMessages');
+
+const { connection } = mongoose;
+mongoose.connect(process.env.SECRET_KEY, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false  } );
+connection
+  .once('open', () => console.log('SUCCESS, connected to DB'))
+  .on('error', err => console.log('Ooopsiwhoops, some sort of error', err));
 
 app.use(express.json());
 app.use(cors());
@@ -98,6 +109,16 @@ app.put('/wines', (req, res) => {
     console.error(err, 'IN DELETE /WINES');
     res.status(500).send(err, 'IN DELETE /WINES');
   }
+});
+
+app.get('/guestBook', async (req, res) => {
+  const data = await getGuestMessages();
+  res.status(200).send(JSON.stringify(data));
+});
+
+app.post('/guestBook', async (req, res) => {
+  await postGuestMessage(req.body);
+  res.status(204).send();
 });
 
 app.listen(port, () => console.log(`test-api is running on port ${port}`));

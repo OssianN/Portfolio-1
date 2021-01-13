@@ -16,10 +16,10 @@ const Nav = props => {
   };
 
   const changeNavBar = () => {
-    if (location.pathname !== '/') {
-      props.setNavStyle('notHomeNav');
-    } else {
+    if (location.pathname === '/' || location.pathname === '/guestbook') {
       props.setNavStyle('homeNav');
+    } else {
+      props.setNavStyle('notHomeNav');
     };
   };
 
@@ -34,6 +34,9 @@ const Nav = props => {
         <ul className={`defaultNav ${props.navStyle}`} >
           <Link to='/' >
             <li className='homeLink'>Home</li>
+          </Link>
+          <Link to='guestbook' >
+            <li className='guestBookLink'>Guest Book</li>
           </Link>
           <Link to='/todo' >
             <li className='todoLink'>Todo App</li>

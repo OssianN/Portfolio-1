@@ -1,0 +1,134 @@
+.guestBook {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 160px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  color: #3b5249;
+  background: linear-gradient(#fcdfa6, #a8ffdf 40%);
+}
+
+.guestBook h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+.guestBook input,
+.guestBook textarea,
+.guestBook button {
+  outline: none;
+}
+
+.guestBookForm {
+  position: fixed;
+  width: 500px;
+  height: auto;
+  padding: 20px 0;
+  margin-left: 50%;
+  left: -550px;
+  border-radius: 10px;
+  background-color: #ffffff67;
+  grid-column: 3/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  box-shadow: 0 0 10px #c5c5c5;
+}
+
+.guestBookForm label {
+  width: 65%;
+  text-align: left;
+}
+
+.guestBookForm input,
+.guestBookForm textarea,
+.guestBookForm button {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+  width: 60%;
+  max-width: 60%;
+  margin: 10px 0;
+  box-shadow: 0 0 5px #c5c5c5;
+}
+
+.guestBook textarea {
+  padding-top: 10px;
+  -webkit-user-drag: none;
+}
+
+#nameInput {
+  max-height: 30px;
+  height: 30px;
+}
+
+#messageInput {
+  height: 100px;
+  max-height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#sendMessage {
+  background-color: #3b5249;
+  color: white;
+  font-size: 16px;
+  width: 30%;
+  height: 40px;
+}
+
+.guestBook .messages {
+  transition: 2s;
+  margin: 0;
+  margin-left: 50px;
+  padding: 0;
+  padding-bottom: 60%;
+  grid-column: 3/5;
+  animation-name: messages;
+  animation-duration: 1s;
+  overflow: scroll;
+}
+
+@keyframes messages {
+  from {
+    opacity: 0;
+    margin-left: 10%;
+  }
+  to {
+    opacity: 1;
+    margin: 0;
+    margin-left: 50px;
+  }
+}
+
+.guestBook .messages ul {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.guestBook .messages li {
+  list-style: none;
+  margin-bottom: 40px;
+  animation-name: messagesLi;
+  animation-duration: 1s;
+}
+
+@keyframes messagesLi {
+  from {
+    opacity: 0;
+    margin-left: 10%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.guestBook .messages li h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
