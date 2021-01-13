@@ -1,0 +1,106 @@
+.home {
+  min-height: 100%;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(#fcdfa6 2%, #a8ffdf 98%);
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.backgroundColumn6 {
+  z-index: 0;
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  background-color: #ffffff00;
+  background-image: radial-gradient(circle, #ffffff38 10%, transparent 0%);
+  background-size: 30px 30px
+}
+
+.profileImageBig {
+  z-index: 10;
+  position: fixed;
+  float: right;
+  object-fit: cover;
+  margin: 0 0 0 50%;
+  width: 50%;
+  min-height: 100%;
+  animation-name: profileImageBig;
+  animation-duration: 1s;
+  overflow: hidden;
+}
+
+@keyframes profileImageBig {
+  from {
+    margin-left: 100%;
+  }
+}
+
+.title {
+  z-index: 10;
+  width: 60%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(90deg, #3b524900 50%, #161f1b50 50%);
+  background-repeat: no-repeat;
+  animation-name: title;
+  animation-duration: 2s;
+}
+
+.titleHeading {
+  font-size: 5em;
+  margin: 0;
+  padding: 0;
+  padding-left: .5em;
+  background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 1%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+}
+
+.titleDescription {
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 50%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+}
+
+@keyframes title {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.externalLinksContainer {
+  position: fixed;
+  align-self: flex-end;
+  width: 100%;
+  height: 10%;
+  margin-left: 2em;
+}
+
+.externalLinksContainer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  opacity: .5;
+}
+
+.externalLinksContainer img:hover {
+  opacity: 1;
+}
