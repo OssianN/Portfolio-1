@@ -1,12 +1,47 @@
 import React from 'react'
-import GuestBookComponent from '../components/guestBook';
+import GuestBookForm from '../components/guestbookForm';
+import { graphql } from "gatsby"
+import '../components/guestbookForm/guestBook.css';
 
-const GuestBook = () => {
+const GuestBook = (props) => {
+  const messages = props.data.allMongodbGuestBookDbGuestbooks.edges;
+    
+  const renderMessages = () => {
+    return messages?.reverse().map(message => {
+      const info = message.node;
+      return (
+        <li key={info.id}>
+          <h2>{info.name}</h2>
+          <p>{info.msg}</p>
+        </li>
+      );
+    });
+  };
+
   return (
-    <div>
-      <GuestBookComponent />
+    <div className='guestBook'>
+      <GuestBookForm />
+      <div className='messages'>
+        <ul>
+          {renderMessages()}
+        </ul>
+      </div>
     </div>
   )
 }
 
 export default GuestBook;
+
+export const pageQuery = graphql`
+  query {
+    allMongodbGuestBookDbGuestbooks {
+      edges {
+        node {
+          id
+          name
+          msg
+        }
+      }
+    }
+  }
+`
