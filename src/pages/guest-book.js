@@ -20,13 +20,15 @@ const GuestBook = (props) => {
   };
 
   return (
-    <div className='guestBook'>
+    <div className='guestBookContainer'>
       <Nav navStyle={'homeNav'} />
-      <GuestBookForm />
-      <div className='messages'>
-        <ul>
-          {renderMessages()}
-        </ul>
+      <div className='guestBook'>
+        <GuestBookForm />
+        <div className='messages'>
+          <ul>
+            {renderMessages()}
+          </ul>
+        </div>
       </div>
     </div>
   )

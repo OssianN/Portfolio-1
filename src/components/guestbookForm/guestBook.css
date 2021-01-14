@@ -1,12 +1,23 @@
-.guestBook {
+.guestBookContainer {
   position: fixed;
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   color: #3b5249;
   background: linear-gradient(#fcdfa6, #a8ffdf 40%);
+}
+
+.guestBook {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin-top: 50px;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .guestBook h1 {
@@ -21,13 +32,14 @@
 }
 
 .guestBookForm {
-  width: 80%;
+  width: 50%;
+  padding: 3%;
+  margin-right: 2.5%;
+  margin-left: 5%;
   max-width: 450px;
-  padding: 10%;
-  margin: 20% 10% 10% 15%;
+  max-height: 462px;
   border-radius: 10px;
   background-color: #ffffff67;
-  grid-column: 1/3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,24 +92,27 @@
 }
 
 .guestBook .messages {
-  margin: 150px 0 0 -25%;
-  padding: 0;
-  padding-bottom: 50%;
-  grid-column: 4/4;
+  padding-right: 5%;
+  padding-left: 2.5%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   animation-name: messages;
   animation-duration: 2s;
   transition: 2s;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @keyframes messages {
   from {
     opacity: 0;
-    margin: 150px 0 -15% 0;
+    margin-left: 10%;
   }
   to {
     opacity: 1;
-    margin: 150px 0 0 -25%;
   }
 }
 

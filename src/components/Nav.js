@@ -31,18 +31,26 @@ const Nav = props => {
     return (
       <nav className={navShow}>
         <ul className={`defaultNav ${navClass}`} >
-          <Link to='/' >
-            <li className='homeLink'>Home</li>
-          </Link>
-          <Link to='guest-book' >
-            <li className='guestBookLink'>Guest Book</li>
-          </Link>
-          <Link to='/todo' >
-            <li className='todoLink'>Todo App</li>
-          </Link>
-          <Link to='wine' >
-            <li className='wineLink'>Wine App</li>
-          </Link>
+          <li className='homeLink'>
+            <Link to='/' >
+              Home
+            </Link>
+          </li>
+          <li className='guestBookLink'>
+            <Link to='guest-book'>
+              Guest Book
+            </Link>
+          </li>
+          <li className='todoLink'>
+            <Link to='/todo'>
+              Todo App
+            </Link>
+          </li>
+          <li className='wineLink'>
+            <Link to='wine'>
+              Wine App
+            </Link>
+          </li>
         </ul>
       </nav>
     );

@@ -20,20 +20,20 @@ div[role="group"][tabindex] {
   z-index: 100;
   display: flex;
   position: fixed;
-  width: 50%;
+  width: 100%;
   animation: navBar;
   animation-duration: 1s;
 }
 
 .defaultNav {
   z-index: 100;
+  padding: 0;
   list-style: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   overflow: hidden;
-  padding-left: 2em;
 }
 
 @keyframes navBar {
@@ -47,19 +47,21 @@ div[role="group"][tabindex] {
   }
 }
 
-.defaultNav a {
+.defaultNav li {
   border-top: 3px solid #3b524900;
-  padding: 20px 0 10px 0;
-  text-decoration: none;
+  padding: 40px 0;
   text-align: center;
-  min-width: 80px;
+  min-width: 110px;
   font-size: 20px;
-  margin: 0 20px;
+  margin: 0 5%;
   transition: .5s;
 }
 
-.defaultNav a:hover {
-  padding: 20px 0 10px 0;
+.defaultNav a {
+  text-decoration: none;
+}
+
+.defaultNav li:hover {
   transition: .5s;
 }
 
@@ -71,10 +73,10 @@ div[role="group"][tabindex] {
   color: #000;
 }
 
-.homeNav a:hover {
+.homeNav li:hover {
   border-top: 3px solid #3b5249;
 }
 
-.notHomeNav a:hover {
+.notHomeNav li:hover {
   border-top: 3px solid #000;
 }
