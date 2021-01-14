@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from '@reach/router';
 import { Link } from 'gatsby'
 
 const Nav = props => {
   const [navShow, setNavShow] = useState('hide');
-  const location = useLocation();
+  const [navClass, setNavClass] = useState('');
 
   const handleNavTransition = () => {
-    if (location.pathname === '/') {
+    if (props.navStyle === 'homeNav') {
       setTimeout(() => {
         setNavShow('navBar');
       }, 1100);
@@ -17,10 +16,10 @@ const Nav = props => {
   };
 
   const changeNavBar = () => {
-    if (location.pathname === '/' || location.pathname === '/guestbook') {
-      props.setNavStyle('homeNav');
+    if (props.navStyle === 'homeNav') {
+      setNavClass('homeNav');
     } else {
-      props.setNavStyle('notHomeNav');
+      setNavClass('notHomeNav');
     };
   };
 
@@ -29,10 +28,9 @@ const Nav = props => {
     changeNavBar();
   });
 
-
     return (
       <nav className={navShow}>
-        <ul className={`defaultNav ${props.navStyle}`} >
+        <ul className={`defaultNav ${navClass}`} >
           <Link to='/' >
             <li className='homeLink'>Home</li>
           </Link>

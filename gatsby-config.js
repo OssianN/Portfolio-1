@@ -29,5 +29,15 @@ module.exports = {
         },
       }
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `alata\:100,400,700`,
+          `quicksand`
+        ],
+        display: 'swap'
+      }
+    }
   ],
 }

@@ -13,13 +13,13 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "sendit": "git add . && git commit -m'update' && git push"
-
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "gatsby": "^2.26.1",
     "gatsby-plugin-express": "^1.1.6",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-netlify-functions": "^0.0.3",
     "gatsby-source-mongodb": "^2.8.0",
     "netlify-lambda": "^2.0.2",

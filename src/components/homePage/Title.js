@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './home.css';
 
-const firstName = 'Ossian ';
-const lastName = 'Nörthen';
+const firstName = 'OSSIAN ';
+const lastName = 'NÖRTHEN';
 const desc = 'Software · Technology · People';
 
 const Title = () => {

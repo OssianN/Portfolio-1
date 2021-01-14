@@ -2,7 +2,6 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  padding: 10% 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: auto;
@@ -12,7 +11,7 @@
 
 .guestBook h1 {
   text-align: center;
-  padding: 20px;
+  padding: 0 10%;
 }
 
 .guestBook input,
@@ -22,27 +21,24 @@
 }
 
 .guestBookForm {
-  position: fixed;
-  width: 500px;
-  height: auto;
-  padding: 20px 0;
-  margin-left: 50%;
-  left: -550px;
+  width: 80%;
+  max-width: 450px;
+  padding: 10%;
+  margin: 20% 10% 10% 15%;
   border-radius: 10px;
   background-color: #ffffff67;
-  grid-column: 3/3;
+  grid-column: 1/3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-self: flex-end;
   box-shadow: 0 0 10px #c5c5c5;
 }
 
 .guestBookForm label {
   width: 65%;
   text-align: left;
-  padding: 3%;
+  margin-top: 5%;
 }
 
 .guestBookForm input,
@@ -84,26 +80,24 @@
 }
 
 .guestBook .messages {
-  transition: 2s;
-  margin-top: 10%;
-  margin-left: 50px;
+  margin: 150px 0 0 -25%;
   padding: 0;
   padding-bottom: 50%;
-  grid-column: 3/5;
+  grid-column: 4/4;
   animation-name: messages;
-  animation-duration: 1s;
+  animation-duration: 2s;
+  transition: 2s;
   overflow: scroll;
 }
 
 @keyframes messages {
   from {
     opacity: 0;
-    margin-left: 10%;
+    margin: 150px 0 -15% 0;
   }
   to {
     opacity: 1;
-    margin: 0;
-    margin-left: 50px;
+    margin: 150px 0 0 -25%;
   }
 }
 

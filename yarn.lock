@@ -5182,6 +5182,11 @@ gatsby-plugin-express@^1.1.6:
   dependencies:
     "@reach/router" "^1.2.1"
 
+gatsby-plugin-google-fonts@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
+  integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
+
 gatsby-plugin-netlify-functions@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-functions/-/gatsby-plugin-netlify-functions-0.0.3.tgz#bf7dea7f6de9d940b6fabd23cd236c83cb1537dc"

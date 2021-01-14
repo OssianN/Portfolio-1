@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './wine.css';
 import WineGrid from './wineGrid/WineGrid';
 import AddWine from './wineForm/AddWine';

@@ -1,6 +1,7 @@
 import React from 'react'
 import GuestBookForm from '../components/guestbookForm';
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
+import Nav from '../components/Nav';
 import '../components/guestbookForm/guestBook.css';
 
 const GuestBook = (props) => {
@@ -20,6 +21,7 @@ const GuestBook = (props) => {
 
   return (
     <div className='guestBook'>
+      <Nav navStyle={'homeNav'} />
       <GuestBookForm />
       <div className='messages'>
         <ul>
