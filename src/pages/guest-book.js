@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import GuestBookForm from '../components/guestbookForm';
 import { graphql } from "gatsby";
 import Nav from '../components/Nav';
 import '../components/guestbookForm/guestBook.css';
 
 const GuestBook = (props) => {
-  const messages = props.data.allMongodbGuestBookDbGuestbooks.edges;
+  const [updateMessages, setUpdateMessages] = useState();
+  const [messages, setMessages] = useState([]);
+  
+
+  const fetchAllMessages = async () => {
+    const messages = props.data.allMongodbGuestBookDbGuestbooks.edges;
+  //   const res = await axios({
+  //     method: 'get',
+  //     url: '/api/getGuestMessage',
+  //   });
+    setMessages(messages);
+  }
+
+  useEffect(() => {
+    fetchAllMessages();
+  }, [updateMessages])
+
     
   const renderMessages = () => {
     return messages?.reverse().map(message => {

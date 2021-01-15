@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
+import axios from 'axios';
 import './guestBook.css';
 
-const GuestBookForm = () => {
+const GuestBookForm = (props) => {
   
   const nameValue = useRef(null);
   const messageValue = useRef(null);
@@ -12,14 +13,13 @@ const GuestBookForm = () => {
       name: nameValue.current.value,
       msg: messageValue.current.value
     };
-    fetch('/api/postGuestMessage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
+    await axios({
+      method: 'put',
+      url: '/api/postGuestMessage',
+      data: data
+    });
     resetForm();
+    props.setUpdateMessages(props.updateMessages + 1);
   };
 
   const resetForm = () => {

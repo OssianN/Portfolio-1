@@ -4,8 +4,6 @@ let conn = null;
 const uri = 'mongodb+srv://ossian:hucfy3-kobvoc-giqwoD@guestbook.gbqd3.mongodb.net/GuestBookDB?retryWrites=true&w=majority';
 
 exports.handler = async function(event, context) {
-  const data = JSON.parse(event.body);
-
   context.callbackWaitsForEmptyEventLoop = false;
   if (conn == null) {
     conn = mongoose.createConnection(uri, {
@@ -29,18 +27,11 @@ exports.handler = async function(event, context) {
     conn.model('guestBook', guestBook);
   }
   const GuestBookDB = conn.model('guestBook');
-
-  const { name, msg } = data;
-
-  const guestMessage = new GuestBookDB({
-    name,
-    msg
-  });
-  await guestMessage.save();
+  const res = await GuestBookDB.find();
 
   return {
     statusCode: 200,
-    body: 'Message posted!',
+    body: res,
   }
 };
 
