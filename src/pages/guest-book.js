@@ -21,7 +21,7 @@ const GuestBook = (props) => {
 
   return (
     <div className='guestBookContainer'>
-      <Nav navStyle={'homeNav'} />
+      <Nav navStyle={'guestbookNav'} />
       <div className='guestBook'>
         <GuestBookForm />
         <div className='messages'>

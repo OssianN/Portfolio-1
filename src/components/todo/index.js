@@ -4,10 +4,22 @@ import Form from './form/Form';
 import CardsList from './cardsList/CardsList';
 
 const Todo = () => {
-  const [cardsArr, setCardsArr] = useState(JSON.parse(window.localStorage.getItem('cardsArr2')) || []);
+  const [cardsArr, setCardsArr] = useState([]);
+
+  const getLocalStorage = () => {
+    setCardsArr(JSON.parse(window.localStorage.getItem('cardsArr2')) || []);
+  }
+
+  const setLocalStorage = () => {
+    window.localStorage.setItem('cardsArr2', JSON.stringify(cardsArr));
+  }
 
   useEffect(() => {
-    window.localStorage.setItem('cardsArr2', JSON.stringify(cardsArr));
+    getLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    setLocalStorage();
   }, [cardsArr]);
 
   return (

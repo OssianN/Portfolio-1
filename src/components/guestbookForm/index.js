@@ -7,14 +7,19 @@ const GuestBookForm = () => {
   const messageValue = useRef(null);
   
   const handleSubmitMessage = async e => {
-    // e.preventDefault();
-    // const data = {
-    //   name: nameValue.current.value,
-    //   msg: messageValue.current.value
-    // };
-    // await axios.post('/guestBook', data);
-    // await getMessages();
-    // resetForm();
+    e.preventDefault();
+    const data = {
+      name: nameValue.current.value,
+      msg: messageValue.current.value
+    };
+    fetch('/api/postGuestMessage', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    resetForm();
   };
 
   const resetForm = () => {

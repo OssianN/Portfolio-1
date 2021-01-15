@@ -51,7 +51,6 @@ div[role="group"][tabindex] {
   border-top: 3px solid #3b524900;
   padding: 40px 0;
   text-align: center;
-  min-width: 110px;
   font-size: 20px;
   margin: 0 5%;
   transition: .5s;
@@ -65,16 +64,38 @@ div[role="group"][tabindex] {
   transition: .5s;
 }
 
-.homeNav a {
-  color: #3b5249;
+.homeNav {
+  width: 50%;
+  justify-self: flex-start;
+  justify-content: flex-start;
+  padding-left: 2%;
 }
 
-.notHomeNav a {
-  color: #000;
+.homeNav a {
+  color: #3b5249;
+  font-weight: 900;
+}
+
+
+.homeNav li {
+  margin: 0 3%  !important;
 }
 
 .homeNav li:hover {
   border-top: 3px solid #3b5249;
+  margin: 0 3%  !important;
+}
+
+.guestbookNav a {
+  color: #3b5249;
+}
+
+.guestbookNav li:hover {
+  border-top: 3px solid #3b5249;
+}
+
+.notHomeNav a {
+  color: #000;
 }
 
 .notHomeNav li:hover {
