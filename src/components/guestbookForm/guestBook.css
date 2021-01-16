@@ -12,10 +12,8 @@
 .guestBook {
   position: fixed;
   display: flex;
-  width: 100%;
-  height: 100%;
   max-width: 1200px;
-  margin-top: 50px;
+  top: 20%;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -33,10 +31,9 @@
 
 .guestBookForm {
   width: 50%;
-  padding: 3%;
-  margin-left: 5%;
-  max-width: 450px;
-  max-height: 462px;
+  padding: 40px;
+  max-width: 500px;
+  height: 500px;
   border-radius: 2px;
   background-color: #ffffff67;
   display: flex;
@@ -47,7 +44,7 @@
 }
 
 .guestBookForm label {
-  width: 65%;
+  width: 300px;
   text-align: left;
   margin-top: 5%;
 }
@@ -57,10 +54,9 @@
 .guestBookForm button {
   border: none;
   border-radius: 2px;
-  padding: 5px 15px;
-  width: 60%;
-  max-width: 60%;
-  margin: 10px 0;
+  width: 300px;
+  padding: 2% 0;
+  margin: 3% 0;
   box-shadow: 0 0 5px #c5c5c5;
 }
 
@@ -69,40 +65,24 @@
   -webkit-user-drag: none;
 }
 
-#nameInput {
-  max-height: 30px;
-  height: 30px;
-}
-
-#messageInput {
-  height: 100px;
-  max-height: 100px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 #sendMessage {
   background-color: #3b5249;
   color: white;
   font-size: 16px;
-  margin-top: 10%;
   padding: 2% 0;
 }
 
 .guestBook .messages {
-  padding-right: 5%;
-  padding-left: 2.5%;
   width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation-name: messages;
-  animation-duration: 2s;
   transition: 2s;
   overflow-y: scroll;
   overflow-x: hidden;
+  animation-name: messages;
+  animation-duration: 2s;
 }
 
 @keyframes messages {
@@ -116,25 +96,14 @@
 }
 
 .guestBook .messages ul {
-  margin-top: 0;
-  padding-top: 0;
+  animation-name: messagesLi;
+  animation-duration: 1s;
 }
 
 .guestBook .messages li {
   list-style: none;
   margin-bottom: 40px;
-  animation-name: messagesLi;
-  animation-duration: 1s;
-}
 
-@keyframes messagesLi {
-  from {
-    opacity: 0;
-    margin-left: 10%;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .guestBook .messages li h2 {

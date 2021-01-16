@@ -8,13 +8,13 @@ const GuestBook = (props) => {
   const [updateMessages, setUpdateMessages] = useState(0);
   const [messages, setMessages] = useState([]);
   
-  const fetchAllMessages = async () => {
+  const fetchDBMessages = async () => {
     const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
     setMessages(messagesDB);
   };
 
   useEffect(() => {
-    fetchAllMessages();
+    fetchDBMessages();
   }, []);
 
   const renderMessages = () => {
