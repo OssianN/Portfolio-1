@@ -5,24 +5,18 @@ import Nav from '../components/Nav';
 import '../components/guestbookForm/guestBook.css';
 
 const GuestBook = (props) => {
-  const [updateMessages, setUpdateMessages] = useState();
+  const [updateMessages, setUpdateMessages] = useState(0);
   const [messages, setMessages] = useState([]);
   
-
   const fetchAllMessages = async () => {
-    const messages = props.data.allMongodbGuestBookDbGuestbooks.edges;
-  //   const res = await axios({
-  //     method: 'get',
-  //     url: '/api/getGuestMessage',
-  //   });
-    setMessages(messages);
-  }
+    const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
+    setMessages(messagesDB);
+  };
 
   useEffect(() => {
     fetchAllMessages();
-  }, [updateMessages])
+  }, []);
 
-    
   const renderMessages = () => {
     return messages?.reverse().map(message => {
       const info = message.node;
@@ -39,7 +33,12 @@ const GuestBook = (props) => {
     <div className='guestBookContainer'>
       <Nav navStyle={'guestbookNav'} />
       <div className='guestBook'>
-        <GuestBookForm />
+        <GuestBookForm
+          updateMessages={updateMessages}
+          setUpdateMessages={setUpdateMessages}
+          messages={messages}
+          setMessages={setMessages}
+        />
         <div className='messages'>
           <ul>
             {renderMessages()}
@@ -47,8 +46,8 @@ const GuestBook = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default GuestBook;
 
@@ -64,4 +63,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

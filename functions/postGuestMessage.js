@@ -30,7 +30,8 @@ exports.handler = async function(event, context) {
   }
   const GuestBookDB = conn.model('guestBook');
 
-  const { name, msg } = data;
+  const { name, msg } = data.node;
+  console.log(name, msg);
 
   const guestMessage = new GuestBookDB({
     name,
