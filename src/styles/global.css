@@ -8,6 +8,10 @@ html, body, #___gatsby, #gatsby-focus-wrapper, .App {
   overflow-x: hidden;
 }
 
+button:focus {
+  outline: none;
+}
+
 body {
   margin: 0px;
 }

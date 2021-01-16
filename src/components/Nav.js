@@ -31,23 +31,23 @@ const Nav = props => {
     return (
       <nav className={navShow}>
         <ul className={`defaultNav ${navClass}`} >
-          <li className='homeLink'>
+          <li>
             <Link to='/' >
               Home
             </Link>
           </li>
-          <li className='guestBookLink'>
-            <Link to='guest-book'>
+          <li>
+            <Link to='/guest-book'>
               Guest Book
             </Link>
           </li>
-          <li className='todoLink'>
+          <li>
             <Link to='/todo'>
               Todo App
             </Link>
           </li>
-          <li className='wineLink'>
-            <Link to='wine'>
+          <li>
+            <Link to='/wine'>
               Wine App
             </Link>
           </li>

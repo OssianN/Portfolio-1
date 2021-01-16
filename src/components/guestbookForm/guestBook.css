@@ -53,14 +53,13 @@
 .guestBookForm button {
   border: none;
   border-radius: 2px;
-  width: 300px;
-  padding: 2% 0;
+  width: 280px;
+  padding: 2%;
   margin: 3% 0;
   box-shadow: 0 0 5px #c5c5c5;
 }
 
 .guestBook textarea {
-  padding-top: 10px;
   -webkit-user-drag: none;
 }
 
@@ -68,7 +67,7 @@
   background-color: #3b5249;
   color: white;
   font-size: 16px;
-  padding: 2% 0;
+  width: 300px;
 }
 
 .guestBook .messages {
