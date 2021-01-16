@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
+import '../styles/navbar.css';
 
 const Nav = props => {
   const [navShow, setNavShow] = useState('hide');
   const [navClass, setNavClass] = useState('');
+  const [showMobileNav, setShowMobileNav] = useState('-400px');
+  const [navToogleClass, setNavToogleClass] = useState('');
 
   const handleNavTransition = () => {
     if (props.navStyle === 'homeNav') {
@@ -23,36 +26,58 @@ const Nav = props => {
     };
   };
 
+  const handleMobileNavToggle = () => {
+    if (showMobileNav === '0') {
+      setShowMobileNav('-400px');
+      setNavToogleClass('')
+    } else {
+      setShowMobileNav('0');
+      setNavToogleClass('open')
+    };
+  };
+
   useEffect(() => {
     handleNavTransition();
     changeNavBar();
   });
 
     return (
-      <nav className={navShow}>
-        <ul className={`defaultNav ${navClass}`} >
-          <li>
-            <Link to='/' >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to='/guest-book'>
-              Guest Book
-            </Link>
-          </li>
-          <li>
-            <Link to='/todo'>
-              Todo App
-            </Link>
-          </li>
-          <li>
-            <Link to='/wine'>
-              Wine App
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <div className='navContainer'>
+        <button className='mobileNavButton' onClick={handleMobileNavToggle}>
+          <div id='nav-icon2' className={navToogleClass}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <nav className={`mobileNav ${navShow}`} style={{marginLeft: showMobileNav}}>
+          <ul className={`defaultNav ${navClass}`} >
+            <li>
+              <Link to='/' >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to='/guest-book'>
+                Guest Book
+              </Link>
+            </li>
+            <li>
+              <Link to='/todo'>
+                Todo App
+              </Link>
+            </li>
+            <li>
+              <Link to='/wine'>
+                Wine App
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     );
 }
 
