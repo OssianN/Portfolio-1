@@ -25,12 +25,12 @@ const GuestBookForm = (props) => {
       }
     }
     resetForm();
-    await axios({
-      method: 'put',
-      url: '/api/postGuestMessage',
-      data: messageData
-    });
-    sendGuestWebhook();
+    // await axios({
+    //   method: 'put',
+    //   url: '/api/postGuestMessage',
+    //   data: messageData
+    // });
+    // sendGuestWebhook();
     const messages = props.messages;
     props.setMessages([ ...messages, messageData ]);
     props.setUpdateMessages(props.updateMessages + 1);

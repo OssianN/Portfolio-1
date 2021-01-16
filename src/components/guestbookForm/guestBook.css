@@ -1,5 +1,4 @@
 .guestBookContainer {
-  position: fixed;
   height: 100%;
   width: 100%;
   display: flex;
@@ -7,15 +6,15 @@
   justify-content: center;
   color: #3b5249;
   background: linear-gradient(#fcdfa6, #a8ffdf 40%);
+  overflow: hidden;
 }
 
 .guestBook {
-  position: fixed;
   display: flex;
   max-width: 1200px;
-  top: 20%;
+  height: 100%;
+  margin: 12% 0;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .guestBook h1 {
@@ -33,7 +32,7 @@
   width: 50%;
   padding: 40px;
   max-width: 500px;
-  height: 500px;
+  height: 450px;
   border-radius: 2px;
   background-color: #ffffff67;
   display: flex;
@@ -74,10 +73,6 @@
 
 .guestBook .messages {
   width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   transition: 2s;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -98,6 +93,8 @@
 .guestBook .messages ul {
   animation-name: messagesLi;
   animation-duration: 1s;
+  max-height: 70%;
+  overflow-y: scroll;
 }
 
 .guestBook .messages li {
