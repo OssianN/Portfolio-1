@@ -1,21 +1,17 @@
 .guestBookContainer {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   color: #3b5249;
-  background: linear-gradient(#fcdfa6, #a8ffdf 40%);
-  overflow: hidden;
+  background: linear-gradient(#fcdfa6 2%, #a8ffdf 98%);
+
 }
 
 .guestBook {
   display: flex;
-  max-width: 1200px;
-  height: 100%;
-  margin: 12% 0;
   padding: 0 5%;
-  justify-content: space-evenly;
 }
 
 .guestBook h1 {
@@ -30,21 +26,15 @@
 }
 
 .guestBookForm {
-  width: 50%;
-  padding: 40px;
-  max-width: 500px;
-  height: 450px;
   border-radius: 2px;
   background-color: #ffffff67;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   box-shadow: 0 0 10px #c5c5c5;
 }
 
 .guestBookForm label {
-  width: 300px;
+  width: 270px;
   text-align: left;
   margin-top: 5%;
 }
@@ -54,8 +44,8 @@
 .guestBookForm button {
   border: none;
   border-radius: 2px;
-  width: 280px;
-  padding: 2%;
+  width: 250px;
+  padding: 10px;
   margin: 3% 0;
   box-shadow: 0 0 5px #c5c5c5;
 }
@@ -68,14 +58,11 @@
   background-color: #3b5249;
   color: white;
   font-size: 16px;
-  width: 300px;
+  width: 270px;
 }
 
 .guestBook .messages {
-  width: 40%;
   transition: 2s;
-  overflow-y: scroll;
-  overflow-x: hidden;
   animation-name: messages;
   animation-duration: 2s;
 }
@@ -93,17 +80,106 @@
 .guestBook .messages ul {
   animation-name: messagesLi;
   animation-duration: 1s;
-  max-height: 70%;
-  overflow-y: scroll;
 }
 
 .guestBook .messages li {
   list-style: none;
   margin-bottom: 40px;
-
 }
 
 .guestBook .messages li h2 {
   margin-top: 0;
   margin-bottom: 5px;
+}
+
+@media (min-width: 1001px) {
+  .guestBookContainer {
+    overflow: hidden;
+  }
+
+  .guestBook {
+    max-width: 1200px;
+    margin: 10% 0;
+    margin-top: 15%;
+    justify-content: space-evenly;
+  }
+
+  .guestBookForm {
+    padding: 40px;
+    max-width: 400px;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .guestBook .messages {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 40%;
+  }
+  
+  .guestBook .messages ul {
+    max-height: 100%;
+    overflow-y: scroll;
+  }
+
+  .mobileMessageButton {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .guestBook {
+    flex-direction: column;
+  }
+
+  .showGuestBookForm {
+    display: flex !important;
+    align-self: center;
+    margin-top: 100px;
+    padding-bottom: 30px;
+    animation-duration: 1s;
+    animation-name: guestBookForm;
+  }
+
+  @keyframes guestBookForm {
+    from {
+      margin-top: -300px;
+    }
+    to {
+      margin-top: 100px;
+    }
+  }
+
+  .guestBookForm {
+    display: none;
+  }
+
+  .guestBook .messages {
+    margin-top: 100px;
+  }
+
+  .guestBook .messages ul {
+    min-height: 100%;
+  }
+
+  .mobileMessageButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .mobileMessageButton button {
+    border: none;
+    background-color: #ffffff83;
+    padding: 3% 5%;
+    width: 100%;
+    max-width: 680px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #dbdada;
+    font-size: 1.8em;
+    font-family: 'quicksand';
+    color: #3b5249;
+  }
 }

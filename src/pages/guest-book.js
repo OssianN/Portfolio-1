@@ -7,16 +7,13 @@ import '../components/guestbookForm/guestBook.css';
 const GuestBook = (props) => {
   const [updateMessages, setUpdateMessages] = useState(0);
   const [messages, setMessages] = useState([]);
+  const [showForm, setShowForm] = useState('guestBookForm');
   
   const fetchDBMessages = async () => {
     const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
     setMessages(messagesDB);
   };
-
-  useEffect(() => {
-    fetchDBMessages();
-  }, []);
-
+  
   const renderMessages = () => {
     return messages?.reverse().map(message => {
       const info = message.node;
@@ -29,6 +26,18 @@ const GuestBook = (props) => {
     });
   };
 
+  const showGuestBookForm = () => {
+    if (showForm === 'guestBookForm') {
+      setShowForm('showGuestBookForm');
+    } else {
+      setShowForm('guestBookForm');
+    }
+  }
+  
+    useEffect(() => {
+      fetchDBMessages();
+    }, []);
+
   return (
     <div className='guestBookContainer'>
       <Nav navStyle={'guestbookNav'} />
@@ -38,7 +47,12 @@ const GuestBook = (props) => {
           setUpdateMessages={setUpdateMessages}
           messages={messages}
           setMessages={setMessages}
+          showForm={showForm}
+          setShowForm={setShowForm}
         />
+        <div className='mobileMessageButton'>
+          <button onClick={showGuestBookForm}>Write a message</button>
+        </div>
         <div className='messages'>
           <ul>
             {renderMessages()}

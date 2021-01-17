@@ -50,7 +50,7 @@ const GuestBookForm = (props) => {
   };
   
   return (
-    <form className='guestBookForm' onSubmit={handleSubmitMessage}>
+    <form className={`guestBookForm ${props.showForm}`} onSubmit={handleSubmitMessage}>
       <h1>Write something for all visitors to see.. be nice!</h1>
       <label htmlFor='nameInput'>Your Name</label>
       <input id='nameInput' ref={nameValue} onChange={handleNameChange}></input>
