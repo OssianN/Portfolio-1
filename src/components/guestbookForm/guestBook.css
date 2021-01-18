@@ -41,7 +41,7 @@
 
 .guestBookForm input,
 .guestBookForm textarea,
-.guestBookForm button {
+.guestBookForm button[type='submit'] {
   border: none;
   border-radius: 2px;
   width: 250px;
@@ -137,6 +137,7 @@
     display: flex !important;
     align-self: center;
     margin-top: 100px;
+    max-width: 680px;
     padding-bottom: 30px;
     animation-duration: 1s;
     animation-name: guestBookForm;
@@ -149,6 +150,13 @@
     to {
       margin-top: 100px;
     }
+  }
+
+  .cancelFormButton {
+    align-self: flex-end;
+    width: 20px;
+    background-color: transparent;
+    border: none;
   }
 
   .guestBookForm {

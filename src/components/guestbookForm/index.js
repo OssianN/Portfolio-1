@@ -51,7 +51,8 @@ const GuestBookForm = (props) => {
   
   return (
     <form className={`guestBookForm ${props.showForm}`} onSubmit={handleSubmitMessage}>
-      <h1>Write something for all visitors to see.. be nice!</h1>
+      <button className="cancelFormButton" onClick={props.showGuestBookForm}>&#10005;</button>
+      <h1>Write something for all visitors to see... or just smile and wave!</h1>
       <label htmlFor='nameInput'>Your Name</label>
       <input id='nameInput' ref={nameValue} onChange={handleNameChange}></input>
       <label htmlFor='messageInput'>Message</label>
