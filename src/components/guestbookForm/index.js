@@ -54,6 +54,7 @@ const GuestBookForm = (props) => {
   return (
     <form 
       className={`guestBookForm ${props.showForm}`}
+      onSubmit={e => handleSubmitMessage(e)}
       name="guestBook"
       method="POST"
       data-netlify="true"
