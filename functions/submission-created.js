@@ -3,6 +3,7 @@ require('dotenv').config();
 
 let conn = null;
 const uri = process.env.MONGODB_URI;
+console.log(uri, 'this is uri')
 
 exports.handler = async function(event, context) {
   const data = JSON.parse(event.body);
@@ -32,7 +33,7 @@ exports.handler = async function(event, context) {
   const GuestBookDB = conn.model('guestBook');
 
   const { name, msg } = data.node;
-  console.log(name, msg);
+  console.log(name, msg, 'this is name and msg');
 
   const guestMessage = new GuestBookDB({
     name,
