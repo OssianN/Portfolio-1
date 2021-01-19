@@ -6,6 +6,7 @@ const uri = process.env.MONGODB_URI;
 
 exports.handler = async function(event, context) {
   const data = JSON.parse(event.body);
+  console.log(data.payload.data, 'EVENT')
 
   context.callbackWaitsForEmptyEventLoop = false;
   if (conn == null) {

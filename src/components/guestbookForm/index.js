@@ -15,9 +15,16 @@ const GuestBookForm = (props) => {
       url: 'https://api.netlify.com/build_hooks/6002ba1b511639c24ee7b511',
     });
   }
+
+
+  const resetForm = () => {
+    nameValue.current.value = null;
+    messageValue.current.value = null;
+  };
   
   const handleSubmitMessage = async e => {
     e.preventDefault();
+
     const messageData = {
       node: {
         name: nameData,
@@ -25,7 +32,11 @@ const GuestBookForm = (props) => {
         id: Date.now(),
       }
     }
-    resetForm();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: messageData,
+    })
     // await axios({
     //   method: 'put',
     //   url: '/api/postGuestMessage',
@@ -36,11 +47,6 @@ const GuestBookForm = (props) => {
     const messages = props.messages;
     props.setMessages([ ...messages, messageData ]);
     props.setUpdateMessages(props.updateMessages + 1);
-  };
-
-  const resetForm = () => {
-    nameValue.current.value = null;
-    messageValue.current.value = null;
   };
 
   const handleNameChange = e => {
