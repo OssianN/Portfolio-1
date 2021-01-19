@@ -63,6 +63,7 @@ const GuestBookForm = (props) => {
       name="guestBook"
       method="POST"
       data-netlify="true"
+      data-netlify-recaptcha="true"
       action=''
       data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="guestBook" />
@@ -73,6 +74,7 @@ const GuestBookForm = (props) => {
       <label htmlFor='messageInput'>Message</label>
       <textarea id='messageInput' ref={messageValue} onChange={handleMsgChange} name="guestMessage"></textarea>
       <button type='submit' id='sendMessage'>Send It</button>
+      <div data-netlify-recaptcha="true"></div>
     </form>
   );
 };
