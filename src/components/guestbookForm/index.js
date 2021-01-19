@@ -53,7 +53,6 @@ const GuestBookForm = (props) => {
   
   return (
     <form className={`guestBookForm ${props.showForm}`} name="guestBook" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="Contact Form" />
       <button className="cancelFormButton" onClick={props.showGuestBookForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>
       <label htmlFor='nameInput'>Your Name</label>
