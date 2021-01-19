@@ -36,8 +36,8 @@ const GuestBook = (props) => {
   }
 
   const hideShowButton = () => showForm === 'showGuestBookForm'
-  ? setShowButton('block')
-  : setTimeout(() => setShowButton('none'), 1000);
+    ? setShowButton('block')
+    : setTimeout(() => setShowButton('none'), 1000);
   
     useEffect(() => {
       fetchDBMessages();

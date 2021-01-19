@@ -126,6 +126,10 @@
   .mobileMessageButton {
     display: none;
   }
+
+  .cancelFormButton {
+    display: none;
+  }
 }
 
 @media (max-width: 1000px) {

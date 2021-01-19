@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 let conn = null;
-const uri = 'mongodb+srv://ossian:hucfy3-kobvoc-giqwoD@guestbook.gbqd3.mongodb.net/GuestBookDB?retryWrites=true&w=majority';
+const uri = process.env.MONGODB_URI;
 
 exports.handler = async function(event, context) {
   context.callbackWaitsForEmptyEventLoop = false;

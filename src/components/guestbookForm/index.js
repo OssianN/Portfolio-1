@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './guestBook.css';
+require('dotenv').config();
 
 const GuestBookForm = (props) => {
   const [nameData, setNameData] = useState(null);
@@ -31,6 +32,7 @@ const GuestBookForm = (props) => {
     //   data: messageData
     // });
     // sendGuestWebhook();
+    
     const messages = props.messages;
     props.setMessages([ ...messages, messageData ]);
     props.setUpdateMessages(props.updateMessages + 1);
@@ -50,13 +52,14 @@ const GuestBookForm = (props) => {
   };
   
   return (
-    <form className={`guestBookForm ${props.showForm}`} onSubmit={handleSubmitMessage}>
+    <form className={`guestBookForm ${props.showForm}`} name="guestBook" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="Contact Form" />
       <button className="cancelFormButton" onClick={props.showGuestBookForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>
       <label htmlFor='nameInput'>Your Name</label>
-      <input id='nameInput' ref={nameValue} onChange={handleNameChange}></input>
+      <input id='nameInput' ref={nameValue} onChange={handleNameChange} name="guestName"></input>
       <label htmlFor='messageInput'>Message</label>
-      <textarea id='messageInput' ref={messageValue} onChange={handleMsgChange}></textarea>
+      <textarea id='messageInput' ref={messageValue} onChange={handleMsgChange} name="guestMessage"></textarea>
       <button type='submit' id='sendMessage'>Send It</button>
     </form>
   );
