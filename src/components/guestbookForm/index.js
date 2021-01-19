@@ -23,8 +23,6 @@ const GuestBookForm = (props) => {
   };
   
   const handleSubmitMessage = async e => {
-    e.preventDefault();
-
     const messageData = {
       node: {
         name: nameData,
@@ -37,6 +35,7 @@ const GuestBookForm = (props) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: messageData,
     })
+    e.preventDefault();
     // await axios({
     //   method: 'put',
     //   url: '/api/postGuestMessage',
