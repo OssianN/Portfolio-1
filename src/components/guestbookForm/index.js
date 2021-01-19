@@ -57,7 +57,7 @@ const GuestBookForm = (props) => {
       name="guestBook"
       method="POST"
       data-netlify="true"
-      action='/guest-book'
+      action=''
       data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" onClick={props.showGuestBookForm}>&#10005;</button>
