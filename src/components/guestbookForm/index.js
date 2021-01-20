@@ -16,11 +16,16 @@ const GuestBookForm = (props) => {
     });
   }
 
-
   const resetForm = () => {
     nameValue.current.value = null;
     messageValue.current.value = null;
   };
+
+  const updateLocalState = (data) => {
+    const messages = props.messages;
+    props.setMessages([ ...messages, {node: data }]);
+    props.setUpdateMessages(props.updateMessages + 1);
+  }
 
   const encode = (data) => {
     return Object.keys(data)
@@ -29,21 +34,24 @@ const GuestBookForm = (props) => {
   }
   
   const handleSubmitMessage = async e => {
+    e.preventDefault();
+
     const messageData = {
       name: nameData,
       msg: JSON.stringify(msgData),
       id: Date.now(),
-    }
-    fetch("/", {
+    };
+
+    const fetchData = {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(messageData)
-    })
-    e.preventDefault();
-    
-    const messages = props.messages;
-    props.setMessages([ ...messages, {node: messageData }]);
-    props.setUpdateMessages(props.updateMessages + 1);
+      body: encode(messageData),
+    };
+
+    fetch("/", fetchData);
+    sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
+    resetForm();
+    updateLocalState(messageData); //becasue we want a local preview of the message = better UX.
   };
 
   const handleNameChange = e => {
@@ -57,13 +65,11 @@ const GuestBookForm = (props) => {
   return (
     <form
       className={`guestBookForm ${props.showForm}`}
-      onSubmit={e => handleSubmitMessage(e)}
       name="guestBook"
       method="post"
       data-netlify="true"
-      action=''
       data-netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true">
+      onSubmit={e => handleSubmitMessage(e)}>
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" onClick={props.showGuestBookForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>
@@ -72,7 +78,6 @@ const GuestBookForm = (props) => {
       <label htmlFor='messageInput'>Message</label>
       <textarea id='messageInput' ref={messageValue} onChange={handleMsgChange} name="guestMessage"></textarea>
       <button type='submit' id='sendMessage'>Send It</button>
-      <div data-netlify-recaptcha="true"></div>
     </form>
   );
 };
