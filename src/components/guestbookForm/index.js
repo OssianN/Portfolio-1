@@ -21,30 +21,28 @@ const GuestBookForm = (props) => {
     nameValue.current.value = null;
     messageValue.current.value = null;
   };
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
   
   const handleSubmitMessage = async e => {
     const messageData = {
-      node: {
-        name: nameData,
-        msg: msgData,
-        id: Date.now(),
-      }
+      name: nameData,
+      msg: JSON.stringify(msgData),
+      id: Date.now(),
     }
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: messageData,
+      body: encode(messageData)
     })
     e.preventDefault();
-    // await axios({
-    //   method: 'put',
-    //   url: '/api/postGuestMessage',
-    //   data: messageData
-    // });
-    // sendGuestWebhook();
     
     const messages = props.messages;
-    props.setMessages([ ...messages, messageData ]);
+    props.setMessages([ ...messages, {node: messageData }]);
     props.setUpdateMessages(props.updateMessages + 1);
   };
 
@@ -57,15 +55,15 @@ const GuestBookForm = (props) => {
   };
   
   return (
-    <form 
+    <form
       className={`guestBookForm ${props.showForm}`}
       onSubmit={e => handleSubmitMessage(e)}
       name="guestBook"
-      method="POST"
+      method="post"
       data-netlify="true"
-      data-netlify-recaptcha="true"
       action=''
-      data-netlify-honeypot="bot-field">
+      data-netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true">
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" onClick={props.showGuestBookForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>

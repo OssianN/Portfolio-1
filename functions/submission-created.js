@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
+const qs = require('qs');
 require('dotenv').config();
 
 let conn = null;
 const uri = process.env.MONGODB_URI;
 
 exports.handler = async function(event, context) {
-  const data = JSON.parse(event.body);
-  console.log(Object.keys(data.payload.data[0]), 'EVENT')
+
+  const dataBody = JSON.parse(event.body);
+  const payload = dataBody.payload.data;
+  const data = qs.parse(payload);
 
   context.callbackWaitsForEmptyEventLoop = false;
   if (conn == null) {
@@ -31,7 +34,7 @@ exports.handler = async function(event, context) {
     conn.model('guestBook', guestBook);
   }
   const GuestBookDB = conn.model('guestBook');
-  const { name, msg } = data.node;
+  const { name, msg } = data;
   const guestMessage = new GuestBookDB({
     name,
     msg
