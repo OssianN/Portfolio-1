@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import GuestBookForm from '../components/guestbookForm';
 import { graphql } from "gatsby";
 import Nav from '../components/Nav';
@@ -45,6 +45,7 @@ const GuestBook = (props) => {
 
   return (
     <div className='guestBookContainer'>
+      <div className='fadeListTop'></div>
       <Nav navStyle={'guestbookNav'} />
       <div className='guestBook'>
         <GuestBookForm
@@ -65,6 +66,7 @@ const GuestBook = (props) => {
           </ul>
         </div>
       </div>
+      <div className='fadeListBottom'></div>
     </div>
   );
 };

@@ -38,7 +38,7 @@ const GuestBookForm = (props) => {
 
     const messageData = {
       name: nameData,
-      msg: JSON.stringify(msgData),
+      msg: msgData,
       id: Date.now(),
     };
 
@@ -48,8 +48,8 @@ const GuestBookForm = (props) => {
       body: encode(messageData),
     };
 
-    fetch("/", fetchData);
-    sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
+    // fetch("/", fetchData);
+    // sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
     resetForm();
     updateLocalState(messageData); //becasue we want a local preview of the message = better UX.
   };
