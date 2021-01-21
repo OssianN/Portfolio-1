@@ -48,10 +48,10 @@ const GuestBookForm = (props) => {
       body: encode(messageData),
     };
 
-    // fetch("/", fetchData);
-    // sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
+    fetch("/", fetchData);
+    sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
     resetForm();
-    updateLocalState(messageData); //becasue we want a local preview of the message = better UX.
+    updateLocalState(messageData); //becasue local preview of the message = better UX.
   };
 
   const handleNameChange = e => {
