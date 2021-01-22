@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import './guestBook.css';
+import './guestBook.scss';
 require('dotenv').config();
 
 const GuestBookForm = (props) => {

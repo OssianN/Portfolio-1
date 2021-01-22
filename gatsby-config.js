@@ -3,6 +3,7 @@ const env = require('dotenv');
 module.exports = {
   plugins: [
     `gatsby-plugin-recaptcha`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-netlify-functions`,
       options: {

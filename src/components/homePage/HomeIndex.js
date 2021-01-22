@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './home.css';
+import './home.scss';
 import ProfileImage from './ProfileImage.js';
 import Title from './Title.js';
 
@@ -7,22 +7,21 @@ const github = require('./images/git.png');
 const linkedin = require('./images/linkedin.png');
 
 const Home = () => {
-  const [background, setBackground] = useState({
-    backgroundPositionX: 0,
-    backgroundPositionY: 0
-  });
-  const moveBackground = (e) => {
-    setBackground({
-      backgroundPositionX: `${-e.clientX * .1}px`,
-      backgroundPositionY: `${-e.clientY * .1}px`,
-    });
-  };
+  // const [background, setBackground] = useState({
+  //   backgroundPositionX: 0,
+  //   backgroundPositionY: 0
+  // });
+  // const moveBackground = (e) => {
+  //   setBackground({
+  //     backgroundPositionX: `${-e.clientX * .1}px`,
+  //     backgroundPositionY: `${-e.clientY * .1}px`,
+  //   });
+  // };
 
   return (
     <div className='home'>
       <ProfileImage />
       <Title />
-      <div className='backgroundColumn6' style={background} onMouseMove={moveBackground}></div>
       <div className='externalLinksContainer'>
         <a href='https://github.com/OssianN'>
           <img src={github} alt='GitHub link' />

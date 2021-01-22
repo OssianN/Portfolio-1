@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
-import '../styles/navbar.css';
+import '../styles/navbar.scss';
 
 const Nav = props => {
   const [navShow, setNavShow] = useState('hide');
@@ -66,13 +66,13 @@ const Nav = props => {
               </Link>
             </li>
             <li>
-              <Link to='/todo'>
-                Todo App
+              <Link to='/about'>
+                About
               </Link>
             </li>
             <li>
-              <Link to='/wine'>
-                Wine App
+              <Link to='/portfolio'>
+                Portfolio
               </Link>
             </li>
           </ul>

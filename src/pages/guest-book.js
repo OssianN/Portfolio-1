@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
-import GuestBookForm from '../components/guestbookForm';
+import GuestBookForm from '../components/guestbook/GestbookForm';
 import { graphql } from "gatsby";
 import Nav from '../components/Nav';
-import '../components/guestbookForm/guestBook.css';
+import '../components/guestbook/guestBook.scss';
 
 const GuestBook = (props) => {
   const [updateMessages, setUpdateMessages] = useState(0);
