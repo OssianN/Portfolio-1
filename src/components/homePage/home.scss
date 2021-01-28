@@ -34,6 +34,7 @@
   %textClip {
     background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 50%);
     color: transparent;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     text-align: center;
@@ -72,7 +73,6 @@
   }
   
   .titleHeading {
-    display: flex;
     font-size: 5em;
     margin: 0;
     padding: 0;
