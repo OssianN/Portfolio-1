@@ -5,7 +5,7 @@ import Nav from '../components/Nav'
 const Todo = () => {
   return (
     <div>
-      <Nav navStyle={'notHomeNav'} />
+      <Nav navStyle='notHomeNav' />
       <TodoComponent />
     </div>
   )

@@ -5,7 +5,7 @@ import '../styles/about.scss';
 const About = () => {
   return (
     <div className='aboutContainer'>
-      <Nav navStyle={'notHomeNav'} />
+      <Nav navStyle='notHomeNav' />
       <div className='about'>
       <h1>Skills</h1>
         <div className='aboutListContainer' >

@@ -46,7 +46,7 @@ const GuestBook = (props) => {
   return (
     <div className='guestBookContainer'>
       <div className='fadeListTop'></div>
-      <Nav navStyle={'guestbookNav'} />
+      <Nav navStyle='guestbookNav' />
       <div className='guestBook'>
         <GuestBookForm
           updateMessages={updateMessages}

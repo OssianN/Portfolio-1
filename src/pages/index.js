@@ -5,7 +5,7 @@ import '../styles/global.scss';
 
 export default function Home() {
   return <div className="App">
-    <Nav navStyle={'homeNav'} />
+    <Nav navStyle='homeNav' />
     <HomePage />
 </div>
 }

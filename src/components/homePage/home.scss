@@ -31,6 +31,14 @@
 }
 
 @media (min-width: 876px) {
+  %textClip {
+    background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 50%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+  }
+
   .profileImageBig {
     z-index: 10;
     position: fixed;
@@ -69,22 +77,14 @@
     margin: 0;
     padding: 0;
     padding-left: 1.25em;
-    background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 1%);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-align: center;
+    @extend %textClip;
   }
   
   .titleDescription {
     margin: 0;
     padding: 0;
     width: 60%;
-    background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 50%);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-align: center;
+    @extend %textClip;
   }
   
   @keyframes title {
@@ -150,10 +150,10 @@
   }
 
   .externalLinksContainer {
-    z-index: 100;
+    z-index: 50;
     display: flex;
-    justify-content: flex-end;
-    top: 20px;
+    justify-content: flex-start;
+    bottom: 20px;
     margin-right: 2em;
     opacity: 1;
   }
