@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import GuestBookForm from '../components/guestbook/GestbookForm';
 import { graphql } from "gatsby";
 import Nav from '../components/Nav';
@@ -19,9 +19,10 @@ const GuestBook = (props) => {
     const messagesCopy = [...messages];
     return messagesCopy?.reverse().map(message => {
       const info = message.node;
+      console.log(info, 'PREVIEW');
       return (
         <li key={info.id}>
-          <h2>{info.name}</h2>
+          <h2>{info.name} {info.preview ? <span className='localPreview'>{info.preview}</span> : ''}</h2>
           <p>{info.msg}</p>
         </li>
       );
