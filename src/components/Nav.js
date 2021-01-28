@@ -7,7 +7,7 @@ const Nav = props => {
   const [navClass, setNavClass] = useState('');
   const [showMobileNav, setShowMobileNav] = useState('-400px');
   const [navToogleClass, setNavToggleClass] = useState('');
-  const [activeTab, setActiveTab] = useState(window?.location.href.match(/[-\w]+\/?$/ig)[0]);
+  const [activeTab, setActiveTab] = useState(null);
 
   const handleNavTransition = () => {
     if (props.navStyle === 'homeNav') {
