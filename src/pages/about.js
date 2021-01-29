@@ -40,7 +40,7 @@ const About = () => {
           </div>
           <div className='skillBall'>
           <ReactSVG
-              blobType={randomNum + 1 <= 10 ? randomNum + 1 : 0}
+              blobType={randomNum + 1 <= 9 ? randomNum + 1 : 0}
             />
             <ul>
             <h2>Frontend</h2>
@@ -63,7 +63,7 @@ const About = () => {
           </div>
           <div className='skillBall'>
           <ReactSVG
-              blobType={randomNum - 1 >= 0 ? randomNum - 1 : 10}
+              blobType={randomNum - 1 >= 0 ? randomNum - 1 : 9}
             />
             <ul>
             <h2>Tools</h2>
