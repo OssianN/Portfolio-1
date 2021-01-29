@@ -11,20 +11,18 @@
 @media (max-width: 600px) {
   .toDoForm form {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
   .toDoForm input {
-    margin: 10px 10px;
+    margin: 5% 0;
     width: 80%;
   }
 
   .toDoForm .formButton {
-    height: 80px;
-    width: 80px;
+    background-color: #effffa;
     margin: 20px 0 0 0;
-    border: solid 1px #00754e;
     border-radius: 50%;
   }
 
@@ -68,15 +66,13 @@
 }
 .toDoForm form {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
 .toDoForm input {
   height: 3em;
-  padding: 0 5px;
-  margin: 0 25px;
+  padding: 0 1%;
   background-color: transparent;
   border: none;
   -webkit-border-radius: 0;
@@ -90,11 +86,8 @@
 }
 
 .toDoForm .formButton {
-  background-color: transparent;
   color: #00754e;
   border: none;
-  margin: auto 0;
-  max-height: 2em;
   cursor: pointer;
   font-size: 2em;
 }
