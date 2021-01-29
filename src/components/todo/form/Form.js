@@ -39,7 +39,7 @@ const Form = props => {
     <div className="toDoForm">
       <form onSubmit={handleSubmit}>
         <input type="text" className="titleInput" placeholder="Add Todo"></input>
-        <input type="text" className="descInput" placeholder="Add description if you like"></input>
+        <input type="text" className="descInput" placeholder="Add description"></input>
         <button type="submit" className="formButton">&#x203A;</button>
       </form>
     </div>
