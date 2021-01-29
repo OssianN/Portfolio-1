@@ -8,7 +8,7 @@
   padding-top: 80px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .toDoForm form {
     flex-direction: column;
     justify-content: space-between;
@@ -29,11 +29,12 @@
   }
 
   .textField h2 {
-    font-size: 24px !important;
+    margin: 0;
+    font-size: 1.5em;
   }
 
   .textField p {
-    font-size: 16px;
+    font-size: 1em;
   }
 
   .cardsList input[type="checkbox"] {
@@ -45,10 +46,6 @@
   .checkedtrue span {
     margin: 0;
     font-size: 25px;
-  }
-
-  .textField {
-    width: 70%;
   }
 
   .cardsList button {
@@ -100,6 +97,11 @@
   cursor: pointer;
 }
 
+.deleteButton {
+  position: absolute;
+  right: 0;
+}
+
 .cardsList {
   color: #00754e;
   background-color: #67ffcc;
@@ -134,7 +136,6 @@
   align-items: center;
   border-radius: 5px;
   width: 100%;
-  min-height: 100px;
   margin: 10px 0;
   padding: 10px;
   cursor: pointer;
@@ -145,19 +146,12 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  width: 80%;
   pointer-events: none;
 }
 
-.textField h2, p {
-  width: 85%;
-  margin: 0;
-  font-size: 24px;
-}
-
-.textField h2 {
-  padding: 5px 0;
-  font-size: 30px;
+.textField h2,
+.textField p {
+  margin: 2.5% 0;
 }
 
 .cardsList button {
@@ -174,7 +168,8 @@
   -webkit-appearance: none;
   height: 25px;
   width: 25px;
-  margin: 0 35px 0 0;
+  margin: 0;
+  margin-right: 20px;
   border-radius: 50%;
   border: none;
   pointer-events: none;

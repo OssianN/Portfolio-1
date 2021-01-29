@@ -6,6 +6,8 @@ const Todo = () => {
   return (
     <div>
       <Nav navStyle='notHomeNav' />
+      <div>
+      </div>
       <TodoComponent />
     </div>
   )

@@ -34,6 +34,7 @@ const Cards = props => {
         <p>{props.desc}</p>
       </div>
       <button
+        className='deleteButton'
         style={{ display: props.checked ? 'block' : 'none' }}
         onClick={handleDelete}>
         &#x2715;
