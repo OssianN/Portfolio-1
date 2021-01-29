@@ -38,7 +38,7 @@ const Nav = props => {
   };
 
   const handleActiveTab = () => {
-    const tabName = window?.location.href.match(/[-\w]+\/?$/ig)[0];
+    const tabName = window ? window.location.href.match(/\/[-\w]*?\/?$/ig)[0] : undefined;
     setActiveTab(tabName);
   };
 
@@ -65,22 +65,22 @@ const Nav = props => {
         </div>
         <nav className={`mobileNav ${navShow}`} style={{marginRight: showMobileNav}}>
           <ul className={`defaultNav ${props.navStyle}`} >
-            <li style={ activeTab === '' ? { borderTop: '3px solid #3b5249' } :{ borderTop: '3px solid #00000000' }}>
+            <li className={ activeTab === '/' ? 'activeTab' : ''}>
               <Link to='/'>
                 Home
               </Link>
             </li>
-            <li style={ activeTab === 'guest-book' ? { borderTop: '3px solid #3b5249' } :{ borderTop: '3px solid #00000000' }}>
+            <li className={ activeTab === '/guest-book' ? 'activeTab' : ''}>
               <Link to='/guest-book'>
                 Guest Book
               </Link>
             </li>
-            <li style={ activeTab === 'about' ? { borderTop: '3px solid #3b5249' } :{ borderTop: '3px solid #00000000' }}>
+            <li className={ activeTab === '/about' ? 'activeTab' : ''}>
               <Link to='/about'>
                 About
               </Link>
             </li>
-            <li style={ activeTab === 'portfolio' ? { borderTop: '3px solid #3b5249' } :{ borderTop: '3px solid #00000000' }}>
+            <li className={ activeTab === '/portfolio' ? 'activeTab' : ''}>
               <Link to='/portfolio'>
                 Portfolio
               </Link>

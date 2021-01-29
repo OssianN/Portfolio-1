@@ -72,7 +72,7 @@ const GuestBookForm = (props) => {
       data-netlify-honeypot="bot-field"
       onSubmit={e => handleSubmitMessage(e)}>
       <input type="hidden" name="form-name" value="guestBook" />
-      <button className="cancelFormButton" onClick={props.showGuestBookForm}>&#10005;</button>
+      <button className="cancelFormButton" type='button' onClick={props.showGuestBookForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>
       <label htmlFor='nameInput'>Your Name</label>
       <input id='nameInput' ref={nameValue} onChange={handleNameChange} name="guestName"></input>

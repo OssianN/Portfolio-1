@@ -44,11 +44,11 @@
   }
   
   @keyframes navBar {
-    from {
+    0% {
       margin-left: 2vw;
       opacity: 0;
     }
-    to {
+    100% {
       margin-left: 0;
       opacity: 1;
     }
@@ -90,6 +90,10 @@
   .mobileNavButton {
     display: none;
   }
+
+  .activeTab {
+    border-top: 3px solid #3b5249 !important;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -130,7 +134,8 @@
   
   .mobileNav ul li {
     margin: 40px 0;
-    padding-top: 10px;
+    padding: 7%;
+    font-size: 1.3em;
   }
   
   #homeLinkMobile {
@@ -139,6 +144,16 @@
   
   #homeLink {
     display: none;
+  }
+
+  .activeTab {
+    margin-left: -20% !important;
+    padding-left: 20% !important;
+    background-color: #3b5249;
+  }
+
+  .activeTab a {
+    color: white;
   }
 }
 

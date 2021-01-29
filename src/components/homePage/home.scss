@@ -30,6 +30,32 @@
   opacity: .7;
 }
 
+.title {
+  animation-name: title;
+  animation-duration: 2s;
+}
+
+@keyframes title {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profileImageBig {
+  animation-name: profileImageBig;
+  animation-duration: 1s;
+}
+
+@keyframes profileImageBig {
+  from {
+    margin-left: 100%;
+  }
+}
+
+
 @media (min-width: 876px) {
   %textClip {
     background-image: linear-gradient(90deg, #3b5249 50%, #a8ffdf 50%);
@@ -48,15 +74,7 @@
     margin: 0 0 0 50%;
     width: 50%;
     min-height: 100%;
-    animation-name: profileImageBig;
-    animation-duration: 1s;
     overflow: hidden;
-  }
-  
-  @keyframes profileImageBig {
-    from {
-      margin-left: 100%;
-    }
   }
   
   .title {
@@ -68,8 +86,6 @@
     align-items: center;
     background-image: linear-gradient(90deg, #3b524900 50%, #161f1b50 50%);
     background-repeat: no-repeat;
-    animation-name: title;
-    animation-duration: 2s;
   }
   
   .titleHeading {
@@ -85,15 +101,6 @@
     padding: 0;
     width: 60%;
     @extend %textClip;
-  }
-  
-  @keyframes title {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 
   .externalLinksContainer {
@@ -153,7 +160,7 @@
     z-index: 50;
     display: flex;
     justify-content: flex-start;
-    bottom: 20px;
+    top: 15px;
     margin-right: 2em;
     opacity: 1;
   }
@@ -163,16 +170,16 @@
   }
 }
 
-@media (max-width: 610px) {
+@media (max-width: 625px) {
   .title {
     padding-top: 1.9em;
   }
 
   .titleHeading {
-    font-size: 3em;
+    font-size: 1.8em;
   }
 
   .titleDescription {
-    font-size: 1em;
+    font-size: 14px;
   }
 }

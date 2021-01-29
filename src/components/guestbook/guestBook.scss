@@ -26,6 +26,7 @@
 
 .guestBook h1 {
   text-align: center;
+  padding: 0 6%;
 }
 
 .guestBook input,
@@ -40,7 +41,7 @@
   flex-direction: column;
   align-items: center;
   box-shadow: 0 0 10px #c5c5c585;
-  z-index: 200;
+  z-index: 100;
 }
 
 .guestBookForm label {
@@ -174,8 +175,10 @@
 
   .cancelFormButton {
     align-self: flex-end;
-    width: 20px;
+    width: 40px;
+    font-size: 30px;
     background-color: transparent;
+    color: #3b5249;
     border: none;
   }
 
