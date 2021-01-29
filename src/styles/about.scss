@@ -65,7 +65,13 @@
 
 .reactBlobContainer {
   position: absolute;
-  z-index: 10;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reactBlob {
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .reactBlob path {
@@ -89,7 +95,6 @@
   .reactBlob {
     width: 200%;
     margin-left: -40%;
-    padding-top: 10%;
   }
 }
 
@@ -104,6 +109,5 @@
   .reactBlob {
     width: 170%;
     margin-left: -35%;
-    padding-top: 10%;
   }
 }
