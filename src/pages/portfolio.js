@@ -54,7 +54,7 @@ const Portfolio = () => {
           <p>My first app built with react. It's just a simple todo app, but god damnit, I built it and I'm proud.</p>
         </Link>
         <div className='timePole'></div>
-        <p>beginning</p>
+        <p className='beginning'>beginning</p>
       </div>
     </div>
   )
