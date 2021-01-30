@@ -5,10 +5,31 @@
   background-color: #effffa;
   width: 100%;
   min-height: 100vh;
-  padding-top: 80px;
+}
+
+@media (min-width: 601px) {
+  .Todo {
+    padding-top: 7%;
+  }
+
+  .toDoForm {
+    margin: 8em 0 2em 0;
+  }
+
+  .cardsList {
+    width: 50%;
+    border-radius: 5px;
+    padding: 0 5% 5% 5%;
+    margin: 1em 0 6em 0;
+  }
 }
 
 @media (max-width: 600px) {
+  .toDoForm {
+    position: fixed;
+    top: 70px;
+  }
+
   .toDoForm form {
     flex-direction: column;
     justify-content: center;
@@ -32,6 +53,16 @@
 
   .textField p {
     font-size: 1em;
+  }
+
+  .cardsList {
+    position: relative;
+    padding: 5% 10%;
+    padding-bottom: 20vh;
+    margin: 0;
+    flex: 1;
+    top: 300px;
+    box-shadow: 0 0 10px #a3a3a3;
   }
 
   .cardsList input[type="checkbox"] {
@@ -58,8 +89,6 @@
 }
 
 .toDoForm {
-  position: relative;
-  margin: 8em 0 2em 0;
   width: 80%;
   max-width: 600px;
 }
@@ -103,12 +132,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  min-width: 250px;
   max-width: 600px;
   min-height: 20em;
-  margin: 1em 0 6em 0;
-  padding: 0 40px 40px 40px;
-  border-radius: 5px;
 }
 
 .cardsList ol {
