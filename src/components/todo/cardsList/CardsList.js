@@ -20,7 +20,7 @@ const CardsList = props => {
 
   return (
     <div className="cardsList" >
-      <h1 className="header">To Do</h1>
+      <h1 className="header">ToDuties</h1>
       <ol>
         {createDomCard}
       </ol>

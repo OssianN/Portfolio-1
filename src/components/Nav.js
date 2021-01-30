@@ -4,7 +4,6 @@ import '../styles/navbar.scss';
 
 const Nav = props => {
   const [navShow, setNavShow] = useState('hide');
-  const [navClass, setNavClass] = useState('');
   const [showMobileNav, setShowMobileNav] = useState('-400px');
   const [navToogleClass, setNavToggleClass] = useState('');
   const [activeTab, setActiveTab] = useState(null);
@@ -16,14 +15,6 @@ const Nav = props => {
       }, 1100);
     } else {
       setNavShow('navBar');
-    };
-  };
-
-  const changeNavBar = () => {
-    if (props.navStyle === 'homeNav') {
-      setNavClass('homeNav');
-    } else {
-      setNavClass('notHomeNav');
     };
   };
 
@@ -45,7 +36,6 @@ const Nav = props => {
 
   useEffect(() => {
     handleNavTransition();
-    changeNavBar();
     handleActiveTab();
   });
 

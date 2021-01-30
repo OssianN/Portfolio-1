@@ -1,12 +1,12 @@
 import React from 'react';
 import './home.scss';
-import profilePic from './images/profilePic.jpg';
+import images from '../images';
 
 const ProfileImage = () => {
   // fixa så bilden laddar innan render, så att den inte laddar animation innan bild.
   return (
     <div className="imgContainer">
-      <img src={profilePic} alt='' className={'profileImageBig'} />
+      <img src={images.profilePic} alt='' className={'profileImageBig'} />
     </div>
   );
 };

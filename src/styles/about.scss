@@ -25,7 +25,6 @@
   justify-content: center;
   color: #3b5249;
   background: linear-gradient($mainYellow 2%, #ccffff);
-  overflow-x: hidden;
 }
 
 .about {
@@ -114,8 +113,8 @@
   }
 
   .reactBlob {
-    width: 200%;
-    margin-left: -40%;
+    width: 100%;
+    transform: scale(2);
   }
 }
 
@@ -132,7 +131,7 @@
   }
 
   .reactBlob {
-    width: 170%;
-    margin-left: -35%;
+    width: 100%;
+    transform: scale(1.7);
   }
 }

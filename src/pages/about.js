@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Nav from '../components/Nav';
 import '../styles/about.scss';
 import ReactSVG from '../components/ReactSVG';
 
 const About = () => {
-  const [randomNum, setRandomNum] = useState(Math.floor(Math.random() * 10))
+  const [randomNum] = useState(Math.floor(Math.random() * 10))
 
   return (
     <div className='aboutContainer'>

@@ -129,9 +129,7 @@
   .title {
     z-index: 100;
     min-width: 100%;
-    margin-top: 20%;
-    padding: 2% 0;
-    padding-top: 2.9em;
+    padding: 3% 0;
     display: flex;
     align-self: center;
     flex-direction: column;
@@ -142,7 +140,6 @@
 
   .titleHeading {
     font-size: 4em;
-    padding: 0 5%;
     margin: 0;
     color: #a8ffdf;
     text-align: center;
@@ -170,11 +167,17 @@
   }
 }
 
-@media (max-width: 625px) {
-  .title {
-    padding-top: 1.9em;
+@media (max-width: 675px) {
+  .titleHeading {
+    font-size: 2.5em;
   }
 
+  .titleDescription {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
   .titleHeading {
     font-size: 1.8em;
   }
