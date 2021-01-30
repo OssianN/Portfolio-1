@@ -1,0 +1,24 @@
+@import './global.scss';
+
+.portfolioContainer {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #3b5249;
+  background: linear-gradient($mainYellow 2%, #ccffff);
+  overflow-x: hidden;
+}
+
+.portfolio {
+  margin-top: 130px;
+}
+
+.backToPortfolioLink {
+  color: $mainDarkGreen;
+  text-decoration: none;
+  position: fixed;
+  top: 30px;
+  left: 5%;
+  z-index: 50;
+}

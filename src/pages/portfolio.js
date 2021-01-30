@@ -1,16 +1,31 @@
 import React from 'react'
-import TodoComponent from '../components/todo';
 import Nav from '../components/Nav'
+import '../styles/portfolio.scss';
+import { Link } from 'gatsby';
 
-const Todo = () => {
+const Portfolio = () => {
   return (
-    <div>
+    <div className="portfolioContainer">
       <Nav navStyle='notHomeNav' />
-      <div>
+      <div className='portfolio'>
+        <Link to='/todo' className='portfolioLink'>
+          <h2>ToDuties</h2>
+        </Link>
+        <Link to='/wine' className='portfolioLink'>
+          <h2>Wine App</h2>
+        </Link>
+        <Link to='/todo' className='portfolioLink'>
+          <h2>Qutine</h2>
+        </Link>
+        <Link to='/todo' className='portfolioLink'>
+          <h2>Gallery App</h2>
+        </Link>
+        <Link to='/todo' className='portfolioLink'>
+          <h2>Förskoleupprorets Hemsida</h2>
+        </Link>
       </div>
-      <TodoComponent />
     </div>
   )
 }
 
-export default Todo;
+export default Portfolio;

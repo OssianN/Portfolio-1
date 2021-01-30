@@ -3,7 +3,7 @@ import './todo.css';
 import Form from './form/Form';
 import CardsList from './cardsList/CardsList';
 
-const Todo = () => {
+const TodoComponent = () => {
   const [cardsArr, setCardsArr] = useState([]);
 
   const getLocalStorage = () => {
@@ -36,4 +36,4 @@ const Todo = () => {
   );
 };
 
-export default Todo;
+export default TodoComponent;

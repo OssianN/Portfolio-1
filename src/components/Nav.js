@@ -64,7 +64,6 @@ const Nav = props => {
           </button>
         </div>
         <nav className={navShow} style={{marginRight: showMobileNav}}>
-          <div className='fadeListTop'></div>
           <ul className={`defaultNav ${props.navStyle}`} >
             <li className={ activeTab === '/' ? 'activeTab' : ''}>
               <Link to='/'>

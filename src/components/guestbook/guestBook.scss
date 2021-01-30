@@ -76,7 +76,6 @@
   transition: 2s;
   animation-name: messages;
   animation-duration: 2s;
-  padding-bottom: 30%;
 }
 
 @keyframes messages {
@@ -112,7 +111,7 @@
 @media (min-width: 1001px) {
   .guestBook {
     max-width: 1200px;
-    padding-top: 170px;
+    padding-top: 15%;
     justify-content: space-around;
   }
 

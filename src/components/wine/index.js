@@ -4,7 +4,7 @@ import WineGrid from './wineGrid/WineGrid';
 import AddWine from './wineForm/AddWine';
 import EditWine from './wineForm/EditWine';
 
-function App() {
+function WineComponent() {
   const [cardArr, setCardArr] = useState([]);
   const [position, setPosition] = useState(null);
   const [updateOnPost, setUpdateOnPost] = useState(0);
@@ -70,4 +70,4 @@ function App() {
   );
 }
 
-export default App;
+export default WineComponent;

@@ -13,6 +13,29 @@ const About = () => {
       <h1>Skills</h1>
         <div className='aboutListContainer' >
           <div className='skillBall'>
+          <ReactSVG
+              blobType={randomNum + 1 <= 9 ? randomNum + 1 : 0}
+            />
+            <ul>
+            <h2>Frontend</h2>
+              <li>
+                HTML
+              </li>
+              <li>
+                CSS/SASS
+              </li>
+              <li>
+                React
+              </li>
+              <li>
+                Gatsby
+              </li>
+              <li>
+                Redux
+              </li>
+            </ul>
+          </div>
+          <div className='skillBall'>
             <ReactSVG
               blobType={randomNum}
             />
@@ -35,29 +58,6 @@ const About = () => {
               </li>
               <li>
                 PostgreSQL
-              </li>
-            </ul>
-          </div>
-          <div className='skillBall'>
-          <ReactSVG
-              blobType={randomNum + 1 <= 9 ? randomNum + 1 : 0}
-            />
-            <ul>
-            <h2>Frontend</h2>
-              <li>
-                HTML
-              </li>
-              <li>
-                CSS/SASS
-              </li>
-              <li>
-                React
-              </li>
-              <li>
-                Gatsby
-              </li>
-              <li>
-                Redux
               </li>
             </ul>
           </div>
