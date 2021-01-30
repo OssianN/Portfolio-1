@@ -211,3 +211,14 @@
     color: #3b5249;
   }
 }
+
+@media (max-height: 720px) {
+  .guestBook h1 {
+    font-size: 1.5em;
+    padding: 0 2%;
+  }
+
+  .guestBookForm {
+    max-height: 350px;
+  }
+}

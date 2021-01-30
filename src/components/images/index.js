@@ -5,6 +5,8 @@ import qutine from './qutine.png';
 import wine from './wine.png';
 import todo from './todo.png';
 import forskoleupproret from './forskoleupproret.png';
+import awesome from './awesome.svg';
+import gallery from './gallery.png';
 
 const images = {
   git,
@@ -14,6 +16,8 @@ const images = {
   wine,
   todo,
   forskoleupproret,
+  awesome,
+  gallery,
 }
 
 export default images;
