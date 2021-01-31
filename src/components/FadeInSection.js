@@ -10,11 +10,11 @@ const FadeInSection = props => {
     });
     observer.observe(domRef.current);
   }, []);
+
   return (
     <div
       className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
-      ref={domRef}
-    >
+      ref={domRef}>
       {props.children}
     </div>
   );

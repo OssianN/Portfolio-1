@@ -38,9 +38,8 @@ const Nav = props => {
     if (window === 'undefined') return;
     let prevScrollY = window.scrollY;
     window.onscroll  = () => {
-      console.log(window.scrollTop)
       const currentScrollY = window.scrollY;
-      prevScrollY < currentScrollY && currentScrollY > 0 && window.scrollHeight - window.scrollTop !== window.clientHeight
+      prevScrollY < currentScrollY && currentScrollY > 0
       ? navbarRef.current.style.top = '-140px'
       : navbarRef.current.style.top = '0';
       prevScrollY = currentScrollY;
