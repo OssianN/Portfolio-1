@@ -39,8 +39,11 @@
     position: fixed;
     width: 100%;
     margin: 0 !important;
+    top: 0;
+    transition: top 0.3s;
     animation: navBar;
     animation-duration: 1s;
+    background-color: $mainYellow;
   }
   
   .defaultNav {

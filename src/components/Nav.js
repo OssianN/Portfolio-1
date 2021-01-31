@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'gatsby';
 import '../styles/navbar.scss';
 
@@ -7,6 +7,7 @@ const Nav = props => {
   const [showMobileNav, setShowMobileNav] = useState('-400px');
   const [navToogleClass, setNavToggleClass] = useState('');
   const [activeTab, setActiveTab] = useState(null);
+  const navbarRef = useRef(null);
 
   const handleNavTransition = () => {
     if (props.navStyle === 'homeNav') {
@@ -33,8 +34,21 @@ const Nav = props => {
     setActiveTab(tabName);
   };
 
+  const hideNavOnScroll = () => {
+    if (window === 'undefined' ) return;
+    let prevScrollPosition = 0;
+    window.onscroll  = function() {
+      const currentScrollPosition = window.pageYOffset;
+      console.log(prevScrollPosition, currentScrollPosition);
+      prevScrollPosition < currentScrollPosition && currentScrollPosition > 0
+      ? navbarRef.current.style.top = '-140px'
+      : navbarRef.current.style.top = '0';
+      prevScrollPosition = currentScrollPosition -1;
+    }
+  }
 
   useEffect(() => {
+    hideNavOnScroll();
     handleNavTransition();
     handleActiveTab();
   });
@@ -53,7 +67,7 @@ const Nav = props => {
             </div>
           </button>
         </div>
-        <nav className={navShow} style={{marginRight: showMobileNav}}>
+        <nav className={navShow}  ref={navbarRef} style={{marginRight: showMobileNav}}>
           <ul className={`defaultNav ${props.navStyle}`} >
             <li className={ activeTab === '/' ? 'activeTab' : ''}>
               <Link to='/'>

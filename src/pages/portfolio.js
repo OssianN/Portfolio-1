@@ -54,7 +54,6 @@ const Portfolio = () => {
             <img src={ images.wine } alt='wine' className='portfolioImg'></img>
             <p>A little solo project during my time at &lt;/salt&gt; for my two day hackaton.
               <br/>
-              <br/>
               I asked my dad if there was an app that ha thought was missing in his life. His reply was a wine app to keep track of where the wines are in his shelf. The app is built using React, Express, MongoDB, Mongoose and Heruko. This is a demo version of that app.</p>
           </Link>
         </FadeInSection>

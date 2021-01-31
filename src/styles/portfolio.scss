@@ -39,7 +39,6 @@
   width: 2px;
   background-color: #0000003a;
   border-radius: 2px;
-  // margin: 0 auto;
 }
 
 .backToPortfolioLink {
@@ -88,7 +87,13 @@
   padding-bottom: 70px;
 }
 
-@media (min-width: 1000px) {
+@media (max-width: 1000px) {
+  .timePole {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1001px) {
   .fade-in-section:nth-child(odd) {
     margin-left: -50%;
   }
