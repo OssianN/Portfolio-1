@@ -111,8 +111,9 @@
 @media (min-width: 1001px) {
   .guestBook {
     max-width: 1200px;
-    padding-top: 15%;
+    padding-top: 170px;
     justify-content: space-around;
+    align-items: flex-start;
   }
 
   .guestBookForm {

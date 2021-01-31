@@ -35,14 +35,15 @@ const Nav = props => {
   };
 
   const hideNavOnScroll = () => {
-    if (window === 'undefined' ) return;
-    let prevScrollPosition = 0;
-    window.onscroll  = function() {
-      const currentScrollPosition = window.pageYOffset;
-      prevScrollPosition < currentScrollPosition && prevScrollPosition > 1
+    if (window === 'undefined') return;
+    let prevScrollY = window.scrollY;
+    window.onscroll  = () => {
+      console.log(window.scrollTop)
+      const currentScrollY = window.scrollY;
+      prevScrollY < currentScrollY && currentScrollY > 0 && window.scrollHeight - window.scrollTop !== window.clientHeight
       ? navbarRef.current.style.top = '-140px'
       : navbarRef.current.style.top = '0';
-      prevScrollPosition = currentScrollPosition -1;
+      prevScrollY = currentScrollY;
     }
   }
 
