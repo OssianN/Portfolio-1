@@ -24,17 +24,13 @@
   display: flex;
   justify-content: center;
   color: #3b5249;
-  background: linear-gradient($mainYellow 2%, #ccffff);
+  background: linear-gradient($mainYellow 2%, #cce6ff);
   overflow: hidden;
 }
 
 .about {
   margin-top: 130px;
   padding-bottom: 25%;
-}
-
-.about h1 {
-  padding-bottom: 50px;
 }
 
 .aboutListContainer {
