@@ -43,7 +43,6 @@
     transition: top 0.3s;
     animation: navBar;
     animation-duration: 1s;
-    background-color: $mainYellow;
   }
   
   .defaultNav {
@@ -78,10 +77,14 @@
   }
   
   .homeNav {
-    width: 50%;
+    width: 48%;
     justify-self: flex-start;
     justify-content: flex-start;
     padding-left: 2%;
+  }
+
+  .notHomeNav {
+    background-color: $mainYellow;
   }
   
   .homeNav li {

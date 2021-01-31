@@ -39,8 +39,7 @@ const Nav = props => {
     let prevScrollPosition = 0;
     window.onscroll  = function() {
       const currentScrollPosition = window.pageYOffset;
-      console.log(prevScrollPosition, currentScrollPosition);
-      prevScrollPosition < currentScrollPosition && currentScrollPosition > 0
+      prevScrollPosition < currentScrollPosition && prevScrollPosition > 1
       ? navbarRef.current.style.top = '-140px'
       : navbarRef.current.style.top = '0';
       prevScrollPosition = currentScrollPosition -1;
