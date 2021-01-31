@@ -39,7 +39,7 @@
   width: 2px;
   background-color: #0000003a;
   border-radius: 2px;
-  margin: 0 auto;
+  // margin: 0 auto;
 }
 
 .backToPortfolioLink {
@@ -86,4 +86,22 @@
 
 .beginning {
   padding-bottom: 70px;
+}
+
+@media (min-width: 1000px) {
+  .fade-in-section:nth-child(odd) {
+    margin-left: -50%;
+  }
+
+  .fade-in-section:nth-child(odd) > .timePole {
+    margin-left: 75%;
+  }
+
+  .fade-in-section:nth-child(even) {
+    margin-right: -50%;
+  }
+
+  .fade-in-section:nth-child(even) > .timePole {
+    margin-left: 25%;
+  }
 }
