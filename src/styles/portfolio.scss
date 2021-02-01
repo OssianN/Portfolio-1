@@ -25,6 +25,10 @@
   visibility: visible;
 }
 
+.presentingPortfolio {
+  text-align: justify;
+}
+
 .portfolio {
   position: relative;
   display: flex;
@@ -106,7 +110,6 @@
 @media (min-width: 1001px) {
   .presentingPortfolio {
     width: 50%;
-    text-align: justify;
   }
   
   .fade-in-section:nth-child(odd) {
