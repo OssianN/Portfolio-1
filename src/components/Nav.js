@@ -34,10 +34,15 @@ const Nav = props => {
     setActiveTab(tabName);
   };
 
-  const checkWindowAndRef = window !== 'undefined' && navbarRef.current ? true : false;
+  const checkWindowAndRef = () => {
+    if (window === 'undefined' && !navbarRef.current) {
+      return false;
+    }
+    return true;
+  }
 
   const hideNavOnScroll = () => {
-    if (!checkWindowAndRef) return;
+    if (!checkWindowAndRef()) return;
     let prevScrollY = window.scrollY;
     window.onscroll  = () => {
       const currentScrollY = window.scrollY;
