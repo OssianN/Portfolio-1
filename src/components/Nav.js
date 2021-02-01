@@ -46,7 +46,7 @@ const Nav = props => {
     let prevScrollY = window.scrollY;
     window.onscroll  = () => {
       const currentScrollY = window.scrollY;
-      if (prevScrollY < currentScrollY && currentScrollY > 140) {
+      if (prevScrollY < currentScrollY && currentScrollY > 100) {
         navbarRef.current.classList.add('scrollNav');
       } else {
         navbarRef.current.classList.remove('scrollNav');

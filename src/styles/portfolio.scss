@@ -7,12 +7,11 @@
   justify-content: center;
   color: #3b5249;
   background: linear-gradient($mainYellow 2%, #cce6ff);
-  overflow-x: hidden;
 }
 
 .fade-in-section {
   opacity: 0;
-  transform: translateY(35vh);
+  transform: translateY(30vh);
   visibility: hidden;
   transition: opacity 1200ms ease-out, transform 600ms ease-out,
     visibility 1200ms ease-out;
@@ -35,17 +34,16 @@
   flex-direction: column;
   align-items: center;
   margin-top: 190px;
-  padding: 0 10%;
   overflow: hidden;
 }
 
 .projectsContainer {
+  width: 80%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
-  overflow: hidden;
 }
 
 .timePole {
@@ -105,6 +103,10 @@
   .timePole {
     margin: 0 auto;
   }
+
+  .presentingPortfolio {
+    width: 80%;
+  }
 }
 
 @media (min-width: 1001px) {
@@ -112,19 +114,11 @@
     width: 50%;
   }
   
-  .fade-in-section:nth-child(odd) {
-    margin-left: -50%;
+  .fade-in-section:nth-of-type(4n+0) {
+    margin-left: -35%;
   }
 
-  .fade-in-section:nth-child(odd) > .timePole {
-    margin-left: 75%;
-  }
-
-  .fade-in-section:nth-child(even) {
-    margin-right: -50%;
-  }
-
-  .fade-in-section:nth-child(even) > .timePole {
-    margin-left: 25%;
+  .fade-in-section:nth-child(4n+3) {
+    margin-left: 35%;
   }
 }
