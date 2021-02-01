@@ -34,14 +34,10 @@ const Nav = props => {
     setActiveTab(tabName);
   };
 
-  const checkWindowAndRef = () => {
-    if (window === 'undefined') return false;
-    if (!navbarRef.current.classList) return false;
-    return true;
-  }
+  const checkWindowAndRef = window !== 'undefined' && navbarRef.current;
 
   const hideNavOnScroll = () => {
-    checkWindowAndRef();
+    if (!checkWindowAndRef) return;
     let prevScrollY = window.scrollY;
     window.onscroll  = () => {
       const currentScrollY = window.scrollY;
@@ -54,9 +50,10 @@ const Nav = props => {
     }
   }
 
-  const changeNavBackground = () => {
-    if 
-  }
+  // const changeNavBackground = () => {
+  //   if (!checkWindowAndRef) return;
+    
+  // }
 
   useEffect(() => {
     hideNavOnScroll();
