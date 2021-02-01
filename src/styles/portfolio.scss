@@ -12,7 +12,7 @@
 
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20vh);
+  transform: translateY(35vh);
   visibility: hidden;
   transition: opacity 1200ms ease-out, transform 600ms ease-out,
     visibility 1200ms ease-out;
@@ -30,8 +30,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 130px;
+  margin-top: 190px;
   padding: 0 10%;
+  overflow: hidden;
+}
+
+.projectsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 10%;
+  overflow: hidden;
 }
 
 .timePole {
@@ -94,6 +105,11 @@
 }
 
 @media (min-width: 1001px) {
+  .presentingPortfolio {
+    width: 50%;
+    text-align: justify;
+  }
+  
   .fade-in-section:nth-child(odd) {
     margin-left: -50%;
   }

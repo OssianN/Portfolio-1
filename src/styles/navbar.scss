@@ -32,6 +32,11 @@
   pointer-events: none;
 }
 
+.scrollNav {
+  top: -140px !important;
+  transition: .3s;
+}
+
 @media (min-width: 1001px) {
   .navBar {
     z-index: 100;
@@ -40,7 +45,7 @@
     width: 100%;
     margin: 0 !important;
     top: 0;
-    transition: top 0.3s;
+    transition: .3s;
     animation: navBar;
     animation-duration: 1s;
   }
@@ -84,7 +89,6 @@
   }
 
   .notHomeNav {
-    background-color: $mainYellow;
     height: 130px;
     margin: 0;
   }

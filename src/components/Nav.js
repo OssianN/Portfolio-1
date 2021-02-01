@@ -36,12 +36,15 @@ const Nav = props => {
 
   const hideNavOnScroll = () => {
     if (window === 'undefined') return;
+    if (!navbarRef.current.classList) return;
     let prevScrollY = window.scrollY;
     window.onscroll  = () => {
       const currentScrollY = window.scrollY;
-      prevScrollY < currentScrollY && currentScrollY > 0
-      ? navbarRef.current.style.top = '-140px'
-      : navbarRef.current.style.top = '0';
+      if (prevScrollY < currentScrollY && currentScrollY > 140) {
+        navbarRef.current.classList.add('scrollNav');
+      } else {
+        navbarRef.current.classList.remove('scrollNav');
+      }
       prevScrollY = currentScrollY;
     }
   }
