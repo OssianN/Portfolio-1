@@ -52,7 +52,7 @@ const Nav = props => {
         navbarRef.current.classList.remove('scrollNav');
       }
       prevScrollY = currentScrollY;
-    }
+    };
   }
 
   // const changeNavBackground = () => {
