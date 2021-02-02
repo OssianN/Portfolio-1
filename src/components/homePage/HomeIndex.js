@@ -10,6 +10,9 @@ const Home = () => {
       <ProfileImage />
       <Title />
       <div className='externalLinksContainer'>
+        <div className='externalLinksBlob'>
+          <img src={images.blob}></img>
+        </div>
         <a href='https://github.com/OssianN'>
           <img src={images.git} alt='GitHub link' />
         </a>

@@ -7,6 +7,7 @@ import todo from './todo.png';
 import forskoleupproret from './forskoleupproret.png';
 import awesome from './awesome.svg';
 import gallery from './gallery.png';
+import blob from './blob.svg';
 
 const images = {
   git,
@@ -18,6 +19,7 @@ const images = {
   forskoleupproret,
   awesome,
   gallery,
+  blob,
 }
 
 export default images;
