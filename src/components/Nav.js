@@ -42,8 +42,8 @@ const Nav = props => {
   }
 
   const changeNavBackground = () => {
-    if ( window.scrollY > 240 ) {
-      navbarRef.current.style.backgroundColor = '#fffffff3';
+    if ( window.scrollY > 100 ) {
+      navbarRef.current.style.backgroundColor = '#ffffffb3';
     } else {
       navbarRef.current.style.backgroundColor = 'transparent';
     }
@@ -53,10 +53,10 @@ const Nav = props => {
     if (!checkWindowAndRef()) return;
     let prevScrollY = window.scrollY;
     window.onscroll  = () => {
+      changeNavBackground();
       const currentScrollY = window.scrollY;
       if (prevScrollY < currentScrollY && currentScrollY > 50) {
         navbarRef.current.classList.add('scrollNav');
-        changeNavBackground();
       } else {
         navbarRef.current.classList.remove('scrollNav');
       }
@@ -68,6 +68,7 @@ const Nav = props => {
     hideNavOnScroll();
     handleNavTransition();
     handleActiveTab();
+    changeNavBackground();
   });
 
     return (
