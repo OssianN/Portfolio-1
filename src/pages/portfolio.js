@@ -48,7 +48,7 @@ const Portfolio = () => {
             <a href='https://github.com/OssianN/GalleryApp-React' className='portfolioLink'>
               <h2>Gallery App</h2>
               <img src={images.gallery} alt='gallery' className='portfolioImg'></img>
-              <p>During the &lt;/salt&gt; bootcamp, me and my mob built a lot of different projects with a mobprogramming approach. This is one of them – a gallery app that works against the unsplashed API. It's built with react in the frontend and express in the backend. We havn't deployed it anyware, but check out the repo if you want.</p>
+              <p>During the &lt;/salt&gt; bootcamp, me and my mob built a lot of different projects, mobprogramming. This is one of them – a gallery app that works against the unsplashed API. It's built with react in the frontend and express in the backend. We havn't deployed it anyware, but check out the repo if you want.</p>
             </a>
           </FadeInSection>
           <div className='timePole'></div>
