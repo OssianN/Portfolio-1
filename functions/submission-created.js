@@ -6,11 +6,12 @@ let conn = null;
 const uri = process.env.MONGODB_URI;
 
 exports.handler = async function(event, context) {
-
+  
   const dataBody = JSON.parse(event.body);
   const payload = dataBody.payload.data;
   const data = qs.parse(payload);
-
+  
+  console.log(data, 'DATA')
   context.callbackWaitsForEmptyEventLoop = false;
   if (conn == null) {
     conn = mongoose.createConnection(uri, {
