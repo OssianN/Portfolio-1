@@ -35,16 +35,18 @@ const Nav = props => {
   }
 
   const checkWindowAndRef = () => {
-    if (window === 'undefined' && !navbarRef.current) {
+    if (window === 'undefined' && !navbarRef.current.style) {
       return false;
     }
     return true;
   }
 
   const changeNavBackground = () => {
-    if ( window.scrollY > 100 ) {
-      navbarRef.current.style.backgroundColor = '#ffffffb3';
+    if (!checkWindowAndRef()) return;
+    if ( window.scrollY > 0 ) {
+      navbarRef.current.style.backgroundColor = '#fffffff3';
     } else {
+      console.log(!!navbarRef.current.style)
       navbarRef.current.style.backgroundColor = 'transparent';
     }
   }

@@ -59,10 +59,11 @@
   padding: 10px;
   margin: 3% 0;
   box-shadow: 0 0 5px #c5c5c585;
+  border-radius: 5px;
 }
 
 .guestBook textarea {
-  -webkit-user-drag: none;
+  resize: none;
 }
 
 #sendMessage {
@@ -125,6 +126,7 @@
     align-items: center;
     top: 170px;
     position: sticky;
+    border-radius: 8px;
   }
 
   .guestBook .messages {

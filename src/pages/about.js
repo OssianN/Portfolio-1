@@ -10,7 +10,6 @@ const About = () => {
     <div className='aboutContainer'>
       <Nav navStyle='notHomeNav' />
       <div className='about'>
-      <h1>Skills</h1>
         <div className='aboutListContainer' >
           <div className='skillBall'>
           <ReactSVG
@@ -57,7 +56,7 @@ const About = () => {
                 MongoDB
               </li>
               <li>
-                PostgreSQL
+                SQL
               </li>
             </ul>
           </div>
@@ -81,6 +80,9 @@ const About = () => {
               </li>
               <li>
                 TDD
+              </li>
+              <li>
+                Figma
               </li>
               <li>
                 Agile methods

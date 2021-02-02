@@ -20,10 +20,8 @@ const Portfolio = () => {
           <div className='timePole'></div>
           <FadeInSection>
             <Link to='/' className='portfolioLink'>
-              <h2>this.this</h2>
-              <div id='awesomeImg'>
-                <img src={ images.awesome } alt='nextFB'></img>
-              </div>
+              <h2>this.page</h2>
+              <img src={ images.thisPage } alt='nextFB' className='portfolioImg'></img>
               <p>Check it out.</p>
             </Link>
           </FadeInSection>

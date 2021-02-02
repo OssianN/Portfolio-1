@@ -5,7 +5,7 @@ import qutine from './qutine.png';
 import wine from './wine.png';
 import todo from './todo.png';
 import forskoleupproret from './forskoleupproret.png';
-import awesome from './awesome.svg';
+import thisPage from './thisPage.png';
 import gallery from './gallery.png';
 import blob from './blob.svg';
 
@@ -17,7 +17,7 @@ const images = {
   wine,
   todo,
   forskoleupproret,
-  awesome,
+  thisPage,
   gallery,
   blob,
 }

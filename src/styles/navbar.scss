@@ -6,20 +6,8 @@
   width: 100%;
 }
 
-.homeNav a {
-  color: #3b5249;
-  font-weight: 900;
-}
-
-.guestbookNav a {
-  color: #3b5249;
-}
-
-.notHomeNav a {
-  color: #000;
-}
-
 .defaultNav a {
+  color: #3b5249;
   text-decoration: none;
 }
 
@@ -40,6 +28,7 @@
     width: 100%;
     margin: 0 !important;
     top: 0;
+    background-color: #ffffffb3;
     transition: .3s;
     animation: navBar;
     animation-duration: 1s;
@@ -82,7 +71,6 @@
   }
   
   .homeNav {
-    width: 48%;
     justify-self: flex-start;
     justify-content: flex-start;
     padding-left: 2%;
