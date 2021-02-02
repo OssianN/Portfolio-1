@@ -16,8 +16,8 @@ const Nav = props => {
       }, 1100);
     } else {
       setNavShow('navBar');
-    };
-  };
+    }
+  }
 
   const handleMobileNavToggle = () => {
     if (showMobileNav === '0') {
@@ -26,13 +26,13 @@ const Nav = props => {
     } else {
       setShowMobileNav('0');
       setNavToggleClass('open')
-    };
-  };
+    }
+  }
 
   const handleActiveTab = () => {
     const tabName = window ? window.location.href.match(/\/[-\w]*?\/?$/ig)[0] : undefined;
     setActiveTab(tabName);
-  };
+  }
 
   const checkWindowAndRef = () => {
     if (window === 'undefined' && !navbarRef.current) {
@@ -41,24 +41,28 @@ const Nav = props => {
     return true;
   }
 
+  const changeNavBackground = () => {
+    if ( window.scrollY > 240 ) {
+      navbarRef.current.style.backgroundColor = '#fffffff3';
+    } else {
+      navbarRef.current.style.backgroundColor = 'transparent';
+    }
+  }
+
   const hideNavOnScroll = () => {
     if (!checkWindowAndRef()) return;
     let prevScrollY = window.scrollY;
     window.onscroll  = () => {
       const currentScrollY = window.scrollY;
-      if (prevScrollY < currentScrollY && currentScrollY > 100) {
+      if (prevScrollY < currentScrollY && currentScrollY > 50) {
         navbarRef.current.classList.add('scrollNav');
+        changeNavBackground();
       } else {
         navbarRef.current.classList.remove('scrollNav');
       }
       prevScrollY = currentScrollY;
-    };
+    }
   }
-
-  // const changeNavBackground = () => {
-  //   if (!checkWindowAndRef) return;
-    
-  // }
 
   useEffect(() => {
     hideNavOnScroll();
