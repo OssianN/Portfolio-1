@@ -32,11 +32,6 @@
   pointer-events: none;
 }
 
-.scrollNav {
-  top: -140px !important;
-  transition: .3s;
-}
-
 @media (min-width: 1001px) {
   .navBar {
     z-index: 100;
@@ -59,6 +54,11 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
+  }
+
+  .scrollNav {
+    top: -140px !important;
+    transition: .3s;
   }
   
   @keyframes navBar {
