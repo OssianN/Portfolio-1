@@ -175,6 +175,7 @@
     background-color: transparent;
     color: #3b5249;
     border: none;
+    -webkit-tap-highlight-color: #00000000;
   }
 
   .hideGuestBookForm {
@@ -197,6 +198,7 @@
 
   .showFormButton {
     transition: 1s;
+    -webkit-tap-highlight-color: #00000000;
   }
 
   .showGuestBookForm .showFormButton {
