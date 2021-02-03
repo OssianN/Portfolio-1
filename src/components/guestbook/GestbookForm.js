@@ -56,7 +56,7 @@ const GuestBookForm = (props) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(messageData),
     }
-    await fetch("/", fetchData);
+    await fetch("/submission-created", fetchData);
 
     updateLocalState(messageData); //becasue local preview of the message = better UX.
     resetForm();
