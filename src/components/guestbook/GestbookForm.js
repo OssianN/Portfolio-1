@@ -59,7 +59,7 @@ const GuestBookForm = (props) => {
     
     updateLocalState(messageData); //becasue local preview of the message = better UX.
     resetForm();
-    await fetch("/submission-created", fetchData);
+    await fetch("/", fetchData);
     sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
   }
 
