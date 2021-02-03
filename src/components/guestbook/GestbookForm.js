@@ -42,7 +42,7 @@ const GuestBookForm = (props) => {
   
   const handleSubmitMessage = async e => {
     e.preventDefault();
-    // hideFormIfMobile();
+    hideFormIfMobile();
 
     const messageData = {
       name: nameData,
@@ -56,10 +56,10 @@ const GuestBookForm = (props) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(messageData),
     }
-    await fetch("/submission-created", fetchData);
-
+    
     updateLocalState(messageData); //becasue local preview of the message = better UX.
     resetForm();
+    await fetch("/submission-created", fetchData);
     sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
   }
 
