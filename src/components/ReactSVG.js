@@ -3,7 +3,6 @@ import React from 'react'
 export const ReactSVG = (props) => {
 
   const changeBlob = () => {
-    console.log(props.blobType)
     switch (props.blobType) {
       case 0:
         return <path fill="#ffffffd7" d="M51.3,-23.3C56.6,-0.3,44.2,21.7,26.8,33.6C9.4,45.5,-13,47.1,-33,35C-52.9,23,-70.4,-2.8,-64.5,-26.6C-58.6,-50.3,-29.3,-72.1,-3.2,-71.1C23,-70.1,46,-46.2,51.3,-23.3Z" transform="translate(100 100)"/>

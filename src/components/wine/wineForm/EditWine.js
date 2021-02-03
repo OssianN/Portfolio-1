@@ -13,7 +13,6 @@ const EditWine = props => {
       alert('A server error occured when editing.', err);
     };
   };
-  console.log(props.cardArr);
 
   const handleRemove = () => {
     const newArr = props.cardArr;
