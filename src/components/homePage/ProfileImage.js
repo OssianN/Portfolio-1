@@ -19,7 +19,7 @@ const ProfileImage = () => {
 console.log(data.file.childImageSharp.fluid)
   return (
     <div className="imgContainer">
-      <Img fluid={data.file.childImageSharp.fluid} alt='profilePic' className={'profileImageBig'} loading='eager'/>
+      <Img fluid={data.file.childImageSharp.fluid} alt='profilePic' className={'profileImageBig'} loading='lazy'/>
     </div>
   );
 }
