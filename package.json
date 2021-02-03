@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "gatsby": "^2.26.1",
+    "gatsby-image": "^2.11.0",
     "gatsby-plugin-express": "^1.1.6",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-netlify-functions": "^0.0.3",

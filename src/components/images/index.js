@@ -1,6 +1,6 @@
 import git from './git.png';
 import linkedin from './linkedin.png';
-import profilePic from './profilePic.jpg';
+import profilePic from './profilePic.png';
 import qutine from './qutine.png';
 import wine from './wine.png';
 import todo from './todo.png';

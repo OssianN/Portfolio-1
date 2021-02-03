@@ -215,7 +215,7 @@
   }
 }
 
-@media (max-height: 720px) {
+@media (min-width: 1000px) and (max-height: 720px) {
   .guestBook h1 {
     font-size: 1.5em;
     padding: 0 2%;
