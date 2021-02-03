@@ -46,7 +46,6 @@ const Nav = props => {
     if ( window.scrollY > 0 ) {
       navbarRef.current.style.backgroundColor = '#fcdfa6f6';
     } else {
-      console.log(!!navbarRef.current.style)
       navbarRef.current.style.backgroundColor = 'transparent';
     }
   }
