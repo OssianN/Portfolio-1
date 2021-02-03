@@ -13,6 +13,7 @@
 .guestBook {
   display: flex;
   padding: 0 5%;
+  width: 90%;
 }
 
 .fadeListBottom {
@@ -36,6 +37,8 @@
 }
 
 .guestBookForm {
+  display: flex;
+  flex-grow: 0;
   border-radius: 2px;
   background-color: #ffffff67;
   flex-direction: column;
@@ -74,6 +77,7 @@
 }
 
 .guestBook .messages {
+  width: 100%;
   transition: 2s;
   animation-name: messages;
   animation-duration: 2s;
@@ -90,6 +94,7 @@
 }
 
 .guestBook .messages ul {
+  padding-bottom: 150px;
   animation-name: messagesLi;
   animation-duration: 1s;
 }
@@ -185,6 +190,10 @@
     padding-bottom: 30px;
     transition: 1s ease-in;
     animation-name: hideGuestBookForm;
+  }
+
+  .displayNoneClass {
+    display: none !important;
   }
 
   @keyframes hideGuestBookForm {

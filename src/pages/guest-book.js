@@ -8,7 +8,7 @@ const GuestBook = (props) => {
   const [updateMessages, setUpdateMessages] = useState(0);
   const [messages, setMessages] = useState([]);
   const [showForm, setShowForm] = useState('hideGuestBookForm');
-  const formRef = useRef(null);
+  const [formDisplay, setFormDisplay] = useState('displayNoneClass')
   
   const fetchDBMessages = async () => {
     const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
@@ -34,11 +34,11 @@ const GuestBook = (props) => {
 
   const showGuestBookForm = () => {
     if (showForm === 'hideGuestBookForm') {
-      formRef.current.style.display = 'flex';
-      setShowForm('showGuestBookForm')
+      setFormDisplay('');
+      setShowForm('showGuestBookForm');
     } else {
       setShowForm('hideGuestBookForm');
-      setTimeout(() => formRef.current.style.display = 'none', 1000);
+      setTimeout(() => setFormDisplay('displayNoneClass'), 1000);
     }
   }
   
@@ -58,7 +58,7 @@ const GuestBook = (props) => {
           showForm={showForm}
           setShowForm={setShowForm}
           showGuestBookForm={showGuestBookForm}
-          formRef={formRef}
+          formDisplay={formDisplay}
         />
         <div className='mobileMessageButton'>
           <button onClick={showGuestBookForm} className='showFormButton'>Write a message</button>

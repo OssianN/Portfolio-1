@@ -32,9 +32,17 @@ const GuestBookForm = (props) => {
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
   }
+
+  const hideFormIfMobile = () => {
+    if (window === 'undefined') return;
+    if (window.innerWidth > 1000) {
+      props.showGuestBookForm();
+    }
+  }
   
   const handleSubmitMessage = async e => {
     e.preventDefault();
+    hideFormIfMobile();
 
     const messageData = {
       name: nameData,
@@ -69,13 +77,12 @@ const GuestBookForm = (props) => {
   
   return (
     <form
-      className={`guestBookForm ${props.showForm}`}
+      className={`guestBookForm ${props.showForm} ${props.formDisplay}`}
       name="guestBook"
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={e => handleSubmitMessage(e)}
-      ref={props.formRef}>
+      onSubmit={e => handleSubmitMessage(e)}>
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" type='button' onClick={handleCancelForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>
