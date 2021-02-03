@@ -8,6 +8,7 @@ const GuestBookForm = (props) => {
   const [msgData, setMsgData] = useState(null);
   const nameValue = useRef('');
   const messageValue = useRef('');
+  const formRef = useRef(null);
 
   const sendGuestWebhook = () => {
     axios({
@@ -41,26 +42,31 @@ const GuestBookForm = (props) => {
       msg: msgData,
       preview: '(Local Preview)',
       id: Date.now(),
-    };
+    }
 
     const fetchData = {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(messageData),
-    };
+    }
+
     updateLocalState(messageData); //becasue local preview of the message = better UX.
     resetForm();
     await fetch("/", fetchData);
     sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
-  };
+  }
 
   const handleNameChange = e => {
     setNameData(e.target.value);
-  };
+  }
 
   const handleMsgChange = e => {
     setMsgData(e.target.value);
-  };
+  }
+
+  const handleCancelForm = () => {
+    props.showGuestBookForm();
+  }
   
   return (
     <form
@@ -69,9 +75,10 @@ const GuestBookForm = (props) => {
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={e => handleSubmitMessage(e)}>
+      onSubmit={e => handleSubmitMessage(e)}
+      ref={formRef}>
       <input type="hidden" name="form-name" value="guestBook" />
-      <button className="cancelFormButton" type='button' onClick={props.showGuestBookForm}>&#10005;</button>
+      <button className="cancelFormButton" type='button' onClick={handleCancelForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>
       <label htmlFor='nameInput'>Your Name</label>
       <input id='nameInput' ref={nameValue} onChange={handleNameChange} name="guestName"></input>

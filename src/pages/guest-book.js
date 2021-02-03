@@ -7,8 +7,8 @@ import '../components/guestbook/guestBook.scss';
 const GuestBook = (props) => {
   const [updateMessages, setUpdateMessages] = useState(0);
   const [messages, setMessages] = useState([]);
-  const [showForm, setShowForm] = useState('guestBookForm');
-  const [showbutton, setShowButton] = useState('block');
+  const [showForm, setShowForm] = useState('hideGuestBookForm');
+  const [showbutton, setShowButton] = useState('showFormButton');
   
   const fetchDBMessages = async () => {
     const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
@@ -34,14 +34,14 @@ const GuestBook = (props) => {
 
   const showGuestBookForm = () => {
     hideShowButton();
-    showForm === 'guestBookForm'
+    showForm === 'hideGuestBookForm'
       ? setShowForm('showGuestBookForm')
-      : setShowForm('guestBookForm');
+      : setShowForm('hideGuestBookForm');
   }
 
-  const hideShowButton = () => showForm === 'showGuestBookForm'
-    ? setShowButton('block')
-    : setTimeout(() => setShowButton('none'), 1000);
+  const hideShowButton = () => showForm !== 'showGuestBookForm'
+    ? setShowButton('hideFormButton')
+    : setShowButton('showFormButton');
   
     useEffect(() => {
       fetchDBMessages();
@@ -61,7 +61,7 @@ const GuestBook = (props) => {
           showGuestBookForm={showGuestBookForm}
         />
         <div className='mobileMessageButton'>
-          <button onClick={showGuestBookForm} style={{display: showbutton}}>Write a message</button>
+          <button onClick={showGuestBookForm} className={showbutton}>Write a message</button>
         </div>
         <div className='messages'>
           <ul>

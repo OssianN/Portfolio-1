@@ -36,6 +36,7 @@
 }
 
 .guestBookForm {
+  display: flex;
   border-radius: 2px;
   background-color: #ffffff67;
   flex-direction: column;
@@ -148,35 +149,59 @@
   }
 
   .showGuestBookForm {
-    display: flex !important;
     align-self: center;
     margin-top: 100px;
     max-width: 680px;
     padding-bottom: 30px;
-    animation-duration: 1s;
-    animation-name: guestBookForm;
+    transition: 1s ease-out;
+    animation-name: showGuestBookForm;
   }
 
-  @keyframes guestBookForm {
-    from {
-      margin-top: -300px;
+  @keyframes showGuestBookForm {
+    0% {
+      margin-top: -400px;
     }
-    to {
+    100% {
       margin-top: 100px;
     }
   }
 
   .cancelFormButton {
     align-self: flex-end;
+    padding: 10px;
     width: 40px;
-    font-size: 30px;
+    font-size: 20px;
     background-color: transparent;
     color: #3b5249;
     border: none;
   }
 
-  .guestBookForm {
-    display: none;
+  .hideGuestBookForm {
+    align-self: center;
+    margin-top: -500px;
+    max-width: 680px;
+    padding-bottom: 30px;
+    transition: 1s ease-in;
+    animation-name: hideGuestBookForm;
+  }
+
+  @keyframes hideGuestBookForm {
+    0% {
+      margin-top: 100px;
+    }
+    100% {
+      margin-top: -400px;
+    }
+  }
+
+  .showFormButton {
+    transition: 1s;
+    opacity: 1;
+  }
+
+  .hideFormButton {
+    transition: 1s;
+    opacity: 0;
   }
 
   .guestBook .messages {
