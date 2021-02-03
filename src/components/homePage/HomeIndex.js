@@ -2,7 +2,7 @@ import React from 'react';
 import './home.scss';
 import Title from './Title.js';
 import ProfileImage from './ProfileImage';
-import images from '../images';
+import images from '../../images';
 
 const Home = () => {
   return (

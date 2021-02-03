@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Nav from '../components/Nav'
 import '../styles/portfolio.scss';
 import { Link } from 'gatsby';
-import images from '../components/images';
+import images from '../images';
 import FadeInSection from '../components/FadeInSection';
 
 const Portfolio = () => {

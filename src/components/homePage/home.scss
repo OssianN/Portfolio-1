@@ -45,6 +45,10 @@
   }
 }
 
+.imgContainer {
+  position: fixed;
+}
+
 .profileImageBig {
   animation-name: profileImageBig;
   animation-duration: 1s;
@@ -52,7 +56,7 @@
 
 @keyframes profileImageBig {
   from {
-    margin-left: 100%;
+    margin-left: 100vw;
   }
 }
 
@@ -70,10 +74,9 @@
   .profileImageBig {
     z-index: 10;
     position: fixed;
-    float: right;
+    margin-left: 50vw;
     object-fit: cover;
-    margin: 0 0 0 50%;
-    width: 50%;
+    width: 50vw;
     min-height: 100%;
     overflow: hidden;
   }
