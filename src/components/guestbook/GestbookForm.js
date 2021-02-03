@@ -8,7 +8,6 @@ const GuestBookForm = (props) => {
   const [msgData, setMsgData] = useState(null);
   const nameValue = useRef('');
   const messageValue = useRef('');
-  const formRef = useRef(null);
 
   const sendGuestWebhook = () => {
     axios({
@@ -76,7 +75,7 @@ const GuestBookForm = (props) => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={e => handleSubmitMessage(e)}
-      ref={formRef}>
+      ref={props.formRef}>
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" type='button' onClick={handleCancelForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>

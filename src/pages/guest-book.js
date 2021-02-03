@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import GuestBookForm from '../components/guestbook/GestbookForm';
 import { graphql } from "gatsby";
 import Nav from '../components/Nav';
@@ -8,7 +8,7 @@ const GuestBook = (props) => {
   const [updateMessages, setUpdateMessages] = useState(0);
   const [messages, setMessages] = useState([]);
   const [showForm, setShowForm] = useState('hideGuestBookForm');
-  const [showbutton, setShowButton] = useState('showFormButton');
+  const formRef = useRef(null);
   
   const fetchDBMessages = async () => {
     const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
@@ -33,15 +33,14 @@ const GuestBook = (props) => {
   };
 
   const showGuestBookForm = () => {
-    hideShowButton();
-    showForm === 'hideGuestBookForm'
-      ? setShowForm('showGuestBookForm')
-      : setShowForm('hideGuestBookForm');
+    if (showForm === 'hideGuestBookForm') {
+      formRef.current.style.display = 'flex';
+      setShowForm('showGuestBookForm')
+    } else {
+      setShowForm('hideGuestBookForm');
+      setTimeout(() => formRef.current.style.display = 'none', 1000);
+    }
   }
-
-  const hideShowButton = () => showForm !== 'showGuestBookForm'
-    ? setShowButton('hideFormButton')
-    : setShowButton('showFormButton');
   
     useEffect(() => {
       fetchDBMessages();
@@ -59,9 +58,10 @@ const GuestBook = (props) => {
           showForm={showForm}
           setShowForm={setShowForm}
           showGuestBookForm={showGuestBookForm}
+          formRef={formRef}
         />
         <div className='mobileMessageButton'>
-          <button onClick={showGuestBookForm} className={showbutton}>Write a message</button>
+          <button onClick={showGuestBookForm} className='showFormButton'>Write a message</button>
         </div>
         <div className='messages'>
           <ul>
