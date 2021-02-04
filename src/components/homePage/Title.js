@@ -11,7 +11,7 @@ const Title = () => {
   const handleTitleTransition = () => {
     return setTimeout(() => {
       return setTitleShow('title');
-    }, 1000);
+    }, 750);
   };
   
   handleTitleTransition();

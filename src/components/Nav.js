@@ -13,7 +13,7 @@ const Nav = props => {
     if (props.navStyle === 'homeNav') {
       setTimeout(() => {
         setNavShow('navBar');
-      }, 1100);
+      }, 100);
     } else {
       setNavShow('navBar');
     }
