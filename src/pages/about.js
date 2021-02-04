@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from '../components/Nav';
 import '../styles/about.scss';
 import ReactSVG from '../components/ReactSVG';
+import SocialMedia from '../components/socialMedia/SocialMedia'
 
 const About = () => {
   const [randomNum] = useState(Math.floor(Math.random() * 10))
@@ -110,6 +111,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <SocialMedia />
     </div>
   );
 };

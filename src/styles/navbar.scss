@@ -30,8 +30,6 @@
     top: 0;
     background-color: #ffffffb3;
     transition: .3s;
-    animation: navBar;
-    animation-duration: 1s;
   }
   
   .defaultNav {
@@ -50,6 +48,28 @@
     transition: .3s;
   }
   
+  .defaultNav li {
+    border-top: 3px solid #00000000;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 0 5%;
+    transition: .5s;
+  }
+  
+  .defaultNav {
+    width: 46%;
+    justify-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2%;
+  }
+
+  .homeNav {
+    animation: navBar;
+    animation-duration: 1s;
+  }
+
   @keyframes navBar {
     0% {
       margin-left: 2vw;
@@ -60,44 +80,9 @@
       opacity: 1;
     }
   }
-  
-  .defaultNav li {
-    border-top: 3px solid #00000000;
-    padding: 40px 0;
-    text-align: center;
-    font-size: 20px;
-    margin: 0 5%;
-    transition: .5s;
-  }
-  
-  .homeNav {
-    width: 46%;
-    justify-self: flex-start;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2%;
-  }
 
-  .notHomeNav {
-    height: 130px;
-    margin: 0;
-  }
-  
-  .homeNav li {
-    margin: 0 3% !important;
-  }
-  
-  .homeNav li:hover {
+  .defaultNav li:hover {
     border-top: 3px solid #3b5249;
-    margin: 0 3%  !important;
-  }
-  
-  .guestbookNav li:hover {
-    border-top: 3px solid #3b5249;
-  }
-  
-  .notHomeNav li:hover {
-    border-top: 3px solid #000;
   }
 
   .mobileNavButton {
@@ -128,8 +113,8 @@
     background-color: transparent;
     align-self: center;
     z-index: 150;
-    right: 0;
-    margin-top: 10px;
+    right: -2.5%;
+    top: 0;
     -webkit-tap-highlight-color: #00000000;
   }
   

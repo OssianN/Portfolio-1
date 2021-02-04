@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import GuestBookForm from '../components/guestbook/GestbookForm';
 import { graphql } from "gatsby";
 import Nav from '../components/Nav';
+import SocialMedia from '../components/socialMedia/SocialMedia'
 import '../components/guestbook/guestBook.scss';
 
 const GuestBook = (props) => {
@@ -45,6 +46,7 @@ const GuestBook = (props) => {
   return (
     <div className='guestBookContainer'>
       <Nav navStyle='guestbookNav' />
+      <SocialMedia />
       <div className='guestBook'>
         <GuestBookForm
           updateMessages={updateMessages}

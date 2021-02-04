@@ -77,7 +77,6 @@
 }
 
 .guestBook .messages {
-  width: 100%;
   transition: 2s;
   animation-name: messages;
   animation-duration: 2s;
@@ -116,10 +115,10 @@
 
 @media (min-width: 1001px) {
   .guestBook {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     max-width: 1200px;
     padding-top: 170px;
-    justify-content: space-around;
-    align-items: flex-start;
   }
 
   .guestBookForm {
@@ -132,10 +131,11 @@
     top: 170px;
     position: sticky;
     border-radius: 8px;
+    justify-self: center;
   }
 
   .guestBook .messages {
-    width: 40%;
+    justify-self: center;
   }
 
   .mobileMessageButton {
@@ -221,6 +221,7 @@
   }
 
   .guestBook .messages {
+    width: 100%;
     margin-top: 50px;
     max-width: 680px;
     align-self: center;
@@ -239,7 +240,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 150px;
   }
 
   .mobileMessageButton button {

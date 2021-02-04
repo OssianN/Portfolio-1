@@ -4,6 +4,7 @@ import '../styles/portfolio.scss';
 import { Link } from 'gatsby';
 import images from '../images';
 import FadeInSection from '../components/FadeInSection';
+import SocialMedia from '../components/socialMedia/SocialMedia'
 
 const Portfolio = () => {
   const portolioRef = useRef(null);
@@ -11,6 +12,7 @@ const Portfolio = () => {
   return (
     <div className='portfolioContainer'>
       <Nav navStyle='notHomeNav' portfolioRef={portolioRef} />
+      <SocialMedia />
       <div className='portfolio' ref={portolioRef}>
         <div className='presentingPortfolio'>
           <h2>Here are some projects I've done, starting from my first app at the bottom up to now.</h2>

@@ -22,7 +22,7 @@ const ProfileImage = () => {
 const handleTitleTransition = () => {
   return setTimeout(() => {
     return setShowImage('profileImageBig');
-  }, 700);
+  }, 500);
 };
 
 handleTitleTransition();
