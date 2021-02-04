@@ -2,24 +2,24 @@ import React from 'react';
 import './home.scss';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-// import images from '../../images';
+import images from '../../images';
 
 const ProfileImage = () => {
-  const data = useStaticQuery( graphql`
-  query MyQuery {
-    file(relativePath: {eq: "profilePic.jpg"}) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`)
+//   const data = useStaticQuery( graphql`
+//   query MyQuery {
+//     file(relativePath: {eq: "profilePic.jpg"}) {
+//       childImageSharp {
+//         fluid {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `) fluid={data.file.childImageSharp.fluid}  loading='lazy'
 
   return (
     <div className="imgContainer">
-      <Img fluid={data.file.childImageSharp.fluid} alt='profilePic' className={'profileImageBig'} loading='lazy'/>
+      <img src={images.profilePic} alt='profilePic' className={'profileImageBig'}/>
     </div>
   );
 }
