@@ -13,7 +13,7 @@ const Portfolio = () => {
       <Nav navStyle='notHomeNav' portfolioRef={portolioRef} />
       <div className='portfolio' ref={portolioRef}>
         <div className='presentingPortfolio'>
-          <h2>Here are some projects I've done, starting from my first React app at the bottom up to now.</h2>
+          <h2>Here are some projects I've done, starting from my first app at the bottom up to now.</h2>
         </div>
         <div className='projectsContainer'>
           <p>present</p>

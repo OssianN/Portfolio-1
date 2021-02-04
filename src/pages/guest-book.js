@@ -14,10 +14,6 @@ const GuestBook = (props) => {
     const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
     setMessages(messagesDB);
   }
-
-  // const previewInfo = () => {
-  //   'This message is a local preview. The message will go live in a couple of minutes, after it has been reviewed. Check back in a while to see the live version.'
-  // }
   
   const renderMessages = () => {
     const messagesCopy = [...messages];
