@@ -22,7 +22,7 @@ const GuestBook = (props) => {
   const renderMessages = () => {
     const messagesCopy = [...messages];
     return messagesCopy?.reverse().map(message => {
-      const info = message.node;
+      const info = message.node || message
       return (
         <li key={info.id}>
           <h2>{info.name} {info.preview ? <span className='localPreview'>{info.preview}</span> : ''}</h2>

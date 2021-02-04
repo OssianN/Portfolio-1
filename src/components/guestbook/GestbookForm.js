@@ -21,12 +21,6 @@ const GuestBookForm = (props) => {
     messageValue.current.value = null;
   };
 
-  const updateLocalState = (data) => {
-    const messages = props.messages;
-    props.setMessages([ ...messages, {node: data }]);
-    props.setUpdateMessages(props.updateMessages + 1);
-  }
-
   const encode = (data) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -47,20 +41,20 @@ const GuestBookForm = (props) => {
     const messageData = {
       name: nameData,
       msg: msgData,
-      preview: '(Local Preview)',
       id: Date.now(),
     }
 
     const fetchData = {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(messageData),
+      body: JSON.stringify(messageData),
     }
-    
-    updateLocalState(messageData); //becasue local preview of the message = better UX.
+
     resetForm();
-    await fetch("/api/mongoDB", fetchData);
-    sendGuestWebhook(); //beacuse we want a rebuild when new data is submitted to DB.
+    const response = await fetch("/.netlify/functions/mongoDB", fetchData);
+    const data = await response.json();
+    props.setMessages(data);
+    props.setUpdateMessages(props.updateMessages + 1);
   }
 
   const handleNameChange = e => {
@@ -77,12 +71,11 @@ const GuestBookForm = (props) => {
   
   return (
     <form
+      onSubmit={e => handleSubmitMessage(e)}
       className={`guestBookForm ${props.showForm} ${props.formDisplay}`}
-      name="guestBook"
-      method="post"
-      data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={e => handleSubmitMessage(e)}>
+      name="guestBook"
+    >
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" type='button' onClick={handleCancelForm}>&#10005;</button>
       <h1>Write something for all visitors to see... or just smile and wave!</h1>

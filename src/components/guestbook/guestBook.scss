@@ -156,6 +156,7 @@
     align-self: center;
     margin-top: 100px;
     max-width: 680px;
+    height: 70vh;
     padding: 0 20px;
     padding-bottom: 30px;
     animation: 1s ease-out;
@@ -185,8 +186,9 @@
 
   .hideGuestBookForm {
     align-self: center;
-    margin-top: -500px;
+    margin-top: -75vh;
     max-width: 680px;
+    height: 70vh;
     padding-bottom: 30px;
     transition: 1s ease-in;
     animation-name: hideGuestBookForm;
@@ -201,7 +203,7 @@
       margin-top: 100px;
     }
     100% {
-      margin-top: -500px;
+      margin-top: -75vh;
     }
   }
 
