@@ -7,7 +7,7 @@ import FadeInSection from '../components/FadeInSection';
 
 const Portfolio = () => {
   return (
-    <Layout>
+    <Layout tabName='/portfolio'>
       <div className='portfolioContainer'>
         <div className='portfolio'>
           <div className='presentingPortfolio'>

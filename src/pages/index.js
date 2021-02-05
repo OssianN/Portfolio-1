@@ -7,7 +7,7 @@ import '../styles/global.scss';
 const Home = () => {
   return (
     <div className="App">
-      <Layout>
+      <Layout tabName='/'>
         <HomePage />
       </Layout>
     </div>

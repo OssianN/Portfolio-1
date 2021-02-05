@@ -43,7 +43,7 @@ const GuestBook = (props) => {
     }, []);
 
   return (
-    <Layout>
+    <Layout  tabName='/guest-book'>
       <div className='guestBookContainer'>
         <div className='guestBook'>
           <GuestBookForm

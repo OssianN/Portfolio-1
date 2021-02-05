@@ -3,7 +3,7 @@ import Nav from './Nav';
 import SocialMedia from './socialMedia/SocialMedia';
 import { StaticQuery } from 'gatsby';
 
-const Layout = ({children }) => (
+const Layout = ({ children, tabName }) => (
   <StaticQuery
     query={ graphql`
       query HomeQuery {
@@ -20,7 +20,7 @@ const Layout = ({children }) => (
     `}
     render = {data => (
       <React.Fragment>
-        <Nav menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
+        <Nav menuLinks={data.site.siteMetadata.menuLinks} tabName={tabName} siteTitle={data.site.siteMetadata.title} />
         {children}
         <SocialMedia />
       </React.Fragment>

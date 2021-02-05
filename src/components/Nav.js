@@ -6,10 +6,9 @@ const Nav = props => {
   const [navShow, setNavShow] = useState('hide');
   const [showMobileNav, setShowMobileNav] = useState('-400px');
   const [navToogleClass, setNavToggleClass] = useState('');
-  const [activeTab, setActiveTab] = useState(null);
   const navbarRef = useRef(null);
   
-  const {menuLinks, siteTitle } = props;
+  const {menuLinks, siteTitle, tabName } = props;
 
   const handleNavTransition = () => {
     if (props.navStyle === 'homeNav') {
@@ -29,11 +28,6 @@ const Nav = props => {
       setShowMobileNav('0');
       setNavToggleClass('open')
     }
-  }
-
-  const handleActiveTab = () => {
-    const tabName = window ? window.location.href.match(/\/[-\w]*?\/?$/ig)[0] : undefined;
-    setActiveTab(tabName);
   }
 
   const checkWindowAndRef = () => {
@@ -70,7 +64,6 @@ const Nav = props => {
   useEffect(() => {
     hideNavOnScroll();
     handleNavTransition();
-    handleActiveTab();
     changeNavBackground();
   });
 
@@ -89,11 +82,10 @@ const Nav = props => {
           </button>
         </div>
         <nav className={navShow}  ref={navbarRef} style={{marginRight: showMobileNav}} role='navigation'>
-          <ul className={`defaultNav ${props.navStyle}`} >
+          <ul className={`defaultNav ${props.navStyle}`}>
             {menuLinks.map(link => {
-              console.log(activeTab, link.name)
               return (
-                <li className={ activeTab === link.link ? 'activeTab' : ''} key={link.name}>
+                <li className={ link.link === tabName ? 'activeTab' : ''} key={link.name}>
                   <Link to={link.link}>
                     {link.name}
                   </Link>
