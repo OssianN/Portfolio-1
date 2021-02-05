@@ -8,6 +8,8 @@ const Nav = props => {
   const [navToogleClass, setNavToggleClass] = useState('');
   const [activeTab, setActiveTab] = useState(null);
   const navbarRef = useRef(null);
+  
+  const {menuLinks, siteTitle } = props;
 
   const handleNavTransition = () => {
     if (props.navStyle === 'homeNav') {
@@ -86,28 +88,18 @@ const Nav = props => {
             </div>
           </button>
         </div>
-        <nav className={navShow}  ref={navbarRef} style={{marginRight: showMobileNav}}>
+        <nav className={navShow}  ref={navbarRef} style={{marginRight: showMobileNav}} role='navigation'>
           <ul className={`defaultNav ${props.navStyle}`} >
-            <li className={ activeTab === '/' ? 'activeTab' : ''}>
-              <Link to='/'>
-                Home
-              </Link>
-            </li>
-            <li className={ activeTab === '/guest-book' ? 'activeTab' : ''}>
-              <Link to='/guest-book'>
-                Guest Book
-              </Link>
-            </li>
-            <li className={ activeTab === '/about' ? 'activeTab' : ''}>
-              <Link to='/about'>
-                About
-              </Link>
-            </li>
-            <li className={ activeTab === '/portfolio' ? 'activeTab' : ''}>
-              <Link to='/portfolio'>
-                Portfolio
-              </Link>
-            </li>
+            {menuLinks.map(link => {
+              console.log(activeTab, link.name)
+              return (
+                <li className={ activeTab === link.link ? 'activeTab' : ''} key={link.name}>
+                  <Link to={link.link}>
+                    {link.name}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </nav>
       </>

@@ -17,9 +17,9 @@
 
 @media (min-width: 1001px) {
   .externalLinksContainer {
-    width: 100px;
-    top: 15px;
-    right: 15px;
+    width: 120px;
+    top: 40px;
+    right: 40px;
   }
 
   .externalLinksContainer a img {
@@ -32,8 +32,9 @@
 
   .externalLinksBlob {
     width: 600px;
-    top: -320px;
+    top: -340px;
     left: -150px;
+    transform: rotate(260deg);
     z-index: -1;
   }
 }

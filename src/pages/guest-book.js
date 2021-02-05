@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import GuestBookForm from '../components/guestbook/GestbookForm';
 import { graphql } from "gatsby";
-import Nav from '../components/Nav';
-import SocialMedia from '../components/socialMedia/SocialMedia'
+import Layout from '../components/Layout';
 import '../components/guestbook/guestBook.scss';
 
 const GuestBook = (props) => {
@@ -44,31 +43,31 @@ const GuestBook = (props) => {
     }, []);
 
   return (
-    <div className='guestBookContainer'>
-      <Nav navStyle='guestbookNav' />
-      <SocialMedia />
-      <div className='guestBook'>
-        <GuestBookForm
-          updateMessages={updateMessages}
-          setUpdateMessages={setUpdateMessages}
-          messages={messages}
-          setMessages={setMessages}
-          showForm={showForm}
-          setShowForm={setShowForm}
-          showGuestBookForm={showGuestBookForm}
-          formDisplay={formDisplay}
-        />
-        <div className='mobileMessageButton'>
-          <button onClick={showGuestBookForm} className='showFormButton'>Write a message</button>
+    <Layout>
+      <div className='guestBookContainer'>
+        <div className='guestBook'>
+          <GuestBookForm
+            updateMessages={updateMessages}
+            setUpdateMessages={setUpdateMessages}
+            messages={messages}
+            setMessages={setMessages}
+            showForm={showForm}
+            setShowForm={setShowForm}
+            showGuestBookForm={showGuestBookForm}
+            formDisplay={formDisplay}
+          />
+          <div className='mobileMessageButton'>
+            <button onClick={showGuestBookForm} className='showFormButton'>Write a message</button>
+          </div>
+          <div className='messages'>
+            <ul>
+              {renderMessages()}
+            </ul>
+          </div>
         </div>
-        <div className='messages'>
-          <ul>
-            {renderMessages()}
-          </ul>
-        </div>
+        <div className='fadeListBottom'></div>
       </div>
-      <div className='fadeListBottom'></div>
-    </div>
+    </Layout>
   );
 };
 
