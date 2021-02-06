@@ -81,6 +81,8 @@
 .portfolioImg {
   position: relative;
   width: 100%;
+  height: 280px;
+  object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 0 5px #80808063;
 }
