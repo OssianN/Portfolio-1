@@ -80,23 +80,20 @@
   .title {
     z-index: 10;
     margin: auto auto;
-    padding: 2% 2%;
+    padding: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 8px;
-    background-image: linear-gradient(90deg, #3b524900 50%, #161f1b50 50%);
+    background-image: linear-gradient(90deg, #3b524900 50%, #161f1b90 50%);
     background-repeat: no-repeat;
   }
 
   .titleHeading::before {
-    content: "";
-    position: absolute;
-    width: 312px;
-    height: 96px;
-    margin-left: -25px;
+    width: 321px;
+    height: 94px;
+    margin-left: -30px;
     border-color:  $mainDarkGreen;
-    border-radius: 8px 0 0 8px;
     @extend %headerBorder;
   }
   
@@ -134,13 +131,13 @@
     z-index: 100;
     min-width: 100%;
     padding: 0;
-    padding-top: 17px;
-    padding-bottom: 20px;
+    padding-top: 35px;
+    padding-bottom: 40px;
     display: flex;
     align-self: center;
     flex-direction: column;
     align-items: center;
-    background-color: #161f1b50;
+    background-color: #161f1b90;
     background-repeat: no-repeat;
   }
 
@@ -149,9 +146,9 @@
     position: absolute;
     border: 3px solid #a8ffdf;
     border-radius: 8px;
-    height: 79px;
-    margin-top: 28px;
-    width: 601px;
+    height: 90px;
+    margin-top: 36px;
+    width: 611px;
   }
 
   .titleHeading {
@@ -164,7 +161,8 @@
   .titleDescription {
     margin: 0;
     padding: 0;
-    padding-bottom: 10px;
+    font-size: 1.2em;
+    padding-bottom: 20px;
     color: #a8ffdf;
     text-align: center;
   }
@@ -172,9 +170,9 @@
 
 @media (max-width: 675px) {
   .title::after {
-    height: 49px;
-    margin-top: 26px;
-    width: 370px;
+    height: 60px;
+    margin-top: 30px;
+    width: 384px;
   }
 
   .titleHeading {
@@ -188,9 +186,9 @@
 
 @media (max-width: 375px) {
   .title::after {
-    height: 36px;
-    margin-top: 25px;
-    width: 274px;
+    height: 45px;
+    margin-top: 30px;
+    width: 285px;
   }
 
   .titleHeading {
