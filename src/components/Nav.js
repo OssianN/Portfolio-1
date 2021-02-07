@@ -32,10 +32,8 @@ const Nav = props => {
 
   const checkWindowAndRef = () => {
     if (window === 'undefined' && !navbarRef.current.style) {
-      console.log('window');
       return false;
     }
-    console.log(navbarRef.current);
     return true;
   }
 
