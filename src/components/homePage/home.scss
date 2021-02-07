@@ -34,7 +34,6 @@
 }
 
 .title {
-  border-radius: 8px;
   animation-name: title;
   animation-duration: 2s;
 }
@@ -85,6 +84,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
     background-image: linear-gradient(90deg, #3b524900 50%, #161f1b50 50%);
     background-repeat: no-repeat;
   }
@@ -133,13 +133,25 @@
   .title {
     z-index: 100;
     min-width: 100%;
-    padding: 3% 0;
+    padding: 0;
+    padding-top: 17px;
+    padding-bottom: 20px;
     display: flex;
     align-self: center;
     flex-direction: column;
     align-items: center;
     background-color: #161f1b50;
     background-repeat: no-repeat;
+  }
+
+  .title::after {
+    content: "";
+    position: absolute;
+    border: 3px solid #a8ffdf;
+    border-radius: 8px;
+    height: 79px;
+    margin-top: 28px;
+    width: 601px;
   }
 
   .titleHeading {
@@ -152,13 +164,19 @@
   .titleDescription {
     margin: 0;
     padding: 0;
-    width: 60%;
+    padding-bottom: 10px;
     color: #a8ffdf;
     text-align: center;
   }
 }
 
 @media (max-width: 675px) {
+  .title::after {
+    height: 49px;
+    margin-top: 26px;
+    width: 370px;
+  }
+
   .titleHeading {
     font-size: 2.5em;
   }
@@ -169,11 +187,32 @@
 }
 
 @media (max-width: 375px) {
+  .title::after {
+    height: 36px;
+    margin-top: 25px;
+    width: 274px;
+  }
+
   .titleHeading {
     font-size: 1.8em;
   }
 
   .titleDescription {
     font-size: 14px;
+  }
+}
+
+
+@media (max-width: 295px) {
+  .title::after {
+    display: none;
+  }
+
+  .titleHeading {
+    font-size: 1.5em;
+  }
+
+  .titleDescription {
+    font-size: 1em;
   }
 }
