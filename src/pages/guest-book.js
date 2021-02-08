@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import GuestBookForm from '../components/guestbook/GestbookForm';
 import { graphql } from "gatsby";
 import Layout from '../components/Layout';
@@ -43,7 +43,7 @@ const GuestBook = (props) => {
     }, []);
 
   return (
-    <Layout  tabName='/guest-book'>
+    <Layout  tabName='guest-book'>
       <div className='guestBookContainer'>
         <div className='guestBook'>
           <GuestBookForm

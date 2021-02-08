@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Layout from '../components/Layout';
 import '../styles/portfolio.scss';
 import { Link } from 'gatsby';
@@ -7,7 +7,7 @@ import FadeInSection from '../components/FadeInSection';
 
 const Portfolio = () => {
   return (
-    <Layout tabName='/portfolio'>
+    <Layout tabName='portfolio'>
       <div className='portfolioContainer'>
         <div className='portfolio'>
           <div className='presentingPortfolio'>

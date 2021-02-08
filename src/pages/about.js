@@ -7,7 +7,7 @@ const About = () => {
   const [randomNum] = useState(Math.floor(Math.random() * 10))
 
   return (
-    <Layout tabName='/about'>
+    <Layout tabName='about'>
       <div className='aboutContainer'>
         <div className='about'>
           <div className='myStory'>
