@@ -30,7 +30,6 @@ const Nav = props => {
       </button>
       <Navigation
         showMobileNav={showMobileNav}
-        navStyle={props.navStyle}
         tabName={props.tabName}
       />
     </>

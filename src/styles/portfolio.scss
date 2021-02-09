@@ -80,21 +80,10 @@
 
 .portfolioImg {
   position: relative;
-  width: 100%;
-  height: 280px;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 0 5px #80808063;
-}
-
-#awesomeImg img {
-  width: 100%;
-  height: 10em;
-  border-radius: 5px;
-  padding: 10% 0;
-  box-shadow: 0 0 5px #80808063;
-  position: relative;
-  background-image: linear-gradient(#ffffff9d, $mainLightGreen);
+  
 }
 
 .portfolioLink p {
@@ -114,11 +103,20 @@
   .presentingPortfolio {
     width: 80%;
   }
+
+  .portfolioImg {
+    width: 100%;
+  }
 }
 
 @media (min-width: 1001px) {
   .presentingPortfolio {
     width: 50%;
+  }
+
+  .portfolioImg {
+    width: 520px;
+    height: 270px;
   }
   
   .fade-in-section:nth-of-type(4n+0) {

@@ -1,31 +1,10 @@
 const env = require('dotenv');
 
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby Contentful starter',
-    menuLinks: [
-      {
-        name:'home',
-        link:'/'
-      },
-      {
-        name:'about',
-        link:'/about'
-      },
-      {
-        name:'guest book',
-        link:'/guest-book'
-      },
-      {
-        name:'portfolio',
-        link:'/portfolio'
-      },
-    ]
-  },
   plugins: [
     `gatsby-plugin-recaptcha`,
     `gatsby-plugin-sass`,
-    `gatsby-transformer-sharp`, 
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-gtag`,
