@@ -1,6 +1,7 @@
 import React from 'react'
 import NavContainer from './NavContainer';
 import SocialMedia from './socialMedia/SocialMedia';
+import { Helmet } from 'react-helmet';
 
 const Template = ({ children, tabName }) => {
   return (
@@ -8,6 +9,7 @@ const Template = ({ children, tabName }) => {
       <NavContainer 
         tabName={tabName}
         />
+      <Helmet title='Ossian Nörthen' />
       { children }
       <SocialMedia />
     </>
