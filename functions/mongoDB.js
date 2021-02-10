@@ -34,7 +34,6 @@ exports.handler = async function(event, context) {
     }
     const GuestBookDB = conn.model('guestBook');
 
-    console.log(event.httpMethod)
   if (event.httpMethod === 'POST')  {
     const data = JSON.parse(event.body);
     const { name, msg } = data;

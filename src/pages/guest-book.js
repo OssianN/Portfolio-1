@@ -14,7 +14,7 @@ const GuestBook = (props) => {
     const response = await fetch("/.netlify/functions/mongoDB");
     const data = await response.json();
     setMessages(data);
-    setUpdateMessages(props.updateMessages + 1);
+    setUpdateMessages(updateMessages + 1);
   }
   
   const renderMessages = () => {
@@ -74,17 +74,3 @@ const GuestBook = (props) => {
 };
 
 export default GuestBook;
-
-export const pageQuery = graphql`
-  query {
-    allMongodbGuestBookDbGuestbooks {
-      edges {
-        node {
-          id
-          name
-          msg
-        }
-      }
-    }
-  }
-`;
