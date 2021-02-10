@@ -11,8 +11,10 @@ const GuestBook = (props) => {
   const [formDisplay, setFormDisplay] = useState('displayNoneClass')
   
   const fetchDBMessages = async () => {
-    const messagesDB = await props.data.allMongodbGuestBookDbGuestbooks.edges;
-    setMessages(messagesDB);
+    const response = await fetch("/.netlify/functions/mongoDB");
+    const data = await response.json();
+    setMessages(data);
+    setUpdateMessages(props.updateMessages + 1);
   }
   
   const renderMessages = () => {

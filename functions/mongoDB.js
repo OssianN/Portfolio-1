@@ -8,11 +8,7 @@ let conn = null;
 const uri = process.env.MONGODB_URI;
 
 exports.handler = async function(event, context) {
-  
   try {
-    console.log('EVENT BODY', JSON.parse(event.body))
-    const data = JSON.parse(event.body);
-
     context.callbackWaitsForEmptyEventLoop = false;
 
     if (conn == null) {
@@ -37,12 +33,18 @@ exports.handler = async function(event, context) {
       conn.model('guestBook', guestBook);
     }
     const GuestBookDB = conn.model('guestBook');
+
+    console.log(event.httpMethod)
+  if (event.httpMethod === 'POST')  {
+    const data = JSON.parse(event.body);
     const { name, msg } = data;
     const guestMessage = new GuestBookDB({
       name,
       msg
     });
     await guestMessage.save();
+  }
+
     const allMessages = await GuestBookDB.find();
 
     return {

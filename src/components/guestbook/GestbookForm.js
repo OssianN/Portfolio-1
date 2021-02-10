@@ -9,13 +9,6 @@ const GuestBookForm = (props) => {
   const nameValue = useRef('');
   const messageValue = useRef('');
 
-  const sendGuestWebhook = () => {
-    axios({
-      method: 'post',
-      url: 'https://api.netlify.com/build_hooks/6002ba1b511639c24ee7b511',
-    });
-  }
-
   const resetForm = () => {
     nameValue.current.value = null;
     messageValue.current.value = null;
