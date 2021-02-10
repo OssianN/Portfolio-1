@@ -44,6 +44,7 @@ const GuestBookForm = (props) => {
     }
 
     resetForm();
+    props.showGuestBookForm();
     const response = await fetch("/.netlify/functions/mongoDB", fetchData);
     const data = await response.json();
     props.setMessages(data);

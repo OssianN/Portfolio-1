@@ -39,7 +39,7 @@ exports.handler = async function(event, context) {
     const { name, msg } = data;
     const guestMessage = new GuestBookDB({
       name,
-      msg
+      msg,
     });
     await guestMessage.save();
   }

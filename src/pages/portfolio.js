@@ -28,7 +28,7 @@ const Portfolio = () => {
               <a href='https://forskoleupproret.netlify.app' className='portfolioLink'>
                 <h2>Förskoleupproret's Webpage</h2>
                 <img src={ images.forskoleupproret } alt='forskoleupproret' className='portfolioImg'></img>
-                <p>Förskoleupproret is a non-profitable organization striving to improve the work conditions and the general environment in preschool. They asked me to build them a new webpage using their graphic profile. The serverless application is biult using React, Gatsby, Contentful, Netlify and styled with Sass.</p>
+                <p>Förskoleupproret is a non-profitable organization striving to improve the work conditions and the general environment in preschool. They asked me to build them a new webpage using their graphic profile. The serverless application is built using React, Gatsby, Contentful, Netlify and styled with Sass.</p>
               </a>
             </FadeInSection>
             <div className='timePole'></div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import GuestBookForm from '../components/guestbook/GestbookForm';
-import { graphql } from "gatsby";
 import Layout from '../components/Layout';
 import '../components/guestbook/guestBook.scss';
 
@@ -19,15 +18,15 @@ const GuestBook = (props) => {
   
   const renderMessages = () => {
     const messagesCopy = [...messages];
-    return messagesCopy?.reverse().map(message => {
-      const info = message.node || message
-      return (
-        <li key={info.id}>
-          <h2>{info.name} {info.preview ? <span className='localPreview'>{info.preview}</span> : ''}</h2>
-          <p>{info.msg}</p>
-        </li>
-      );
-    });
+      return messagesCopy?.reverse().map(message => {
+        const info = message.node || message
+        return (
+          <li key={info._id}>
+            <h2>{info.name} {info.preview ? <span className='localPreview'>{info.preview}</span> : ''}</h2>
+            <p>{info.msg}</p>
+          </li>
+        );
+      });
   };
 
   const showGuestBookForm = () => {
