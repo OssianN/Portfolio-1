@@ -1,5 +1,19 @@
 @import '../../styles/global.scss';
 
+//===========================KEYFRAMES===========================//
+
+@keyframes messages {
+  from {
+    opacity: 0;
+    margin-left: 10%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//===============================================================//
+
 .guestBookContainer {
   min-height: 100%;
   width: 100%;
@@ -81,29 +95,16 @@
 
 .guestBook .messages {
   transition: 2s;
-  animation-name: messages;
-  animation-duration: 2s;
-}
-
-@keyframes messages {
-  from {
-    opacity: 0;
-    margin-left: 10%;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .guestBook .messages ul {
   padding-bottom: 150px;
-  animation-name: messagesLi;
-  animation-duration: 1s;
 }
 
 .guestBook .messages li {
   list-style: none;
   margin-bottom: 40px;
+  animation-duration: 1s;
   animation-name: messages;
 }
 
