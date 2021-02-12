@@ -15,9 +15,10 @@ const GuestBook = (props) => {
     setMessages(data);
     setUpdateMessages(updateMessages + 1);
   }
-  
+
   const renderMessages = () => {
     const messagesCopy = [...messages];
+    if (messages.length === 0) return <h1>loading...</h1>;
       return messagesCopy?.reverse().map(message => {
         const info = message.node || message
         return (
@@ -38,10 +39,10 @@ const GuestBook = (props) => {
       setTimeout(() => setFormDisplay('displayNoneClass'), 1000);
     }
   }
-  
-    useEffect(() => {
-      fetchDBMessages();
-    }, []);
+
+  useEffect(() => {
+    fetchDBMessages();
+  }, []);
 
   return (
     <Layout  tabName='guest-book'>

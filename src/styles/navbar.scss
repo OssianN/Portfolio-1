@@ -43,6 +43,11 @@
     list-style: none;
   }
 
+  .App .scrollNav {
+    top: 0 !important;
+    background-color: transparent !important;
+  }
+
   .scrollNav {
     top: -140px !important;
     transition: .3s;

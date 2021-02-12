@@ -1,6 +1,6 @@
 @import '../../styles/global.scss';
 
-// keyframes
+//___________________________________keyframes__________________________________//
 
 @keyframes title {
   from {
@@ -17,7 +17,7 @@
   }
 }
 
-//____________________________________________________________________________
+//_______________________________________________________________________________//
 
 .home {
   min-height: 100%;
@@ -27,6 +27,7 @@
   flex-direction: row;
   background: linear-gradient($mainYellow 2%, $mainLightGreen 98%);
   overflow: hidden;
+
 }
 
 .hide {

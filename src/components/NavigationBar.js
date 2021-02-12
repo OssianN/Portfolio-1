@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import '../styles/navbar.scss';
 
 const Navigation = props => {
-  const [scrollAtBottom, setScrollAtBottom] = useState(false)
   const navbarRef = useRef(null);
 
   const isWindowAndNavUndefined = () => window === 'undefined' || !navbarRef.current;
@@ -17,15 +16,6 @@ const Navigation = props => {
     }
   }
 
-//   const handleScroll = () => {
-//     const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-//     const body = document.body;
-//     const html = document.documentElement;
-//     const docHeight = Math.max(body.scrollHeight, document.body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-//     // windowBottom >= docHeight
-//       // setScrollAtBottom(true)
-// }
-
   const hideNavOnScroll = () => {
     if (isWindowAndNavUndefined()) return;
     let prevScrollY = window.scrollY;
@@ -35,7 +25,6 @@ const Navigation = props => {
       const currentScrollY = window.scrollY;
       const windowBottom = window.innerHeight + window.pageYOffset;
       const bodyHeight = document.documentElement.scrollHeight;
-      console.log(windowBottom, bodyHeight)
       if (prevScrollY < currentScrollY && currentScrollY > 50 || windowBottom >= bodyHeight) {
         navbarRef.current.classList.add('scrollNav');
       } else {
