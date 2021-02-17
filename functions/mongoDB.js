@@ -1,7 +1,5 @@
 'use strict';
 const mongoose = require('mongoose');
-const qs = require('qs');
-const querystring = require('querystring');
 require('dotenv').config();
 
 let conn = null;

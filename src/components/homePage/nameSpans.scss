@@ -1,0 +1,363 @@
+@import '../../styles/global.scss';
+
+.nameSpans {
+  transform: scale(2);
+  display: flex;
+  margin-top: 100px;
+  transition: 1s ease-out;
+}
+
+.nameSpans span {
+  position: absolute;
+  min-height: 3px;
+  min-width: 40px;
+  background-color: $mainDarkGreen;
+  border-radius: 5px;
+  transition: 1s ease-out;
+  align-self: center;
+}
+
+//=============O=================//
+.nameSpans span:nth-child(2),
+.nameSpans span:nth-child(4) {
+  margin-left: -134px;
+}
+.nameSpans span:nth-child(1),
+.nameSpans span:nth-child(3) {
+  transform: rotate(90deg);
+}
+
+.nameSpans span:nth-child(1) {
+  margin-left: -153px;
+}
+
+.nameSpans span:nth-child(3) {
+  margin-left: -115px;
+}
+
+
+.nameSpans span:nth-child(2) {
+  margin-top: 18.5px;
+}
+
+.nameSpans span:nth-child(4) {
+  margin-top: -18.5px;
+}
+
+//=============S================//
+
+.nameSpans span:nth-child(5),
+.nameSpans span:nth-child(6),
+.nameSpans span:nth-child(7),
+.nameSpans span:nth-child(8),
+.nameSpans span:nth-child(9) {
+  margin-left: -90px;
+}
+
+.nameSpans span:nth-child(5) {
+  margin-top: -18.5px;
+}
+
+.nameSpans span:nth-child(6) {
+  min-width: 21px;
+  margin-left: -99px;
+  margin-top: -9px;
+  transform: rotate(90deg);
+}
+
+.nameSpans span:nth-child(8) {
+  min-width: 21px;
+  margin-left: -62px;
+  margin-top: 9px;
+  transform: rotate(90deg);
+}
+
+.nameSpans span:nth-child(9) {
+  margin-top: 18.5px;
+}
+
+//=============S================
+.nameSpans span:nth-child(10),
+.nameSpans span:nth-child(11),
+.nameSpans span:nth-child(12),
+.nameSpans span:nth-child(13),
+.nameSpans span:nth-child(14) {
+  margin-left: -45px;
+}
+
+.nameSpans span:nth-child(10) {
+  margin-top: -18.5px;
+}
+
+.nameSpans span:nth-child(11) {
+  min-width: 21px;
+  margin-left: -54px;
+  margin-top: -9px;
+  transform: rotate(90deg);
+}
+
+.nameSpans span:nth-child(12) {
+  min-width: 21px;
+  margin-left: -17px;
+  margin-top: 9px;
+  transform: rotate(90deg);
+}
+
+.nameSpans span:nth-child(13) {
+  margin-top: 18.5px;
+}
+
+//=============IAN================
+.nameSpans.change span:nth-child(11),
+.nameSpans span:nth-child(15),
+.nameSpans span:nth-child(16),
+.nameSpans span:nth-child(17),
+.nameSpans span:nth-child(18),
+.nameSpans span:nth-child(19),
+.nameSpans span:nth-child(20),
+.nameSpans span:nth-child(21),
+.nameSpans span:nth-child(22),
+.nameSpans span:nth-child(23),
+.nameSpans span:nth-child(24),
+.nameSpans span:nth-child(25) {
+  background-color: $mainLightGreen;
+}
+
+//=============I================
+
+.nameSpans span:nth-child(15),
+.nameSpans span:nth-child(16) {
+  margin-left: -15px;
+  transform: rotate(90deg);
+  min-width: 40px;
+}
+
+//=============A================
+
+.nameSpans span:nth-child(17) {
+  transform: rotate(90deg);
+  min-width: 40px;
+  margin-left: -5px;
+}
+
+.nameSpans span:nth-child(19) {
+  transform: rotate(90deg);
+  margin-left: 33px;
+  min-width: 40px;
+}
+
+.nameSpans span:nth-child(18) {
+  margin-top: -18.5px;
+  margin-left: 14px;
+}
+
+.nameSpans span:nth-child(20) {
+  margin-left: 14px;
+}
+
+//=============N================
+
+.nameSpans span:nth-child(21) {
+  transform: rotate(90deg);
+  margin-left: 40px;
+  min-width: 40px;
+}
+
+.nameSpans span:nth-child(22) {
+  transform: rotate(45deg);
+  margin-left: 51px;
+  min-width: 56px;
+}
+
+.nameSpans span:nth-child(23) {
+  transform: rotate(90deg);
+  margin-left: 78px;
+  min-width: 40px;
+}
+
+//=============CHANGE================//
+
+
+//=============N================
+
+.nameSpans.change span:nth-child(1) {
+  margin-left: -153px;
+}
+
+.nameSpans.change span:nth-child(2) {
+  transform: rotate(45deg);
+  margin-left: -142px;
+  min-width: 56px;
+  margin-top: 0;
+}
+
+.nameSpans.change span:nth-child(3) {
+  margin-left: -115px;
+}
+
+.nameSpans.change span:nth-child(4) {
+  transform: rotate(90deg);
+  margin-left: -64px;
+  min-width: 40px;
+  margin-top: 0;
+}
+
+//=============Ö================
+.nameSpans.change span:nth-child(6) {
+  min-width: 21px;
+  margin-top: 9px;
+  margin-left: -99px;
+  transform: rotate(90deg);
+}
+
+//=============R============
+.nameSpans.change span:nth-child(10) {
+  margin-top: -18.5px;
+}
+
+.nameSpans.change span:nth-child(11) {
+  margin-left: 89px;
+  min-width: 21px;
+  transform: rotate(0deg);
+  top: 8px;
+}
+
+.nameSpans.change span:nth-child(12) {
+  min-width: 21px;
+  margin-top: -9px;
+}
+
+.nameSpans.change span:nth-child(13) {
+  transform: rotate(50deg);
+  margin-top: 10px;
+  margin-left: -28px;
+  min-width: 27px;
+}
+
+//=============T================
+
+.nameSpans.change span:nth-child(15) {
+  margin-top: -18.5px;
+  margin-left: 0;
+  transform: rotate(0deg);
+}
+
+.nameSpans.change span:nth-child(16) {
+  margin-left: -0px;
+  transform: rotate(90deg);
+  min-width: 40px;
+}
+
+//=============H================
+.nameSpans.change span:nth-child(17) {
+  transform: rotate(90deg);
+  min-width: 40px;
+  margin-left: 25px;
+}
+
+.nameSpans.change span:nth-child(19) {
+  transform: rotate(90deg);
+  margin-left: 63px;
+  min-width: 40px;
+}
+
+.nameSpans.change span:nth-child(18) {
+  margin-top: -18.5px;
+  margin-left: 89px;
+}
+
+.nameSpans.change span:nth-child(20) {
+  margin-left: 44px;
+}
+
+//=============N================
+.nameSpans.change span:nth-child(21) {
+  transform: rotate(90deg);
+  margin-left: 115px;
+  min-width: 40px;
+}
+
+.nameSpans.change span:nth-child(22) {
+  transform: rotate(45deg);
+  margin-left: 126px;
+  min-width: 56px;
+}
+
+.nameSpans.change span:nth-child(23) {
+  transform: rotate(90deg);
+  margin-left: 153px;
+  min-width: 40px;
+}
+
+//=============E================
+.nameSpans span:nth-child(24),
+.nameSpans span:nth-child(25),
+.nameSpans span:nth-child(26) {
+  opacity: 0;
+}
+
+.nameSpans.change span:nth-child(24),
+.nameSpans.change span:nth-child(25),
+.nameSpans.change span:nth-child(26) {
+  opacity: 1;
+}
+
+.nameSpans.change span:nth-child(24) {
+  transform: rotate(90deg);
+  margin-left: 70px;
+  min-width: 40px;
+}
+
+.nameSpans.change span:nth-child(25) {
+  margin-left: 89px;
+  min-width: 40px;
+  margin-top: 18.5px;
+}
+
+@media (max-width: 875px) {
+  .nameSpans {
+    margin-top: 120px;
+    padding-left: 35px;
+  }
+
+  .nameSpans.change {
+    margin-left: -80px;
+    padding-left: 0;
+  }
+
+  .nameSpans span {
+    background-color: $mainLightGreen;
+  }
+}
+
+@media (max-width: 700px) {
+  .nameSpans {
+    transform: scale(1.5);
+  }
+
+  .nameSpans.change {
+    margin-left: -60px;
+    }
+}
+
+@media (max-width: 500px) {
+  .nameSpans {
+    transform: scale(1);
+  }
+
+  .nameSpans.change {
+    margin-left: -40px;
+    }
+}
+
+@media (max-width: 315px) {
+  .nameSpans {
+    transform: scale(.5);
+  }
+
+  .nameSpans.change {
+    margin-left: -20px;
+    }
+}
+
+

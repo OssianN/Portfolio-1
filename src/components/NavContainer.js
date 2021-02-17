@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
 import Navigation from './NavigationBar';
+import Hamburger from './hamburger';
 import '../styles/navbar.scss';
 
 const Nav = props => {
   const [showMobileNav, setShowMobileNav] = useState('-400px');
-  const [navToogleClass, setNavToggleClass] = useState('');
-
-  const handleMobileNavToggle = () => {
-    if (showMobileNav === '0') {
-      setShowMobileNav('-400px');
-      setNavToggleClass('')
-    } else {
-      setShowMobileNav('0');
-      setNavToggleClass('open')
-    }
-  }
 
   return (
     <>
-      <button className='mobileNavButton' onClick={handleMobileNavToggle}>
+      {/* <button className='mobileNavButton' onClick={handleMobileNavToggle}>
         <div id='nav-icon2' className={navToogleClass}>
           <span></span>
           <span></span>
@@ -27,7 +17,11 @@ const Nav = props => {
           <span></span>
           <span></span>
         </div>
-      </button>
+      </button> */}
+      <Hamburger
+        showMobileNav={showMobileNav}
+        setShowMobileNav={setShowMobileNav}
+      /> 
       <Navigation
         showMobileNav={showMobileNav}
         tabName={props.tabName}

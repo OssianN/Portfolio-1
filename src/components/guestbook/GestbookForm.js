@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import axios from 'axios';
 import './guestBook.scss';
 require('dotenv').config();
 
@@ -13,12 +12,6 @@ const GuestBookForm = (props) => {
     nameValue.current.value = null;
     messageValue.current.value = null;
   };
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  }
 
   const hideFormIfMobile = () => {
     if (window === 'undefined') return;
