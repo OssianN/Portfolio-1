@@ -5,15 +5,18 @@
   display: flex;
   margin-top: 100px;
   transition: 1s ease-out;
+  position: relative;
+  height: 40px;
 }
 
 .nameSpans span {
   position: absolute;
   min-height: 3px;
+  max-height: 3px;
   min-width: 40px;
   background-color: $mainDarkGreen;
-  border-radius: 5px;
-  transition: 1s ease-out;
+  border-radius: 20px;
+  transition: 1s;
   align-self: center;
 }
 
@@ -37,11 +40,11 @@
 
 
 .nameSpans span:nth-child(2) {
-  margin-top: 18.5px;
+  top: 0;
 }
 
 .nameSpans span:nth-child(4) {
-  margin-top: -18.5px;
+  bottom: 0;
 }
 
 //=============S================//
@@ -55,25 +58,25 @@
 }
 
 .nameSpans span:nth-child(5) {
-  margin-top: -18.5px;
+  bottom: 0;
 }
 
 .nameSpans span:nth-child(6) {
   min-width: 21px;
   margin-left: -99px;
-  margin-top: -9px;
+  top: 9px;
   transform: rotate(90deg);
 }
 
 .nameSpans span:nth-child(8) {
   min-width: 21px;
   margin-left: -62px;
-  margin-top: 9px;
+  top: 28px;
   transform: rotate(90deg);
 }
 
 .nameSpans span:nth-child(9) {
-  margin-top: 18.5px;
+  top: 0;
 }
 
 //=============S================
@@ -86,25 +89,25 @@
 }
 
 .nameSpans span:nth-child(10) {
-  margin-top: -18.5px;
+  bottom: 0;
 }
 
 .nameSpans span:nth-child(11) {
   min-width: 21px;
   margin-left: -54px;
-  margin-top: -9px;
+  top: 9px;
   transform: rotate(90deg);
 }
 
 .nameSpans span:nth-child(12) {
   min-width: 21px;
   margin-left: -17px;
-  margin-top: 9px;
+  top: 28px;
   transform: rotate(90deg);
 }
 
 .nameSpans span:nth-child(13) {
-  margin-top: 18.5px;
+  top: 0;
 }
 
 //=============IAN================
@@ -147,7 +150,7 @@
 }
 
 .nameSpans span:nth-child(18) {
-  margin-top: -18.5px;
+  top: 0;
   margin-left: 14px;
 }
 
@@ -188,7 +191,7 @@
   transform: rotate(45deg);
   margin-left: -142px;
   min-width: 56px;
-  margin-top: 0;
+  top: 18.5px;
 }
 
 .nameSpans.change span:nth-child(3) {
@@ -199,45 +202,45 @@
   transform: rotate(90deg);
   margin-left: -64px;
   min-width: 40px;
-  margin-top: 0;
+  top: 18.5px;
 }
 
 //=============Ö================
 .nameSpans.change span:nth-child(6) {
   min-width: 21px;
-  margin-top: 9px;
+  top: 28px;
   margin-left: -99px;
   transform: rotate(90deg);
 }
 
 //=============R============
 .nameSpans.change span:nth-child(10) {
-  margin-top: -18.5px;
+  top: 0;
 }
 
 .nameSpans.change span:nth-child(11) {
   margin-left: 89px;
   min-width: 21px;
   transform: rotate(0deg);
-  top: 8px;
+  top: 18px;
 }
 
 .nameSpans.change span:nth-child(12) {
   min-width: 21px;
-  margin-top: -9px;
+  top: 9px;
 }
 
 .nameSpans.change span:nth-child(13) {
-  transform: rotate(50deg);
-  margin-top: 10px;
-  margin-left: -28px;
-  min-width: 27px;
+  transform: rotate(43deg);
+  top: 28px;
+  margin-left: -31px;
+  min-width: 29px;
 }
 
 //=============T================
 
 .nameSpans.change span:nth-child(15) {
-  margin-top: -18.5px;
+  top: 0;
   margin-left: 0;
   transform: rotate(0deg);
 }
@@ -262,7 +265,7 @@
 }
 
 .nameSpans.change span:nth-child(18) {
-  margin-top: -18.5px;
+  top: 37px;
   margin-left: 89px;
 }
 
@@ -311,7 +314,7 @@
 .nameSpans.change span:nth-child(25) {
   margin-left: 89px;
   min-width: 40px;
-  margin-top: 18.5px;
+  top: 0;
 }
 
 @media (max-width: 875px) {
