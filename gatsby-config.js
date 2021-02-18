@@ -1,11 +1,17 @@
-const env = require('dotenv');
+require('dotenv').config();
 
 module.exports = {
   plugins: [
-    `gatsby-plugin-recaptcha`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-recaptcha`,
+      options: {
+         async: true,
+         defer: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

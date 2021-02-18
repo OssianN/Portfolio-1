@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './guestBook.scss';
+import Recaptcha from 'react-recaptcha';
 require('dotenv').config();
 
 const GuestBookForm = (props) => {
@@ -55,6 +56,10 @@ const GuestBookForm = (props) => {
   const handleCancelForm = () => {
     props.showGuestBookForm();
   }
+
+  const recapthchaLoaded = () => {
+    console.log('recaptcha loaded');
+  }
   
   return (
     <form
@@ -62,6 +67,7 @@ const GuestBookForm = (props) => {
       className={`guestBookForm ${props.showForm} ${props.formDisplay}`}
       data-netlify-honeypot="bot-field"
       name="guestBook"
+      data-netlify-recaptcha="true"
     >
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" type='button' onClick={handleCancelForm}>&#10005;</button>
@@ -70,6 +76,7 @@ const GuestBookForm = (props) => {
       <input id='nameInput' ref={nameValue} onChange={handleNameChange} name="guestName"></input>
       <label htmlFor='messageInput'>Message</label>
       <textarea id='messageInput' ref={messageValue} onChange={handleMsgChange} name="guestMessage"></textarea>
+      <div data-netlify-recaptcha="true"></div>
       <button type='submit' id='sendMessage'>Send It</button>
     </form>
   );
