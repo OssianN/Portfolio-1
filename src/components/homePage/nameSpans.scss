@@ -1,22 +1,24 @@
 @import '../../styles/global.scss';
 
 .nameSpans {
+  will-change: transform;
   transform: scale(2);
   display: flex;
-  margin-top: 100px;
+  margin-top: 80px;
   transition: 1s ease-out;
   position: relative;
   height: 40px;
 }
 
 .nameSpans span {
+  will-change: transform;
   position: absolute;
   min-height: 3px;
   max-height: 3px;
   min-width: 40px;
   background-color: $mainDarkGreen;
   border-radius: 20px;
-  transition: 1s;
+  transition: 1s ease-out;
   align-self: center;
 }
 
@@ -44,7 +46,7 @@
 }
 
 .nameSpans span:nth-child(4) {
-  bottom: 0;
+  top: 37px;
 }
 
 //=============S================//
@@ -58,7 +60,7 @@
 }
 
 .nameSpans span:nth-child(5) {
-  bottom: 0;
+  top: 37px;
 }
 
 .nameSpans span:nth-child(6) {
@@ -89,7 +91,7 @@
 }
 
 .nameSpans span:nth-child(10) {
-  bottom: 0;
+  top: 37px;
 }
 
 .nameSpans span:nth-child(11) {
@@ -135,6 +137,11 @@
   min-width: 40px;
 }
 
+.nameSpans span:nth-child(15) {
+  opacity: 0;
+  top: 9px;
+}
+
 //=============A================
 
 .nameSpans span:nth-child(17) {
@@ -176,6 +183,11 @@
   transform: rotate(90deg);
   margin-left: 78px;
   min-width: 40px;
+}
+
+.nameSpans span:nth-child(25) {
+  top: 0;
+  margin-left: 14px;
 }
 
 //=============CHANGE================//
@@ -222,7 +234,7 @@
   margin-left: 89px;
   min-width: 21px;
   transform: rotate(0deg);
-  top: 18px;
+  top: 18.5px;
 }
 
 .nameSpans.change span:nth-child(12) {
@@ -231,16 +243,17 @@
 }
 
 .nameSpans.change span:nth-child(13) {
-  transform: rotate(43deg);
+  transform: rotate(45deg);
   top: 28px;
-  margin-left: -31px;
-  min-width: 29px;
+  margin-left: -29px;
+  min-width: 28px;
 }
 
 //=============T================
 
 .nameSpans.change span:nth-child(15) {
   top: 0;
+  opacity: 1;
   margin-left: 0;
   transform: rotate(0deg);
 }
@@ -265,7 +278,7 @@
 }
 
 .nameSpans.change span:nth-child(18) {
-  top: 37px;
+  top: 0;
   margin-left: 89px;
 }
 
@@ -292,6 +305,12 @@
   min-width: 40px;
 }
 
+.nameSpans span:nth-child(24) {
+  transform: rotate(90deg);
+  margin-left: 33px;
+  min-width: 40px;
+}
+
 //=============E================
 .nameSpans span:nth-child(24),
 .nameSpans span:nth-child(25),
@@ -314,12 +333,12 @@
 .nameSpans.change span:nth-child(25) {
   margin-left: 89px;
   min-width: 40px;
-  top: 0;
+  top: 37px;
 }
 
 @media (max-width: 875px) {
   .nameSpans {
-    margin-top: 115px;
+    margin-top: 95px;
     padding-left: 35px;
   }
 

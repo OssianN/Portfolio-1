@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import './guestBook.scss';
-import Recaptcha from 'react-recaptcha';
 require('dotenv').config();
 
 const GuestBookForm = (props) => {
@@ -55,10 +54,6 @@ const GuestBookForm = (props) => {
 
   const handleCancelForm = () => {
     props.showGuestBookForm();
-  }
-
-  const recapthchaLoaded = () => {
-    console.log('recaptcha loaded');
   }
   
   return (
