@@ -7,7 +7,7 @@ const SocialMedia = () => {
     <>
       <div className='externalLinksContainer'>
         <div className='externalLinksBlob'>
-          <img src={images.blob}></img>
+          <img src={images.blob} alt='blob'></img>
         </div>
         <a href='https://github.com/OssianN'>
           <img src={images.git} alt='GitHub link' />

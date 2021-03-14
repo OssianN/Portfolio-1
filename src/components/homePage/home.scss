@@ -151,23 +151,6 @@
     background-repeat: no-repeat;
   }
 
-  // .title::after {
-  //   content: "";
-  //   position: absolute;
-  //   border: 2px solid #a8ffdf;
-  //   border-radius: 8px;
-  //   height: 90px;
-  //   margin-top: 36px;
-  //   width: 611px;
-  // }
-
-  // .titleHeading {
-  //   font-size: 4em;
-  //   margin: 0;
-  //   color: #a8ffdf;
-  //   text-align: center;
-  // }
-
   .titleDescription {
     position: absolute;
     margin: 0;
@@ -185,10 +168,6 @@
     margin-top: 27px;
     width: 354px;
   }
-
-  // .titleHeading {
-  //   font-size: 2.2em;
-  // }
 }
 
 @media (max-width: 500px) {
@@ -201,10 +180,6 @@
     margin-top: 60px;
     font-size: 14px;
   }
-
-  // .titleHeading {
-  //   font-size: 2.2em;
-  // }
 }
 
 @media (max-width: 375px) {
@@ -213,10 +188,6 @@
     margin-top: 30px;
     width: 285px;
   }
-
-  // .titleHeading {
-  //   font-size: 1.8em;
-  // }
 }
 
 @media (max-width: 295px) {

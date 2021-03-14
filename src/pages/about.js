@@ -37,19 +37,29 @@ const About = () => {
               <ul>
               <h2>Frontend</h2>
                 <li>
-                  HTML
+                  <p>
+                    HTML
+                  </p>
                 </li>
                 <li>
-                  CSS/SASS
+                  <p>
+                    CSS/SASS
+                  </p>
                 </li>
                 <li>
-                  React
+                  <p>
+                    React
+                  </p>
                 </li>
                 <li>
-                  Gatsby
+                  <p>
+                    Gatsby
+                  </p>
                 </li>
                 <li>
-                  Redux
+                  <p>
+                    Redux
+                  </p>
                 </li>
               </ul>
             </div>
@@ -60,22 +70,34 @@ const About = () => {
               <ul>
                 <h2>Backend</h2>
                 <li>
-                  Node.js
+                  <p>
+                    Node.js
+                  </p>
                 </li>
                 <li>
-                  Express.js
+                  <p>
+                    Express.js
+                  </p>
                 </li>
                 <li>
-                  REST
+                  <p>
+                    REST
+                  </p>
                 </li>
                 <li>
-                  GraphQL
+                  <p>
+                    GraphQL
+                  </p>
                 </li>
                 <li>
-                  MongoDB
+                  <p>
+                    MongoDB
+                  </p>
                 </li>
                 <li>
-                  SQL
+                  <p>
+                    SQL
+                  </p>
                 </li>
               </ul>
             </div>
@@ -86,25 +108,39 @@ const About = () => {
               <ul>
               <h2>Tools</h2>
                 <li>
-                  Netlify
+                  <p>
+                    Netlify
+                  </p>
                 </li>
                 <li>
-                  Heroku
+                  <p>
+                    Heroku
+                  </p>
                 </li>
                 <li>
-                  Contentful
+                  <p>
+                    Contentful
+                  </p>
                 </li>
                 <li>
-                  Mocha/Jest
+                  <p>
+                    Mocha/Jest
+                  </p>
                 </li>
                 <li>
-                  TDD
+                  <p>
+                    TDD
+                  </p>
                 </li>
                 <li>
-                  Figma
+                  <p>
+                    Figma
+                  </p>
                 </li>
                 <li>
-                  Agile methods
+                  <p>
+                    Agile methods
+                  </p>
                 </li>
               </ul>
             </div>

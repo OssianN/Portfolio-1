@@ -1,14 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavContainer from './NavContainer';
 import SocialMedia from './socialMedia/SocialMedia';
 import { Helmet } from 'react-helmet';
 
-const Template = ({ children, tabName }) => {
+const Template = ({ children }) => {
   return (
     <>
-      <NavContainer 
-        tabName={tabName}
-        />
+      <NavContainer />
       <Helmet title='Ossian Nörthen' />
       { children }
       <SocialMedia />

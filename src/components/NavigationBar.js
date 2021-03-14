@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 import '../styles/navbar.scss';
 
@@ -25,7 +25,7 @@ const Navigation = props => {
       const currentScrollY = window.scrollY;
       const windowBottom = window.innerHeight + window.pageYOffset;
       const bodyHeight = document.documentElement.scrollHeight;
-      if (prevScrollY < currentScrollY && currentScrollY > 50 || windowBottom >= bodyHeight) {
+      if ((prevScrollY < currentScrollY && currentScrollY > 50) || windowBottom >= bodyHeight) {
         navbarRef.current.classList.add('scrollNav');
       } else {
         navbarRef.current.classList.remove('scrollNav');
@@ -34,29 +34,42 @@ const Navigation = props => {
     }
   }
 
+  const handleActiveTab = () => {
+    console.log(props.location);
+  }
+
   useEffect(() => {
     hideNavOnScroll();
     changeNavBackground();
+    handleActiveTab();
   });
 
   return (
     <nav className='navbar' ref={navbarRef} style={{marginRight: props.showMobileNav}}>
       <ul>
-        <span className='activeTabSpan activeHome' style={{opacity: props.tabName === 'home' ? 1 : 0}}></span>
-        <li>
-          <Link to="/">home</Link>
+        <li className='navbar__list-item'>
+          <Link to="/" activeClassName='activeTab'>
+            <span className='navbar__list-item__active-span'></span>
+            home
+          </Link>
         </li>
-        <span className='activeTabSpan activeAbout' style={{opacity: props.tabName === 'about' ? 1: 0}}></span>
-        <li>
-          <Link to="/about/">about</Link>
+        <li className='navbar__list-item'>
+          <Link to="/about/" activeClassName='activeTab'>
+            <span className='navbar__list-item__active-span'></span>
+            about
+          </Link>
         </li>
-        <span className='activeTabSpan activeGuestBook' style={{opacity: props.tabName === 'guest-book' ? 1: 0}}></span>
-        <li>
-          <Link to="/guest-book/">guest book</Link>
+        <li className='navbar__list-item'>
+          <Link to="/guest-book/" activeClassName='activeTab'>
+            <span className='navbar__list-item__active-span'></span>
+            guest book
+          </Link>
         </li>
-        <span className='activeTabSpan activePortfolio' style={{opacity: props.tabName === 'portfolio' ? 1: 0}}></span>
-        <li>
-          <Link to="/portfolio/">portfolio</Link>
+        <li className='navbar__list-item'>
+          <Link to="/portfolio/" activeClassName='activeTab'>
+            <span className='navbar__list-item__active-span'></span>
+            portfolio
+          </Link>
         </li>
       </ul>
     </nav>

@@ -3,7 +3,7 @@ import GuestBookForm from '../components/guestbook/GestbookForm';
 import Layout from '../components/Layout';
 import '../components/guestbook/guestBook.scss';
 
-const GuestBook = (props) => {
+const GuestBook = () => {
   const [updateMessages, setUpdateMessages] = useState(0);
   const [messages, setMessages] = useState([]);
   const [showForm, setShowForm] = useState('hideGuestBookForm');
