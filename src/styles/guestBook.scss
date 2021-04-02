@@ -128,11 +128,16 @@
   color: #4c695e;
 }
 
+.message__emphasize-container {
+  position: relative;
+  display: inline-block;
+}
+
 .message__emphasize-span {
   position: absolute;
   font-size: 3rem;
   left: 0;
-  bottom: -.4rem;
+  bottom: 0;
   font-family: 'Kalam', cursive;
   color: $lightFontColor;
   transition: font-size .5s;

@@ -28,7 +28,7 @@ const GuestBook = () => {
         if(match[0] && !oneMatch) {
           oneMatch = true;
           return (
-            <span key={i} style={{position: 'relative'}}>
+            <span key={i} className='message__emphasize-container'>
               <span className='message__emphasize-span'>{ ` ${match.join('')}` }</span>
               <span className='message__emphasize-placeholder'>{ ` ${match.join('')}` }</span>
             </span>
