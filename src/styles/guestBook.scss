@@ -45,6 +45,10 @@
   pointer-events: none;
 }
 
+.displayNoneClass{
+  display: none !important;
+}
+
 .guestBook input,
 .guestBook textarea,
 .guestBook button {
@@ -125,26 +129,38 @@
 }
 
 .message__emphasize-span {
+  position: absolute;
+  font-size: 3rem;
+  left: 0;
+  bottom: -.4rem;
   font-family: 'Kalam', cursive;
+  color: $lightFontColor;
   transition: font-size .5s;
 }
 
 .is-visible .message__emphasize-span {
-  min-width: 3rem;
-  font-size: 3rem;
-  font-family: 'Kalam', cursive;
-  color: $lightFontColor;
   animation-name: emphasize;
   animation-duration: .5s;
 }
 
 @keyframes emphasize {
   0% {
+    font-size: 3rem;
+  }
+  10% {
     font-size: 1.7rem;
+  }
+  80% {
+    font-size: 6rem;
   }
   100% {
     font-size: 3rem;
   }
+}
+
+.message__emphasize-placeholder {
+  font-size: 2.7rem;
+  opacity: 0;
 }
 
 @media (min-width: 1001px) {

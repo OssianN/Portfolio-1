@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../../styles/guestBook.scss';
 require('dotenv').config();
 
@@ -6,6 +6,7 @@ const GuestBookForm = (props) => {
   const [nameData, setNameData] = useState(null);
   const [msgData, setMsgData] = useState(null);
   const [error, setError] = useState(null);
+  const formRef = useRef();
   const nameValue = useRef('');
   const messageValue = useRef('');
 
@@ -62,8 +63,9 @@ const GuestBookForm = (props) => {
   
   return (
     <form
+      ref={formRef}
       onSubmit={e => handleSubmitMessage(e)}
-      className={`guestBookForm ${props.showForm} ${props.formDisplay}`}
+      className={`${props.formDisplay} guestBookForm ${props.showForm}`}
       data-netlify-honeypot="bot-field"
       name="guestBook"
       data-netlify-recaptcha="true"
