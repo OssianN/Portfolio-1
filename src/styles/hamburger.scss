@@ -20,11 +20,11 @@
 }
 
 #nav-icon2 span:nth-child(odd) {
-  border-radius: 9px 0 0 9px;
+  border-radius: .75rem 0 0 .75rem;
 }
 
 #nav-icon2 span:nth-child(even) {
-  border-radius: 0 9px 9px 0;
+  border-radius: 0 .75rem .75rem 0;
 }
 
 #nav-icon2 span:nth-child(1),
@@ -40,7 +40,7 @@
 #nav-icon2 span:nth-child(3) {
   top: 10px;
   width: 100%;
-  border-radius: 9px;
+  border-radius: .75rem;
 }
 
 #nav-icon2 span:nth-child(4),
@@ -61,7 +61,7 @@
 #nav-icon2.open span:nth-child(2) {
   transform: rotate(220deg);
   top: 5px;
-  border-radius: 9px;
+  border-radius: .75rem;
 }
 
 #nav-icon2.open span:nth-child(3) {
@@ -72,7 +72,7 @@
 #nav-icon2.open span:nth-child(4) {
   transform: rotate(-220deg);
   top: 15px;
-  border-radius: 9px;
+  border-radius: .75rem;
 }
 
 #nav-icon2.open span:nth-child(5) {

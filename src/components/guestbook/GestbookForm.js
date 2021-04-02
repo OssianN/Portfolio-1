@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react';
-import './guestBook.scss';
+import '../../styles/guestBook.scss';
 require('dotenv').config();
 
 const GuestBookForm = (props) => {
   const [nameData, setNameData] = useState(null);
   const [msgData, setMsgData] = useState(null);
+  const [error, setError] = useState(null);
   const nameValue = useRef('');
   const messageValue = useRef('');
 
@@ -19,9 +20,12 @@ const GuestBookForm = (props) => {
       props.showGuestBookForm();
     }
   }
-  
+
   const handleSubmitMessage = async e => {
     e.preventDefault();
+    if( !nameData || !msgData ) {
+      return setError('enter a name and a message to send :)')
+    }
     hideFormIfMobile();
 
     const messageData = {
@@ -66,7 +70,7 @@ const GuestBookForm = (props) => {
     >
       <input type="hidden" name="form-name" value="guestBook" />
       <button className="cancelFormButton" type='button' onClick={handleCancelForm}>&#10005;</button>
-      <h1>Write something for all visitors to see... or just smile and wave!</h1>
+      { error ? <p>{ error }</p> : <p></p> }
       <label htmlFor='nameInput'>Your Name</label>
       <input id='nameInput' ref={nameValue} onChange={handleNameChange} name="guestName"></input>
       <label htmlFor='messageInput'>Message</label>

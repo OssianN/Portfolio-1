@@ -11,53 +11,58 @@ const About = () => {
       <div className='aboutContainer'>
         <div className='about'>
           <div className='myStory'>
-            <h1>My story in a few sentences</h1>
-            <p>
+            <h1 className='header-title--standard'>A quick summary of my journey.</h1>
+            <p className='bread-text--standard'>
               Human interaction and behavior has for a long time been an interest of mine.
               With that interest in <i>mind</i>, I tailored my education at Lund's university to result in two bachelor degrees – one in Sociology, one in Psychology – and one master's degree in HR and work psychology.
               <br />
               <br />
-              Plot twist though, towards the end of this journey I discovered software development.
+              <b className='bold-text--big'>Plot twist</b> though, towards the end of this journey I discovered software development.
               I quickly realized, that was an even better fit for me, as I found it extremly captivating and rewarding.
               I decided, after my masters, to persue this dream.
               This is when I discovered &lt;/salt&gt; – a possibility for me to achieve this goal through an intense bootcamp.
-              Out of 1500 applicants, me and 30 others were selected for the program after having gone through an extensive assessment process.
+              <b className='bold-text--big'> Out of 1500 applicants</b>, me and 30 others were selected for the program after having gone through an extensive assessment process.
               When the bootcamp was coming to an end, I was asked by &lt;/salt&gt; to come work as an instructor for the bootcamp.
               <br />
               <br />
-              Sort of full circle, I'm now working as a Full Stack JS instructor.
+              Sort of full circle, I'm now working as a <b className='bold-text--big'>Full Stack JS instructor</b>.
               I get to apply my knowledge about software development as well as people every day, and I also learn a lot about both in the process.
             </p>
           </div>
           <div className='aboutListContainer' >
             <div className='skillBall'>
             <ReactSVG
-                blobType={randomNum + 1 <= 9 ? randomNum + 1 : 0}
+                blobType={2}
               />
               <ul>
-              <h2>Frontend</h2>
+              <h2 className='about-list__category-title'>Frontend</h2>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
+                    Javascript
+                  </p>
+                </li>
+                <li>
+                  <p className='about-list__category-list-item'>
                     HTML
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     CSS/SASS
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     React
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Gatsby
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Redux
                   </p>
                 </li>
@@ -65,37 +70,37 @@ const About = () => {
             </div>
             <div className='skillBall'>
               <ReactSVG
-                blobType={randomNum}
+                blobType={1}
               />
               <ul>
-                <h2>Backend</h2>
+                <h2 className='about-list__category-title' >Backend</h2>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Node.js
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Express.js
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     REST
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     GraphQL
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     MongoDB
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     SQL
                   </p>
                 </li>
@@ -103,43 +108,43 @@ const About = () => {
             </div>
             <div className='skillBall'>
             <ReactSVG
-                blobType={randomNum - 1 >= 0 ? randomNum - 1 : 9}
+                blobType={0}
               />
               <ul>
-              <h2>Tools</h2>
+              <h2 className='about-list__category-title' >Tools</h2>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Netlify
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Heroku
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Contentful
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Mocha/Jest
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     TDD
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className='about-list__category-list-item'>
                     Figma
                   </p>
                 </li>
                 <li>
-                  <p>
-                    Agile methods
+                  <p className='about-list__category-list-item'>
+                    Agile
                   </p>
                 </li>
               </ul>

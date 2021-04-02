@@ -9,7 +9,7 @@
 .navbar a {
   color: #3b5249;
   text-decoration: none;
-  font-family: Sofia Pro ExtraLight;
+  font-family: Sofia Pro Light;
 }
 
 .fadeListTop {
@@ -30,6 +30,11 @@
     transition: .3s;
     z-index: 110;
     overflow: hidden;
+  }
+
+  .glass-nav {
+    background: linear-gradient(white, #ffffff80);
+    backdrop-filter: blur(2rem);
   }
 
   .navbar ul {
@@ -77,21 +82,32 @@
   }
 
   .navbar__list-item__active-span {
-    min-height: 1.5px;
-    width: 100%;
+    min-height: 3px;
+    width: 50px;
     top: -80px;
     position: absolute;
-    align-self: center;
+    margin-left: 50%;
+    left: -25px;
     transition: 1s;
     background-color: #3b5249;
-    border-radius: 3px;
+    border-radius: 1rem;
     z-index: 200;
   }
 
   .activeTab > .navbar__list-item__active-span {
     top: 10px !important;
     transition: 1s;
+    animation-name: active-span;
   }
+
+  // @keyframes active-span {
+  //   0% {
+  //     top: -80px;
+  //   }
+  //   100% {
+  //     top: -30px;
+  //   }
+  // }
 }
 
 @media (max-width: 1000px) {
@@ -100,11 +116,13 @@
     height: 100%;
     right: 0;
     background-color: #fffffff3 !important;
+    backdrop-filter: blur(2rem);
     box-shadow: 0 0 5px #80808083;
     transition: .5s ease-in-out;
+    overflow-y: scroll;
     z-index: 110;
   }
-  
+
   .mobileNavButton {
     position: fixed;
     border: none;
@@ -122,11 +140,10 @@
   
   .navbar ul {
     flex-direction: column;
-    width: 250px;
-    height: 100%;
-    padding-top: 20%;
+    width: 210px;
+    padding-left: 40px;
+    padding-top: 100px;
     list-style: none;
-    overflow: hidden;
   }
 
   .activeTabSpan {
@@ -137,7 +154,7 @@
     margin-top: 60px;
     margin-left: 15px;
     background-color: #3b5249;
-    border-radius: 3px;
+    border-radius: 1rem;
     transition: 1s;
   }
 
@@ -146,9 +163,8 @@
   }
   
   .navbar ul li {
-    margin: 40px 0;
-    padding: 7%;
-    font-size: 1.3em;
+    padding-bottom: 70px;
+    font-size: 1.7em;
   }
   
   #homeLinkMobile {

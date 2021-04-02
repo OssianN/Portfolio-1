@@ -1,7 +1,7 @@
-$mainYellow: #fcdfa6;
+$mainYellow: #fff4df;
 $mainDarkGreen: #3b5249;
-$mainLightGreen: #a8ffdf;
-$mainYellow2: #fcdfa6f3;
+$mainLightGreen: #c7ffeb;
+$lightFontColor: #4c695e;
 
 button:focus {
   outline: none;
@@ -13,4 +13,28 @@ body {
 
 div[role="group"][tabindex] {
   height: 100%;
+}
+
+.header-title--standard {
+  font-size: 4rem;
+  font-family: Sofia Pro Medium;
+  line-height: 3.5rem;
+  color: $lightFontColor;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  width: 300px;
+}
+
+.bread-text--standard {
+  font-size: 1rem;
+  line-height: 1.7rem;
+  font-weight: normal;
+  font-family: Sofia Pro ExtraLight;
+  margin: 1.5rem 0;
+}
+
+.bold-text--big {
+  font-family: Sofia Pro SemiBold;
+  color: $mainDarkGreen;
 }

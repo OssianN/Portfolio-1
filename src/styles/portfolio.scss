@@ -6,14 +6,13 @@
   display: flex;
   justify-content: center;
   color: #3b5249;
-  background: linear-gradient($mainYellow 2%, #cce6ff);
+  background: linear-gradient($mainYellow, $mainLightGreen);
 }
 
 .fade-in-section {
   width: 100%;
   max-width: 600px;
   opacity: 0;
-  transform: translateY(30vh);
   visibility: hidden;
   transition: opacity 1200ms ease-out, transform 600ms ease-out,
     visibility 1200ms ease-out;
@@ -22,24 +21,35 @@
 
 .fade-in-section.is-visible {
   opacity: 1;
-  transform: none;
+  transform: none !important;
   visibility: visible;
 }
 
-.portfolio_header {
+.portfolio__header {
+  width: 90%;
+  max-width: 600px;
   text-align: justify;
 }
 
-.portfolio_box_header {
+.portfolio-box__header {
+  padding-top: 40px;
+  padding-bottom: 20px;
   text-align: center;
+  font-family: 'Kalam', cursive;
+  color: $lightFontColor
+}
+
+.portfolio-box__bread-text {
+  padding: 0 20px;
 }
 
 .portfolio {
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 190px;
+  margin-top: 130px;
   overflow: hidden;
 }
 
@@ -49,14 +59,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
 }
 
 .timePole {
   min-height: 80px;
   width: 2px;
   background-color: #0000003a;
-  border-radius: 2px;
+  border-radius: .75rem;
 }
 
 .backToPortfolioLink {
@@ -81,7 +90,7 @@
 .portfolioImg {
   position: relative;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: .75rem;
   box-shadow: 0 0 5px #80808063;
   
 }
@@ -91,8 +100,21 @@
   margin-top: 7%;
 }
 
-.beginning {
-  padding-bottom: 70px;
+.time-pole__p.present {
+  margin-bottom: 40px;
+}
+
+.time-pole__p.beginning {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.fade-in-section:nth-of-type(4n+0) {
+  transform: translateX(30vw);
+}
+
+.fade-in-section:nth-of-type(4n+2) {
+  transform: translateX(-30vw);
 }
 
 @media (max-width: 1000px) {
@@ -119,12 +141,17 @@
     width: 100%;
   }
 
+  .portfolio-box__header {
+    font-size: 2.5rem;
+  }
+
   .fade-in-section {
     width: 65%;
   }
   
   .fade-in-section:nth-of-type(4n+0) {
     padding-left: 35%;
+    transform: translateX(30vw);
   }
 
   .fade-in-section:nth-of-type(4n+0) > .portfolio_box_header {
@@ -133,6 +160,7 @@
 
   .fade-in-section:nth-of-type(4n+2) {
     padding-right: 35%;
+    transform: translateX(-30vw);
   }
 
   .fade-in-section:nth-of-type(4n+2) > .portfolio_box_header {

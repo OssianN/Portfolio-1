@@ -32,32 +32,33 @@ const Portfolio = () => {
   )
 
   const portfolios = data.allContentfulPortfolio?.edges;
+  const reversePortfolio = portfolios?.reverse();
 
   return (
     <Layout tabName='portfolio'>
       <div className='portfolioContainer'>
         <div className='portfolio'>
-          <header className='portfolio_header'>
-            <h2>Here are some projects I've done, starting from my first app at the bottom up to now.</h2>
+          <header className='portfolio__header'>
+            <h1 className='header-title--standard'>Here are some projects I've done.</h1>
           </header>
           <div className='projectsContainer'>
-            <p>present</p>
+            <p className='time-pole__p present'>present</p>
             <div className='timePole'></div>
-            {portfolios?.reverse().map(portfolio => {
+            {reversePortfolio?.map((portfolio, i) => {
               return (
                 <>
-                <FadeInSection>
-                  <h2 className='portfolio_box_header'>{ portfolio.node.title }</h2>
+                <FadeInSection key={i}>
+                  <h2 className='portfolio-box__header'>{ portfolio.node.title }</h2>
                   <a href={ portfolio.node.link } className='portfolioLink'>
                     <Img fluid={ portfolio.node.portfolioImg.fluid } alt={ portfolio.node.portfolioImg.title } className='portfolioImg'></Img>
                   </a>
-                  <p>{ portfolio.node.description.description }</p>
+                  <p className='bread-text--standard portfolio-box__bread-text'>{ portfolio.node.description.description }</p>
                 </FadeInSection>
                 <div className='timePole'></div>
                 </>
               )
             })}
-            <p className='beginning'>beginning</p>
+            <p className='time-pole__p beginning'>beginning</p>
           </div>
         </div>
       </div>

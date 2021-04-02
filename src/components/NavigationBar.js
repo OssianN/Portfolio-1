@@ -9,10 +9,10 @@ const Navigation = props => {
 
   const changeNavBackground = () => {
     if (isWindowAndNavUndefined()) return;
-    if ( window.scrollY > 0 ) {
-      navbarRef.current.style.backgroundColor = '#fcdfa6f6';
+    if ( window.scrollY > 100 ) {
+      navbarRef.current.classList.add('glass-nav');
     } else {
-      navbarRef.current.style.backgroundColor = 'transparent';
+      navbarRef.current.classList.remove('glass-nav');
     }
   }
 
@@ -34,14 +34,9 @@ const Navigation = props => {
     }
   }
 
-  const handleActiveTab = () => {
-    console.log(props.location);
-  }
-
   useEffect(() => {
     hideNavOnScroll();
     changeNavBackground();
-    handleActiveTab();
   });
 
   return (
@@ -50,25 +45,25 @@ const Navigation = props => {
         <li className='navbar__list-item'>
           <Link to="/" activeClassName='activeTab'>
             <span className='navbar__list-item__active-span'></span>
-            home
+            Home
           </Link>
         </li>
         <li className='navbar__list-item'>
           <Link to="/about/" activeClassName='activeTab'>
             <span className='navbar__list-item__active-span'></span>
-            about
+            About
           </Link>
         </li>
         <li className='navbar__list-item'>
           <Link to="/guest-book/" activeClassName='activeTab'>
             <span className='navbar__list-item__active-span'></span>
-            guest book
+            Guestbook
           </Link>
         </li>
         <li className='navbar__list-item'>
           <Link to="/portfolio/" activeClassName='activeTab'>
             <span className='navbar__list-item__active-span'></span>
-            portfolio
+            Portfolio
           </Link>
         </li>
       </ul>

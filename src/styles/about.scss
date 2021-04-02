@@ -24,19 +24,20 @@
   display: flex;
   justify-content: center;
   color: #3b5249;
-  background: linear-gradient($mainYellow 2%, #cce6ff);
+  background: linear-gradient($mainYellow 2%, $mainLightGreen);
   overflow: hidden;
 }
 
 .about {
   margin-top: 130px;
+  padding: 0 60px;
 }
 
 .myStory {
   max-width: 600px;
   margin: 0 auto;
   margin-bottom: 120px;
-  text-align: justify;
+  text-align: left;
 }
 
 .aboutListContainer {
@@ -53,6 +54,20 @@
   padding: 0;
   margin: 0;
   z-index: 20;
+}
+
+.about-list__category-title {
+  font-size: 1rem;
+  font-family: Sofia Pro ExtraLight;
+  color:#4c6b5f;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-list__category-list-item {
+  font-size: 2.5rem;
+  font-family: Sofia Pro Medium;
+  color: #4a645a;
 }
 
 .skillBall {
@@ -90,8 +105,8 @@
 
 .reactBlob {
   pointer-events: none;
-  overflow: hidden;
-  padding-top: 10%;
+  width: 400px;
+  height: 400px;
 }
 
 .reactBlob path {
@@ -99,11 +114,6 @@
 }
 
 @media (min-width: 801px) {
-  .about h1 {
-    font-size: 4em;
-    text-align: left;
-  }
-
   .skillBall {
     margin-top: 30px;
     font-size: 1.2em;
@@ -118,22 +128,14 @@
   }
 
   .reactBlob {
-    width: 100%;
     transform: scale(2);
   }
 }
 
 @media (max-width: 800px) {
   .myStory {
-    padding: 15%;
-    padding-bottom: 0;
+    padding: 0 15%;
     margin-bottom: 0;
-  }
-  
-  .about h1 {
-    margin-top: 0;
-    font-size: 2.2em;
-    text-align: left;
   }
 
   .skillBall {
@@ -142,7 +144,6 @@
   }
 
   .reactBlob {
-    width: 100%;
-    transform: scale(1.7);
+    transform: scale(1.8);
   }
 }
