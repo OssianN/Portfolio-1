@@ -7,8 +7,9 @@ const SocialMedia = () => {
     <>
       <div className='externalLinksContainer'>
         <div className='externalLinksBlob'>
-          <img src={images.blob} alt='blob'></img>
+          {/* <img src={images.blob} alt='blob'></img> */}
         </div>
+        <div className='social-media__inset-bubble'></div>
         <a href='https://github.com/OssianN'>
           <img src={images.git} alt='GitHub link' />
         </a>

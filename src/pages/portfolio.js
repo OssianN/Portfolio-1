@@ -42,7 +42,6 @@ const Portfolio = () => {
             <h1 className='header-title--standard'>Here are some projects I've done.</h1>
           </header>
           <div className='projectsContainer'>
-            <p className='time-pole__p present'>present</p>
             <div className='timePole'></div>
             {reversePortfolio?.map((portfolio, i) => {
               return (
@@ -58,7 +57,6 @@ const Portfolio = () => {
                 </>
               )
             })}
-            <p className='time-pole__p beginning'>beginning</p>
           </div>
         </div>
       </div>

@@ -20,6 +20,7 @@
   min-width: 40px;
   opacity: 0;
   background: linear-gradient(to right, #fff, #ffffffcb);
+  backdrop-filter: blur(1rem);
   border-radius: .75rem;
   box-shadow: 0 0 .6rem #a1a1a188;
   transition: transform 1s ease-out;
@@ -346,8 +347,8 @@
   
   @media (max-width: 600px) {
     .nameSpans {
-      transform: scale(1.4);
-      top: 55px;
+      transform: scale(1.2);
+      top: 40px;
     }
   }
   
