@@ -13,7 +13,7 @@
 }
 
 .nameSpans span {
-  will-change: transform;
+  will-change: transform opacity;
   position: absolute;
   min-height: 5px;
   max-height: 5px;
@@ -23,7 +23,7 @@
   backdrop-filter: blur(1rem);
   border-radius: .75rem;
   box-shadow: 0 0 .6rem #a1a1a188;
-  transition: transform 1s ease-out;
+  animation-duration: .5s;
   align-self: center;
   cursor: pointer;
 }
@@ -50,7 +50,6 @@
 .nameSpans span:nth-child(20),
 .nameSpans span:nth-child(25) {
   animation-name: no-change-span--horizontal;
-  animation-duration: 1.2s;
 }
 
 .nameSpans span:nth-child(1),
@@ -67,14 +66,11 @@
 .nameSpans span:nth-child(23),
 .nameSpans span:nth-child(24) {
   animation-name: no-change-span--vertical;
-  animation-duration: 1.2s;
 }
 
 .nameSpans span:nth-child(2),
 .nameSpans span:nth-child(4) {
   margin-left: 0;
-  animation-name: no-change-span--horizontal;
-  animation-duration: 1s;
 }
 .nameSpans span:nth-child(1),
 .nameSpans span:nth-child(3) {
@@ -281,7 +277,8 @@
       opacity: 1;
     }
     100% {
-      transform: scale(20) rotate(300deg);
+      transform: scale(20) rotate(90deg);
+      // transform: scale(20) rotate(300deg);
       opacity: 0;
     }
   }
@@ -291,7 +288,8 @@
       opacity: 1;
     }
     100% {
-      transform: scale(20) rotate(300deg);
+      // transform: scale(20) rotate(300deg);
+      transform: scale(20);
       opacity: 0;
     }
   }
@@ -301,7 +299,8 @@
       opacity: 1;
     }
     100% {
-      transform: scale(20), rotate(200deg);
+      // transform: scale(20), rotate(200deg);
+      transform: scale(20);
       opacity: 0;
     }
   }
@@ -313,16 +312,19 @@
     }
     100% {
       transform: scale(1) rotate(90deg);
+      // transform: scale(1);
       opacity: 1;
     }
   }
 
   @keyframes no-change-span--horizontal {
     0% {
-      transform: scale(20) rotate(300deg);
+      // transform: scale(20) rotate(300deg);
+      transform: scale(20);
       opacity: 0;
     }
     100% {
+      // transform: scale(1);
       transform: scale(1) rotate(0deg);
       opacity: 1;
     }
@@ -330,10 +332,12 @@
 
   @keyframes no-change-span--diagonal {
     0% {
-      transform: scale(20) rotate(300deg) ;
+      // transform: scale(20) rotate(300deg) ;
+      transform: scale(20);
       opacity: 0;
     }
     100% {
+      // transform: scale(1);
       transform: scale(1) rotate(45deg);
       opacity: 1;
     }

@@ -16,13 +16,13 @@
 
 .social-media__inset-bubble {
   position: absolute;
-  background: linear-gradient(to right, #ffffff, #ffffffce);
-  backdrop-filter: blur(2rem);
+  background-image: linear-gradient(to left, #ffffff, #ffffff56);
+  backdrop-filter: blur(1rem);
   border-radius: 50%;
-  width: 210px;
-  height: 190px;
-  top: -120px;
-  left: -80px;
+  width: 290px;
+  height: 250px;
+  top: -150px;
+  right: -90px;
   box-shadow: 0 0 10px #4d4d4d31;
 }
 
@@ -67,6 +67,13 @@
 
   .externalLinksContainer a img {
     width: 30px;
+  }
+
+  .social-media__inset-bubble {
+    width: 210px;
+    height: 190px;
+    top: -120px;
+    left: -80px;
   }
 
   .externalLinksBlob {

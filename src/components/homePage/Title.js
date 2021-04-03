@@ -25,8 +25,8 @@ const Title = () => {
   const renderSpans = () => {
     const arr = Array(23).fill(0);
     return arr.map((span, i) => {
-      const delay = i / 10;
-      return <span key={i} style={{animationDelay: `${delay}s`, animationFillMode: 'both'}} className=''></span>;
+      const delay = i / 7;
+      return <span key={i} style={{ animationDelay: `${delay}s`, animationFillMode: 'both'}} className=''></span>;
     })
   }
 

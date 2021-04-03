@@ -45,10 +45,6 @@
   pointer-events: none;
 }
 
-.displayNoneClass{
-  display: none !important;
-}
-
 .guestBook input,
 .guestBook textarea,
 .guestBook button {
@@ -61,7 +57,8 @@
   align-items: center;
   flex-grow: 0;
   border-radius: .75rem;
-  background-color: #ffffff67;
+  background: linear-gradient(white, #ffffff80);
+  backdrop-filter: blur(2rem);
   box-shadow: 0 0 10px #c5c5c585;
   z-index: 100;
 }
@@ -206,14 +203,16 @@
 }
 
 @media (max-width: 1000px) {
+  .displayNoneClass{
+    display: none !important;
+  }
+
   .guestBook {
     flex-direction: column;
   }
 
   .guestBookForm {
     position: fixed;
-    background-color: #ffffffee;
-    box-shadow: 0 0 100px rgb(179, 179, 179);
   }
 
   .showGuestBookForm {
@@ -278,6 +277,7 @@
   }
 
   .guestBook .messages {
+    margin: 0 auto;
     margin-top: 130px;
     max-width: 680px;
     justify-self: center;

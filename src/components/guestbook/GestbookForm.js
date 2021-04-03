@@ -16,8 +16,10 @@ const GuestBookForm = (props) => {
   };
 
   const hideFormIfMobile = () => {
+    console.log('hej')
     if (window === 'undefined') return;
     if (window.innerWidth > 1000) {
+      console.log(window.innerWidth)
       props.showGuestBookForm();
     }
   }

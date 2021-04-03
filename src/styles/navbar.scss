@@ -82,7 +82,7 @@
   }
 
   .navbar__list-item__active-span {
-    min-height: 3px;
+    min-height: 2px;
     width: 50px;
     top: -80px;
     position: absolute;
@@ -99,15 +99,6 @@
     transition: 1s;
     animation-name: active-span;
   }
-
-  // @keyframes active-span {
-  //   0% {
-  //     top: -80px;
-  //   }
-  //   100% {
-  //     top: -30px;
-  //   }
-  // }
 }
 
 @media (max-width: 1000px) {
@@ -147,7 +138,7 @@
   }
 
   .activeTabSpan {
-    min-height: 2px;
+    min-height: 1.5px;
     min-width: 185px;
     opacity: 0;
     position: absolute;
@@ -173,5 +164,21 @@
   
   #homeLink {
     display: none;
+  }
+
+  .navbar__list-item__active-span {
+    min-height: 3px;
+    padding: 2px;
+    margin-right: 20px;
+    transition: 1s;
+    background-color: #3b5249;
+    border-radius: 1rem;
+    z-index: 200;
+    opacity: 0;
+  }
+
+  .activeTab > .navbar__list-item__active-span {
+    opacity: 1;
+    margin-left: 20px;
   }
 }
