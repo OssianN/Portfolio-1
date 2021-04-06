@@ -111,11 +111,11 @@
 }
 
 .fade-in-section:nth-of-type(4n+0) {
-  transform: translateX(30vw);
+  transform: translateX(10vw);
 }
 
 .fade-in-section:nth-of-type(4n+2) {
-  transform: translateX(-30vw);
+  transform: translateX(-10vw);
 }
 
 @media (max-width: 1000px) {

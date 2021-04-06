@@ -8,7 +8,7 @@ const ProfileImage = () => {
 const handleTitleTransition = () => {
   return setTimeout(() => {
     return setShowImage('profileImageBig');
-  }, 100);
+  }, 200);
 };
 
 handleTitleTransition();

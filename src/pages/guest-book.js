@@ -79,7 +79,7 @@ const GuestBook = () => {
       <div className='guestBookContainer'>
         <div className='guestBook'>
           <div className='messages'>
-            <h1 className='guestbook-title header-title--standard'>Write something for all visitors to see...
+            <h1 className='header-title--standard guestbook-title'>Write something for all visitors to see...
               <p className='guestbook-form__title-span bread-text--standard'>or just smile and wave!</p>
             </h1>
             <div className='mobileMessageButton'>

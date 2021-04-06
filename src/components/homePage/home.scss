@@ -11,11 +11,14 @@
   }
 }
 
-@keyframes profileImageBig {
-  0% {
-    opacity: 0;
-  }
-}
+// @keyframes profileImageBig {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
 //_______________________________________________________________________________//
 
@@ -41,11 +44,6 @@
 
 .imgContainer {
   position: fixed;
-}
-
-.profileImageBig {
-  animation-name: profileImageBig;
-  animation-duration: 1s;
 }
 
 @media (min-width: 876px) {
@@ -87,8 +85,8 @@
     flex-direction: column;
     align-items: center;
     border-radius: .75rem;
-    background-image: linear-gradient(to left, #ffffffde, #ffffff13);
-    box-shadow: 0 0 1rem #c2c2c288;
+    background-image: linear-gradient(to left top, #ffffffde, #ffffff4d);
+    box-shadow: 0 0 1rem #3d3d3d2c;
     backdrop-filter: blur(2rem);
     background-repeat: no-repeat;
   }
