@@ -15,35 +15,11 @@
   display: none;
 }
 
-.title {
-  animation-name: title;
-  animation-duration: 1s ease-in;
-}
-
 .profile-img__container {
   position: fixed;
 }
 
 @media (min-width: 876px) {
-  %textClip {
-    background-image: linear-gradient(90deg, #3b5249 50%, $mainLightGreen 50%);
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-align: center;
-  }
-
-  %headerBorder {
-    content: "";
-    position: absolute;
-    border-top: 3px solid;
-    border-bottom: 3px solid;
-    border-left: 3px solid;
-    border-radius: .75rem 0 0 .75rem;
-    margin-top: -2px;
-  }
-
   .profile-img__img {
     z-index: 10;
     position: fixed;
@@ -75,32 +51,6 @@
     transition: 1s ease-out;
     z-index: 10;
   }
-
-  .titleHeading {
-    font-size: 5em;
-    font-weight: 100;
-    margin: 0;
-    padding: 0;
-    padding-left: 1.25em;
-    @extend %textClip;
-  }
-  
-  // .title-description {
-  //   position: absolute;
-  //   bottom: -50px;
-  //   right: 10px;
-  //   font-size: 1.5rem;
-  //   color: white;
-  //   text-shadow: 0 0 5px #494949;
-  // }
-}
-
-.changeNameButton {
-  background-color: transparent;
-  border: none;
-  width: 100%;
-  height: 40vh;
-  position: absolute;
 }
 
 @media (max-width: 875px) {
@@ -108,42 +58,30 @@
     z-index: 0;
     position: fixed;
     object-fit: cover;
+    transition: 1s ease-in;
     width: 100vw;
     min-height: 100vh;
     overflow: hidden;
   }
 
-  .title {
-    z-index: 100;
+  .home__glas-container {
+    z-index: 10;
     min-width: 95%;
-    min-height: 200px;
-    margin: 0 auto;
-    margin-bottom: -200px;
-    padding: 0;
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    align-items: center;
-    background-image: linear-gradient(to right, white, #ffffff99);
-    box-shadow: 0 0 10px #2b2b2b83;
-    border-radius: .75rem;
-    backdrop-filter: blur(2rem);
-    background-repeat: no-repeat;
-  }
-
-  // .titleDescription {
-  //   position: absolute;
-  //   margin: 0;
-  //   padding: 0;
-  //   font-size: 1.2em;
-  //   margin-top: 25px;
-  //   color: #a8ffdf;
-  //   text-align: center;
-  // }
-}
-
-@media (max-width: 600px) {
-  .title {
     min-height: 120px;
+    margin: auto auto;
+    padding: 0;
+    position: relative;
+  }
+  
+  .home__glas-box {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: .75rem;
+    background-image: linear-gradient(to left top, #ffffffde, #ffffff4d);
+    box-shadow: 0 0 1rem #3d3d3d2c;
+    backdrop-filter: blur(2rem);
+    opacity: 0;
+    transition: 1s ease-out;
   }
 }
