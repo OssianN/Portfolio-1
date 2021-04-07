@@ -40,8 +40,8 @@ const Navigation = props => {
   });
 
   return (
-    <nav className='navbar' ref={navbarRef} style={{marginRight: props.showMobileNav, ...props.homeTransition}}>
-      <ul>
+    <nav className='navbar' ref={navbarRef} style={{marginRight: props.showMobileNav,}}>
+      <ul style={props.homeTransition}>
         <li className='navbar__list-item'>
           <Link to="/" activeClassName='activeTab'>
             <span className='navbar__list-item__active-span'></span>

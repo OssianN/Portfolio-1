@@ -12,7 +12,7 @@ const Nav = props => {
       setHomeTransition({ opacity: 1 });
     }
     if (props.tabName === 'home') {
-      setTimeout(() => setHomeTransition({ transition: '2s ease-in', opacity: 1 }), 4500);
+      setTimeout(() => setHomeTransition({ transition: '1s ease-out', opacity: 1 }), 4500);
     }
   }, [])
 

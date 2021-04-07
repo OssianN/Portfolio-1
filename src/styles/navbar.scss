@@ -121,7 +121,7 @@
     background: linear-gradient(to right, #fffffff3, #ffffffd3) !important;
     backdrop-filter: blur(2rem);
     box-shadow: 0 0 5px #80808083;
-    transition: .5s ease-in-out;
+    transition: .5s;
     overflow-y: scroll;
     z-index: 110;
   }

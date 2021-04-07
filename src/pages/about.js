@@ -37,8 +37,8 @@ const About = () => {
     <Layout tabName='about'>
       <div className='aboutContainer'>
         <div className='about'>
+          <h1 className='header-title--standard'>A quick summary of my journey.</h1>
           <div className='myStory'>
-            <h1 className='header-title--standard'>A quick summary of my journey.</h1>
             <p className='bread-text--standard'>
               Human interaction and behavior has for a long time been an interest of mine.
               With that interest in <i>mind</i>, I tailored my education at Lund's university to result in two bachelor degrees – one in Sociology, one in Psychology – and one master's degree in HR and work psychology.
