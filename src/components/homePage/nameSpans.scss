@@ -1,18 +1,18 @@
 @import '../../styles/global.scss';
 
 .nameSpans {
-  transform: scale(2);
   display: flex;
   top: 80px;
   transition: 1s ease-out;
   position: relative;
   height: 40px;
   width: 233px;
-  z-index: -1;
+  margin: 0 auto;
+  transform: scale(1.9);
+  z-index: 20;
 }
 
 .nameSpans span {
-  will-change: transform opacity;
   position: absolute;
   min-height: 5px;
   max-height: 5px;

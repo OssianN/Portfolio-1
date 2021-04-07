@@ -6,7 +6,7 @@ import '../styles/layout.scss';
 const Home = () => {
   return (
     <div className="App">
-      <Layout tabName='home'>
+      <Layout tabName='home' delay={6000}>
         <HomePage />
       </Layout>
     </div>

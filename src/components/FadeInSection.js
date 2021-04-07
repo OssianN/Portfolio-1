@@ -7,7 +7,7 @@ const FadeInSection = props => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setVisible(entry.isIntersecting));
-    }, { root: null, rootMargin: '0px', threshold: 0.6 });
+    }, { root: null, rootMargin: '0px', threshold: 0.4 });
     observer.observe(domRef.current);
   }, []);
 

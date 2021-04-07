@@ -1,27 +1,5 @@
 @import '../../styles/global.scss';
 
-//___________________________________keyframes__________________________________//
-
-@keyframes title {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-// @keyframes profileImageBig {
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
-
-//_______________________________________________________________________________//
-
 .home {
   position: relative;
   min-height: 100%;
@@ -39,10 +17,10 @@
 
 .title {
   animation-name: title;
-  animation-duration: 2s;
+  animation-duration: 1s ease-in;
 }
 
-.imgContainer {
+.profile-img__container {
   position: fixed;
 }
 
@@ -66,29 +44,36 @@
     margin-top: -2px;
   }
 
-  .profileImageBig {
+  .profile-img__img {
     z-index: 10;
     position: fixed;
     margin-left: 50vw;
     object-fit: cover;
     width: 50vw;
     min-height: 100vh;
+    transition: 1s ease-in;
     overflow: hidden;
   }
-  
-  .title {
+
+  .home__glas-container {
     z-index: 10;
     margin: auto auto;
+    position: relative;
     min-height: 200px;
     min-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
+  
+  .home__glas-box {
+    position: absolute;
+    min-height: 200px;
+    min-width: 800px;
     border-radius: .75rem;
     background-image: linear-gradient(to left top, #ffffffde, #ffffff4d);
     box-shadow: 0 0 1rem #3d3d3d2c;
     backdrop-filter: blur(2rem);
-    background-repeat: no-repeat;
+    opacity: 0;
+    transition: 1s ease-out;
+    z-index: 10;
   }
 
   .titleHeading {
@@ -100,14 +85,14 @@
     @extend %textClip;
   }
   
-  .titleDescription {
-    margin: 0;
-    margin-left: 130px;
-    padding: 0;
-    color: $mainDarkGreen;
-    align-self: flex-start;
-    position: absolute;
-  }
+  // .title-description {
+  //   position: absolute;
+  //   bottom: -50px;
+  //   right: 10px;
+  //   font-size: 1.5rem;
+  //   color: white;
+  //   text-shadow: 0 0 5px #494949;
+  // }
 }
 
 .changeNameButton {
@@ -119,7 +104,7 @@
 }
 
 @media (max-width: 875px) {
-  .profileImageBig {
+  .profile-img__img {
     z-index: 0;
     position: fixed;
     object-fit: cover;
@@ -146,15 +131,15 @@
     background-repeat: no-repeat;
   }
 
-  .titleDescription {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    font-size: 1.2em;
-    margin-top: 25px;
-    color: #a8ffdf;
-    text-align: center;
-  }
+  // .titleDescription {
+  //   position: absolute;
+  //   margin: 0;
+  //   padding: 0;
+  //   font-size: 1.2em;
+  //   margin-top: 25px;
+  //   color: #a8ffdf;
+  //   text-align: center;
+  // }
 }
 
 @media (max-width: 600px) {

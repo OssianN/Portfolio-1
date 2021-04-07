@@ -1,5 +1,14 @@
 @import './global.scss';
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .9;
+  }
+}
+
 .navContainer {
   position: fixed;
   z-index: 150;
@@ -24,7 +33,7 @@
 @media (min-width: 1001px) {
   .navbar {
     position: fixed;
-    height: 130px;
+    height: 100px;
     width: 100%;
     top: 0;
     transition: .3s;
@@ -44,7 +53,7 @@
     align-items: center;
     width: 100%;
     margin-left: 0 !important;
-    margin: 16px 0;
+    margin: 0;
     padding: 0 2%;
     list-style: none;
   }
@@ -66,9 +75,12 @@
     border-top: 3px solid #00000000;
     padding: 40px 0 0 0;
     text-align: center;
-    font-size: 1.1em;
     margin: 0 20px;
     transition: 0.3s;
+  }
+
+  .navbar li a {
+    font-size: 1.3rem;
   }
 
   @media (hover: hover) and (pointer: fine) {

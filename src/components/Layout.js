@@ -3,13 +3,13 @@ import NavContainer from './NavContainer';
 import SocialMedia from './socialMedia/SocialMedia';
 import { Helmet } from 'react-helmet';
 
-const Template = ({ children }) => {
+const Template = ({ tabName, children }) => {
   return (
     <>
-      <NavContainer />
+      <NavContainer tabName={tabName} />
       <Helmet title='Ossian Nörthen' />
       { children }
-      <SocialMedia />
+      <SocialMedia tabName={tabName} />
     </>
   )
 }

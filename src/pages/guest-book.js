@@ -53,7 +53,7 @@ const GuestBook = () => {
       const info = message.node || message
       return (
         <BiggerTextInView key={info._id}>
-          <p className='bread-text--standard'>{info.name} {info.preview ? <span className='localPreview'>{info.preview}</span> : ''}</p>
+          <p className='bread-text--standard'>{info.name}</p>
           <p className='message__body-p'>{emphasizeAdjective(info.msg)}</p>
         </BiggerTextInView>
       );

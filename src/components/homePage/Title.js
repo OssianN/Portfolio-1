@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import './home.scss';
 import './nameSpans.scss';
 
@@ -8,9 +8,9 @@ const lastName = 'NÖRTHEN';
 const desc = 'Software · Technology · People';
 
 const Title = () => {
-  const [ titleShow, setTitleShow ] = useState('hide');
+  const [ titleShow, setTitleShow ] = useState({});
 
-  const handleTitleTransition = () => setTimeout(() => setTitleShow('title'), 300);
+  const handleTitleTransition = () => setTimeout(() => setTitleShow({ opacity: '1' }), 4500);
   const removeClassOnDelay = element => setTimeout(() => element.classList?.remove('change'), 3000);
   const addNeutralClass = element => !element?.classList?.contains('name-span--neutral')
     ? element?.classList?.add('name-span--neutral')
@@ -25,22 +25,22 @@ const Title = () => {
   const renderSpans = () => {
     const arr = Array(23).fill(0);
     return arr.map((span, i) => {
-      const delay = (i / 7) + 1;
+      const delay = (i / 7);
       return <span key={i} style={{ animationDelay: `${delay}s`, animationFillMode: 'both'}} className=''></span>;
     })
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleTitleTransition();
   }, []);
 
   return (
-    <div className={titleShow} >
-      {/* <p className='titleDescription'>{ desc }</p> */}
-      <h1 style={{display: 'none'}}>{ firstName }{ lastName }</h1>
+    <div className='home__glas-container'>
+      <div className='home__glas-box' style={titleShow} ></div>
       <div className={`nameSpans`} onClick={handleNameChange}>
         {renderSpans()}
       </div>
+      <h1 style={{display: 'none'}}>{ firstName }{ lastName }</h1>
     </div>
   );
 };

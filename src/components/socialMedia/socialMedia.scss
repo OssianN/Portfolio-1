@@ -1,3 +1,12 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .externalLinksContainer {
   position: fixed;
   display: flex;
@@ -17,13 +26,18 @@
 .social-media__inset-bubble {
   position: absolute;
   background-image: linear-gradient(to left top, #ffffffde, #ffffff4d);
-  backdrop-filter: blur(1rem);
+  box-shadow: 0 0 1rem #3d3d3d2c;
+  transition: 1s;
+  backdrop-filter: blur(2rem);
   border-radius: 50%;
   width: 290px;
   height: 250px;
   top: -160px;
   right: -100px;
-  box-shadow: 0 0 10px #4d4d4d23;
+}
+
+.externalLinksContainer a {
+  transition: 1s;
 }
 
 @media (min-width: 1001px) {
