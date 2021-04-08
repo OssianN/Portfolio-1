@@ -5,14 +5,14 @@ import '../styles/navbar.scss';
 
 const Nav = props => {
   const [showMobileNav, setShowMobileNav] = useState('-400px');
-  const [ homeTransition, setHomeTransition ] = useState({opacity: 0});
+  const [ homeTransition, setHomeTransition ] = useState(null);
 
   useLayoutEffect(() => {
     if (props.tabName !== 'home') {
       setHomeTransition({ opacity: 1 });
     }
     if (props.tabName === 'home') {
-      setTimeout(() => setHomeTransition({ transition: '1s ease-out', opacity: 1 }), 4500);
+      setTimeout(() => setHomeTransition({ transition: '1s ease-out', opacity: 1 }), 6000);
     }
   }, [])
 

@@ -34,9 +34,11 @@
   height: 250px;
   top: -160px;
   right: -100px;
+  opacity: 0;
 }
 
 .externalLinksContainer a {
+  opacity: 0;
   transition: 1s;
 }
 

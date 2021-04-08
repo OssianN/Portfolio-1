@@ -1,28 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import images from '../../images';
 import './socialMedia.scss';
 
 const SocialMedia = ( { tabName } ) => {
-  const [ hide, setHide ] = useState('0');
+  const [ socialMediaTransition, setSocialMediaTransition ] = useState(null);
 
-  if (tabName === 'home') {
-    setTimeout(() => setHide('1'), 4500)
-  }
-
-  if (!tabName || tabName !== 'home') {
-    setTimeout(() => setHide('1'), 0)
-  }
+  useLayoutEffect(() => {
+    if (tabName !== 'home') {
+      setSocialMediaTransition({ opacity: 1 });
+    }
+    if (tabName === 'home') {
+      setTimeout(() => setSocialMediaTransition({ transition: '1s ease-out', opacity: 1 }), 6000);
+    }
+  }, [])
 
   return (
     <>
       <div className='externalLinksContainer'>
         <div className='externalLinksBlob'>
         </div>
-        <div className='social-media__inset-bubble' style={{opacity: hide}}></div>
-        <a href='https://github.com/OssianN' style={{opacity: hide}}>
+        <div className='social-media__inset-bubble' style={socialMediaTransition}></div>
+        <a href='https://github.com/OssianN' style={socialMediaTransition}>
           <img src={images.git} alt='GitHub link' />
         </a>
-        <a href='https://linkedin.com/in/ossian-nörthen' style={{opacity: hide}}>
+        <a href='https://linkedin.com/in/ossian-nörthen' style={socialMediaTransition}>
           <img src={images.linkedin} alt='LinkedIn link' />
         </a>
       </div>

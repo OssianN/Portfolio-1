@@ -10,7 +10,7 @@ const desc = 'Software · Technology · People';
 const Title = () => {
   const [ titleShow, setTitleShow ] = useState({});
 
-  const handleTitleTransition = () => setTimeout(() => setTitleShow({ opacity: '1' }), 4500);
+  const handleTitleTransition = () => setTimeout(() => setTitleShow({ opacity: '1' }), 6000);
   const removeClassOnDelay = element => setTimeout(() => element.classList?.remove('change'), 3000);
   const addNeutralClass = element => !element?.classList?.contains('name-span--neutral')
     ? element?.classList?.add('name-span--neutral')
@@ -25,7 +25,7 @@ const Title = () => {
   const renderSpans = () => {
     const arr = Array(23).fill(0);
     return arr.map((span, i) => {
-      const delay = (i / 7);
+      const delay = (i / 7) + 1.5;
       return <span key={i} style={{ animationDelay: `${delay}s`, animationFillMode: 'both'}} className=''></span>;
     })
   }
