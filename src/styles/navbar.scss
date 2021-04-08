@@ -42,8 +42,9 @@
   }
 
   .glass-nav {
-    background: linear-gradient(white, #ffffffc2);
+    background: linear-gradient(to right, white, #ffffff00);
     backdrop-filter: blur(2rem);
+    box-shadow: 0 0 5px #0303031a;
   }
 
   .navbar ul {
@@ -162,12 +163,8 @@
     transition: 1s;
   }
 
-  .activeTabSpan.activeHome {
-    margin-top: 100px;
-  }
-  
   .navbar ul li {
-    padding-bottom: 70px;
+    padding-bottom: 50px;
     font-size: 1.7em;
   }
   
@@ -179,19 +176,24 @@
     display: none;
   }
 
+  a.activeTab {
+    margin-left: 40px;
+  }
+
   .navbar__list-item__active-span {
-    min-height: 3px;
-    padding: 2px;
-    margin-right: 20px;
-    transition: 1s;
-    background-color: #3b5249;
+    width: 3px;
+    height: 30px;
+    background: $mainDarkGreen;
+    position: absolute;
+    left: 0;
+    margin-top: -5px;
+    margin-left: 40px;
     border-radius: 1rem;
-    z-index: 200;
+    display: inline-block;
     opacity: 0;
   }
 
   .activeTab > .navbar__list-item__active-span {
     opacity: 1;
-    margin-left: 20px;
   }
 }

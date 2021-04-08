@@ -66,10 +66,10 @@
 
   .home__glas-container {
     z-index: 10;
-    min-width: 95%;
-    min-height: 120px;
     margin: auto auto;
     padding: 0;
+    min-width: 95%;
+    min-height: 200px;
     position: relative;
   }
   
@@ -83,5 +83,11 @@
     backdrop-filter: blur(2rem);
     opacity: 0;
     transition: 1s ease-out;
+  }
+
+  @media (max-width: 600px) {
+    .home__glas-container {
+      min-height: 120px;
+    }
   }
 }
