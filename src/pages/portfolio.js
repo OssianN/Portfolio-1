@@ -19,7 +19,12 @@ const Portfolio = () => {
             link
             slug
             title
-            portfolioImg {
+            desktopImage {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+            mobileImage {
               fluid {
                 ...GatsbyContentfulFluid
               }
@@ -36,24 +41,31 @@ const Portfolio = () => {
 
   return (
     <Layout tabName='portfolio'>
-      <div className='portfolioContainer'>
+      <div className='portfolio__container'>
         <div className='portfolio'>
           <header className='portfolio__header'>
             <h1 className='header-title--standard'>Here are some projects I've done.</h1>
           </header>
-          <div className='projectsContainer'>
-            <div className='timePole'></div>
-            {reversePortfolio?.map((portfolio, i) => {
+          <div className='projects__container'>
+            <div className='time-pole'></div>
+            {reversePortfolio?.map((project, i) => {
               return (
                 <>
                 <FadeInSection key={i}>
-                  <h2 className='portfolio-box__header'>{ portfolio.node.title }</h2>
-                  <a href={ portfolio.node.link } className='portfolioLink'>
-                    <Img fluid={ portfolio.node.portfolioImg.fluid } alt={ portfolio.node.portfolioImg.title } className='portfolioImg'></Img>
+                  <h2 className='project-box__header'>{ project.node.title }</h2>
+                  <a className='project__link' href={ project.node.link }>
+                    <div className='project__img-container'>
+                      <div className='project__img-frame--desktop'>
+                        <Img className='project__desktop-img' fluid={ project.node.desktopImage.fluid } alt={ project.node.title }></Img>
+                      </div>
+                      <div className='project__img-frame--mobile'>
+                        <Img className='project__mobile-img' fluid={ project.node.mobileImage?.fluid } alt={ project.node.title }></Img>
+                      </div>
+                    </div>
                   </a>
-                  <p className='bread-text--standard portfolio-box__bread-text'>{ portfolio.node.description.description }</p>
+                  <p className='bread-text--standard project-box__bread-text'>{ project.node.description.description }</p>
                 </FadeInSection>
-                <div className='timePole'></div>
+                <div className='time-pole'></div>
                 </>
               )
             })}

@@ -24,7 +24,7 @@ div[role="group"][tabindex] {
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 100px;
-  width: 300px;
+  width: 220px;
 }
 
 .bread-text--standard {
@@ -38,4 +38,10 @@ div[role="group"][tabindex] {
 .bold-text--big {
   font-family: Sofia Pro SemiBold;
   color: $lightFontColor;
+}
+
+@media (min-width: 767px) {
+  .header-title--standard {
+    width: 300px;
+  }
 }
