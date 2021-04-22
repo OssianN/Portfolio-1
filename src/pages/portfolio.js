@@ -55,12 +55,14 @@ const Portfolio = () => {
                   <h2 className='project-box__header'>{ project.node.title }</h2>
                   <a className='project__link' href={ project.node.link }>
                     <div className='project__img-container'>
-                      <div className='project__img-frame--desktop'>
+                      <div className={`project__img-frame--desktop ${project.node.mobileImage ? '' : 'no-mobile'}`}>
                         <Img className='project__desktop-img' fluid={ project.node.desktopImage.fluid } alt={ project.node.title }></Img>
                       </div>
-                      <div className='project__img-frame--mobile'>
-                        <Img className='project__mobile-img' fluid={ project.node.mobileImage?.fluid } alt={ project.node.title }></Img>
-                      </div>
+                      { project.node.mobileImage
+                        ? <div className='project__img-frame--mobile'>
+                            <Img className='project__mobile-img' fluid={ project.node.mobileImage?.fluid } alt={ project.node.title }></Img>
+                          </div>
+                        : <></> }
                     </div>
                   </a>
                   <p className='bread-text--standard project-box__bread-text'>{ project.node.description.description }</p>
