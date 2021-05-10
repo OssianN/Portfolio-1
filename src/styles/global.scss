@@ -16,7 +16,7 @@ div[role="group"][tabindex] {
 }
 
 .header-title--standard {
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: Sofia Pro Medium;
   line-height: 3.5rem;
   color: $lightFontColor;
@@ -38,6 +38,13 @@ div[role="group"][tabindex] {
 .bold-text--big {
   font-family: Sofia Pro SemiBold;
   color: $lightFontColor;
+}
+
+@media (min-width: 420px) {
+  .header-title--standard {
+    font-size: 4rem;
+    width: 300px;
+  }
 }
 
 @media (min-width: 767px) {
