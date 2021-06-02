@@ -71,7 +71,7 @@ const GuestBook = () => {
   }
 
   useEffect(() => {
-    if (!messages) {
+    if (messages.length === 0) {
       fetchDBMessages();
     }
   });
