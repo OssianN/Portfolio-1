@@ -6,19 +6,17 @@ const SocialMedia = ( { tabName } ) => {
   const [ socialMediaTransition, setSocialMediaTransition ] = useState(null);
 
   useLayoutEffect(() => {
-    if (tabName !== 'home') {
-      setSocialMediaTransition({ opacity: 1 });
-    }
     if (tabName === 'home') {
       setTimeout(() => setSocialMediaTransition({ transition: '1s ease-out', opacity: 1 }), 6000);
+      return;
     }
-  }, [])
+    setSocialMediaTransition({ opacity: 1 });
+  }, [tabName])
 
   return (
     <>
       <div className='externalLinksContainer'>
-        <div className='externalLinksBlob'>
-        </div>
+        <div className='externalLinksBlob'></div>
         <div className='social-media__inset-bubble' style={socialMediaTransition}></div>
         <a href='https://github.com/OssianN' style={socialMediaTransition}>
           <img src={images.git} alt='GitHub link' />

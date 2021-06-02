@@ -3,18 +3,18 @@ import Navigation from './NavigationBar';
 import Hamburger from './hamburger';
 import '../styles/navbar.scss';
 
-const Nav = props => {
+const Nav = ({ tabName, setActiveTabPosition }) => {
   const [showMobileNav, setShowMobileNav] = useState('-400px');
   const [ homeTransition, setHomeTransition ] = useState(null);
 
   useLayoutEffect(() => {
-    if (props.tabName !== 'home') {
+    if (tabName !== 'home') {
       setHomeTransition({ opacity: 1 });
     }
-    if (props.tabName === 'home') {
+    if (tabName === 'home') {
       setTimeout(() => setHomeTransition({ transition: '1s ease-out', opacity: 1 }), 6000);
     }
-  }, [])
+  }, [tabName])
 
   return (
     <div>
@@ -25,7 +25,7 @@ const Nav = props => {
       <Navigation
         homeTransition={homeTransition}
         showMobileNav={showMobileNav}
-        setActiveTabPosition={props.setActiveTabPosition}
+        setActiveTabPosition={setActiveTabPosition}
       />
     </div>
   );

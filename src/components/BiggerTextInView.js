@@ -1,18 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const BiggerTextInView = props => {
+const BiggerTextInView = ({ children }) => {
   const [isVisible, setVisible] = useState(false);
   const viewRef = useRef(null);
 
   useEffect(() => {
+    const viewNodeObject = viewRef.current;
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setVisible(entry.isIntersecting));
-    }, { root: null, rootMargin: '-150px', threshold: 0.2 });
+        entries.forEach(entry => setVisible(entry.isIntersecting));
+      },
+      {
+        root: null, rootMargin: '-150px', threshold: 0.2
+      }
+    );
 
-    if(viewRef.current) observer.observe(viewRef.current);
+    if(viewNodeObject) {
+      observer.observe(viewNodeObject);
+    }
 
     return () => {
-      if(viewRef.current) observer.unobserve(viewRef.current);
+      if(viewNodeObject) {
+        observer.unobserve(viewNodeObject);
+      }
     }
   }, []);
 
@@ -20,7 +29,7 @@ const BiggerTextInView = props => {
     <li
       className={isVisible ? 'is-visible' : ''}
       ref={viewRef}>
-      {props.children}
+      { children }
     </li>
   );
 }

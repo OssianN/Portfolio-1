@@ -2,24 +2,38 @@ import React, { useState, useLayoutEffect } from 'react';
 import './home.scss';
 import './nameSpans.scss';
 
-
 const firstName = 'OSSIAN ';
 const lastName = 'NÖRTHEN';
-const desc = 'Software · Technology · People';
 
 const Title = () => {
   const [ titleShow, setTitleShow ] = useState({});
 
-  const handleTitleTransition = () => setTimeout(() => setTitleShow({ opacity: '1' }), 6000);
-  const removeClassOnDelay = element => setTimeout(() => element.classList?.remove('change'), 3000);
-  const addNeutralClass = element => !element?.classList?.contains('name-span--neutral')
-    ? element?.classList?.add('name-span--neutral')
-    : null;
+  const showGlassBackgroundOnDelay = () => {
+    setTimeout(() => {
+      return setTitleShow({ opacity: '1' });
+    }, 6000);
+  }
+
+  const removeClassOnDelay = element => {
+    setTimeout(() => {
+      return element.classList?.remove('change')
+    }, 3000);
+  }
+
+  const addNeutralClass = element => {
+  const containsNeutralClass = element.classList?.contains('name-span--neutral');
+    if (!containsNeutralClass) {
+      element.classList.add('name-span--neutral');
+    }
+  }
 
   const handleNameChange = (e) => {
-    addNeutralClass(e?.target);
-    removeClassOnDelay(e?.target);
-    return e?.target?.classList?.add('change');
+    if (!e) return;
+
+    addNeutralClass(e.target);
+    removeClassOnDelay(e.target);
+    e.target.classList.add('change');
+    return;
   }
 
   const renderSpans = () => {
@@ -31,7 +45,7 @@ const Title = () => {
   }
 
   useLayoutEffect(() => {
-    handleTitleTransition();
+    showGlassBackgroundOnDelay();
   }, []);
 
   return (

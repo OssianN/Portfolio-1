@@ -23,7 +23,7 @@ const GuestBook = () => {
     let oneMatch = false;
     return message
       ?.split(/\b/)
-      ?.map((word, i) => {
+      .map((word, i) => {
         const match = adjectiveList.filter(adj => adj.toLowerCase() === word.toLowerCase());
         if(match[0] && !oneMatch) {
           oneMatch = true;
@@ -71,8 +71,10 @@ const GuestBook = () => {
   }
 
   useEffect(() => {
-    fetchDBMessages();
-  }, []);
+    if (!messages) {
+      fetchDBMessages();
+    }
+  });
 
   return (
     <Layout  tabName='guest-book'>

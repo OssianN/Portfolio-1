@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import '../../styles/guestBook.scss';
 require('dotenv').config();
 
@@ -16,17 +16,15 @@ const GuestBookForm = (props) => {
   };
 
   const hideFormIfMobile = () => {
-    console.log('hej')
     if (window === 'undefined') return;
     if (window.innerWidth > 1000) {
-      console.log(window.innerWidth)
       props.showGuestBookForm();
     }
   }
 
   const handleSubmitMessage = async e => {
     e.preventDefault();
-    if( !nameData || !msgData ) {
+    if (!nameData || !msgData) {
       return setError('enter a name and a message to send :)')
     }
     hideFormIfMobile();

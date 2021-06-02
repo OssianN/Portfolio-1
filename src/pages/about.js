@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import '../styles/about.scss';
 import ReactSVG from '../components/ReactSVG';

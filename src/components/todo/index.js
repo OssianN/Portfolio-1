@@ -5,20 +5,20 @@ import CardsList from './cardsList/CardsList';
 
 const TodoComponent = () => {
   const [cardsArr, setCardsArr] = useState([]);
-
-  const getLocalStorage = () => {
-    setCardsArr(JSON.parse(window.localStorage.getItem('cardsArr2')) || []);
-  }
-
-  const setLocalStorage = () => {
-    window.localStorage.setItem('cardsArr2', JSON.stringify(cardsArr));
-  }
-
+  
   useEffect(() => {
+    const getLocalStorage = () => {
+      setCardsArr(JSON.parse(window.localStorage.getItem('cardsArr2')) || []);
+    }
+    
     getLocalStorage();
   }, []);
-
-  useEffect(() => {
+  
+  useEffect(() => {  
+    const setLocalStorage = () => {
+      window.localStorage.setItem('cardsArr2', JSON.stringify(cardsArr));
+    }
+    
     setLocalStorage();
   }, [cardsArr]);
 
