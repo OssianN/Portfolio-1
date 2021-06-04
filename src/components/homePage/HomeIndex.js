@@ -1,7 +1,7 @@
-import React from 'react';
-import './home.scss';
-import Title from './Title.js';
-import ProfileImage from './ProfileImage';
+import React from 'react'
+import './home.scss'
+import Title from './Title.js'
+import ProfileImage from './ProfileImage'
 
 const Home = () => {
   return (
@@ -10,6 +10,6 @@ const Home = () => {
       <Title />
     </div>
   )
-};
+}
 
-export default Home;
+export default Home

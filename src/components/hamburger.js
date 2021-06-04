@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import '../styles/hamburger.scss';
+import React, { useState } from 'react'
+import '../styles/hamburger.scss'
 
 const Hamburger = props => {
-  const [navToogleClass, setNavToggleClass] = useState('');
+  const [navToogleClass, setNavToggleClass] = useState('')
 
   const handleMobileNavToggle = () => {
     if (props.showMobileNav === '0') {
-      props.setShowMobileNav('-400px');
+      props.setShowMobileNav('-400px')
       setNavToggleClass('')
     } else {
-      props.setShowMobileNav('0');
+      props.setShowMobileNav('0')
       setNavToggleClass('open')
     }
   }
@@ -24,7 +24,7 @@ const Hamburger = props => {
         <span></span>
       </div>
     </button>
-  );
+  )
 }
 
-export default Hamburger;
+export default Hamburger

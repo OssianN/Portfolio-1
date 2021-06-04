@@ -1,15 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 
 const FadeInSection = props => {
-  const [isVisible, setVisible] = useState(false);
-  const domRef = useRef();
+  const [isVisible, setVisible] = useState(false)
+  const domRef = useRef()
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setVisible(entry.isIntersecting));
-    }, { root: null, rootMargin: '0px', threshold: 0.4 });
-    observer.observe(domRef.current);
-  }, []);
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => setVisible(entry.isIntersecting))
+      },
+      { root: null, rootMargin: '0px', threshold: 0.4 }
+    )
+    observer.observe(domRef.current)
+  }, [])
 
   return (
     <div
@@ -17,7 +20,7 @@ const FadeInSection = props => {
       ref={domRef}>
       {props.children}
     </div>
-  );
+  )
 }
 
-export default FadeInSection;
+export default FadeInSection

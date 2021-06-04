@@ -53,7 +53,7 @@ const Portfolio = () => {
                 <>
                 <FadeInSection key={i}>
                   <h2 className='project-box__header'>{ project.node.title }</h2>
-                  <a className='project__link' href={ project.node.link } target="_blank">
+                  <a className='project__link' href={ project.node.link } target="_blank" rel="noreferrer">
                     <div className='project__img-container'>
                       <div className={`project__img-frame--desktop ${project.node.mobileImage ? '' : 'no-mobile'}`}>
                         <Img className='project__desktop-img' fluid={ project.node.desktopImage.fluid } alt={ project.node.title }></Img>

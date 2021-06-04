@@ -1,18 +1,21 @@
-import React, { useState, useLayoutEffect } from 'react';
-import Navigation from './NavigationBar';
-import Hamburger from './hamburger';
-import '../styles/navbar.scss';
+import React, { useState, useLayoutEffect } from 'react'
+import Navigation from './NavigationBar'
+import Hamburger from './hamburger'
+import '../styles/navbar.scss'
 
 const Nav = ({ tabName, setActiveTabPosition }) => {
-  const [showMobileNav, setShowMobileNav] = useState('-400px');
-  const [ homeTransition, setHomeTransition ] = useState(null);
+  const [showMobileNav, setShowMobileNav] = useState('-400px')
+  const [homeTransition, setHomeTransition] = useState(null)
 
   useLayoutEffect(() => {
     if (tabName !== 'home') {
-      setHomeTransition({ opacity: 1 });
+      setHomeTransition({ opacity: 1 })
     }
     if (tabName === 'home') {
-      setTimeout(() => setHomeTransition({ transition: '1s ease-out', opacity: 1 }), 6000);
+      setTimeout(
+        () => setHomeTransition({ transition: '1s ease-out', opacity: 1 }),
+        6000
+      )
     }
   }, [tabName])
 
@@ -28,7 +31,7 @@ const Nav = ({ tabName, setActiveTabPosition }) => {
         setActiveTabPosition={setActiveTabPosition}
       />
     </div>
-  );
+  )
 }
 
-export default Nav;
+export default Nav

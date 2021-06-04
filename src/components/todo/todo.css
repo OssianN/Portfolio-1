@@ -65,7 +65,7 @@
     box-shadow: 0 0 10px #a3a3a3;
   }
 
-  .cardsList input[type="checkbox"] {
+  .cardsList input[type='checkbox'] {
     height: 15px;
     width: 15px;
     margin: 0 25px 0 0;
@@ -82,7 +82,7 @@
   }
 }
 
-.cardsList .header  {
+.cardsList .header {
   font-size: 3em;
   font-weight: 100;
   margin: 50px 0;
@@ -186,7 +186,7 @@
   cursor: pointer;
 }
 
-.cardsList input[type="checkbox"] {
+.cardsList input[type='checkbox'] {
   -webkit-appearance: none;
   min-height: 25px;
   min-width: 25px;
@@ -197,7 +197,7 @@
   pointer-events: none;
 }
 
-.checkedfalse input[type="checkbox"] {
+.checkedfalse input[type='checkbox'] {
   background-color: #00c28162;
 }
 
@@ -205,7 +205,7 @@
   display: none;
 }
 
-.checkedtrue input[type="checkbox"] {
+.checkedtrue input[type='checkbox'] {
   background-color: #67ffcc;
 }
 
