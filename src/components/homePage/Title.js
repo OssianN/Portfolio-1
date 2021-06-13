@@ -8,38 +8,44 @@ const lastName = 'NÖRTHEN'
 const Title = () => {
   const [titleShow, setTitleShow] = useState({})
 
-  const showGlassBackgroundOnDelay = () => {
+  const showGlassBackgroundOnDelay = ms => {
     setTimeout(() => {
-      return setTitleShow({ opacity: '1' })
-    }, 6000)
+      setTitleShow({ opacity: '1' })
+    }, ms)
   }
 
-  const removeClassOnDelay = element => {
+  const removeCangeClassOnDelay = element => {
     setTimeout(() => {
-      return element.classList?.remove('change')
+      element.classList.remove('change')
     }, 3000)
   }
 
   const addNeutralClass = element => {
-    const containsNeutralClass = element.classList?.contains(
+    const containsNeutralClass = element.classList.contains(
       'name-span--neutral'
     )
-    if (!containsNeutralClass) {
-      element.classList.add('name-span--neutral')
+    if (containsNeutralClass) {
+      return
     }
+
+    element.classList.add('name-span--neutral')
+    return
   }
 
   const handleNameChange = e => {
-    if (!e) return
+    if (!e) {
+      return
+    }
 
     addNeutralClass(e.target)
-    removeClassOnDelay(e.target)
+    removeCangeClassOnDelay(e.target)
     e.target.classList.add('change')
     return
   }
 
   const renderSpans = () => {
     const arr = Array(23).fill(0)
+
     return arr.map((span, i) => {
       const delay = i / 7 + 1.5
       return (
@@ -52,7 +58,7 @@ const Title = () => {
   }
 
   useLayoutEffect(() => {
-    showGlassBackgroundOnDelay()
+    showGlassBackgroundOnDelay(6000)
   }, [])
 
   return (

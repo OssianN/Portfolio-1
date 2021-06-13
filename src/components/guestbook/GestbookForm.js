@@ -77,7 +77,7 @@ const GuestBookForm = props => {
         &#10005;
       </button>
       {error ? <p>{error}</p> : <p></p>}
-      <label htmlFor='nameInput'>Your Name</label>
+      <label htmlFor='nameInput'>Name</label>
       <input
         id='nameInput'
         ref={nameValue}

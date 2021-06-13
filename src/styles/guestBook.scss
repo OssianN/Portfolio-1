@@ -70,11 +70,12 @@
 .guestBookForm textarea,
 .guestBookForm button[type='submit'] {
   border: none;
+  height: 2em;
   width: 270px;
-  padding: 10px;
+  padding: 1em;
   margin: 0;
-  margin-top: 15px;
-  box-shadow: 0 0 5px #c5c5c585;
+  margin-top: 1em;
+  box-shadow: 0 0 5px #0000001a;
   border-radius: .75rem;
 }
 
@@ -86,10 +87,10 @@
   background-color: #3b5249;
   color: white;
   font-size: 1rem;
-  width: 290px;
-  height: 40px;
-  margin-top: 40px;
+  height: 2.7em;
+  width: 10em;
   padding: 0;
+  margin-top: 2em;
 }
 
 .guestBook .messages {
@@ -279,11 +280,13 @@
     margin: 0 auto;
     margin-top: 130px;
     max-width: 680px;
+    min-width: 100%;
     justify-self: center;
   }
 
   .guestBook .messages ul {
     padding: 0 50px;
+    padding-bottom: 100px;
   }
 
   .fadeListTop {
@@ -300,8 +303,8 @@
   .mobileMessageButton button {
     background-color: #ffffffaf;
     border-radius: .75rem;
-    padding: 20px;
-    width: 90%;
+    padding: 1em;
+    width: 90vw;
     max-width: 680px;
     box-shadow: 0 0 10px #dfdfdf;
     font-size: 1.7em;
