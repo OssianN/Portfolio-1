@@ -1,43 +1,65 @@
-@import "./global.scss";
+@import './global.scss';
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @font-face {
   font-family: 'Sofia Pro UltraLight';
-  src: local('Sofia Pro'), url("../fonts/Sofia_Pro_UltraLight_Az.otf");
+  src: local('Sofia Pro'), url('../fonts/Sofia_Pro_UltraLight_Az.otf');
 }
 
 @font-face {
   font-family: 'Sofia Pro ExtraLight';
-  src: local('Sofia Pro'), url("../fonts/Sofia_Pro_ExtraLight_Az.otf");
+  src: local('Sofia Pro'), url('../fonts/Sofia_Pro_ExtraLight_Az.otf');
 }
 
 @font-face {
   font-family: 'Sofia Pro Light';
-  src: local('Sofia Pro'), url("../fonts/Sofia_Pro_Light_Az.otf");
+  src: local('Sofia Pro'), url('../fonts/Sofia_Pro_Light_Az.otf');
 }
 
 @font-face {
   font-family: 'Sofia Pro Medium';
-  src: local('Sofia Pro'), url("../fonts/Sofia_Pro_Medium_Az.otf");
+  src: local('Sofia Pro'), url('../fonts/Sofia_Pro_Medium_Az.otf');
 }
 
 @font-face {
   font-family: 'Sofia Pro SemiBold';
-  src: local('Sofia Pro'), url("../fonts/Sofia Pro Semi Bold Az.otf");
+  src: local('Sofia Pro'), url('../fonts/Sofia Pro Semi Bold Az.otf');
 }
 
 * {
-	outline: 0;
-	padding: 0;
-	margin: 0;
-	border: 0;
-	}
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
 
-html, body, #___gatsby, #gatsby-focus-wrapper, .App {
-  min-height: 100%;
-  height: 100%;
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper,
+.App {
+  min-height: 100vh;
+  height: auto;
   width: 100%;
   font-family: Sofia Pro Light;
+}
+
+.layout__faded-background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.layout__faded-background--top {
+  background: linear-gradient(to top left, #ffffff00 85%, $mainLightGreen 99%);
+}
+
+
+.layout__faded-background--bottom {
+  background: linear-gradient(to bottom right, #ffffff00 85%, $mainLightGreen 99%);
 }
 
 button {

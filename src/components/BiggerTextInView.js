@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-const BiggerTextInView = ({ children }) => {
+const BiggerTextInView = ({ className, children }) => {
   const [isVisible, setVisible] = useState(false)
   const viewRef = useRef(null)
 
@@ -29,7 +29,7 @@ const BiggerTextInView = ({ children }) => {
   }, [])
 
   return (
-    <li className={isVisible ? 'is-visible' : ''} ref={viewRef}>
+    <li className={`${className}`, isVisible ? 'is-visible' : ''} ref={viewRef}>
       {children}
     </li>
   )

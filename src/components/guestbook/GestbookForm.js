@@ -65,7 +65,7 @@ const GuestBookForm = props => {
     <form
       ref={formRef}
       onSubmit={e => handleSubmitMessage(e)}
-      className={`${props.formDisplay} guestBookForm ${props.showForm}`}
+      className={`${props.formDisplay} guestbook-form ${props.showForm}`}
       data-netlify-honeypot='bot-field'
       name='guestBook'
       data-netlify-recaptcha='true'>
@@ -76,7 +76,7 @@ const GuestBookForm = props => {
         onClick={handleCancelForm}>
         &#10005;
       </button>
-      {error ? <p>{error}</p> : <p></p>}
+      {error ? <p className='guestbook-form__error-message'>{error}</p> : null}
       <label htmlFor='nameInput'>Name</label>
       <input
         id='nameInput'

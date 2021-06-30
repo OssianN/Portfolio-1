@@ -12,10 +12,7 @@ const Nav = ({ tabName, setActiveTabPosition }) => {
       setHomeTransition({ opacity: 1 })
     }
     if (tabName === 'home') {
-      setTimeout(
-        () => setHomeTransition({ transition: '1s ease-out', opacity: 1 }),
-        6000
-      )
+      setHomeTransition({ transition: '1s ease-out', opacity: 1 })
     }
   }, [tabName])
 

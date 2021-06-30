@@ -14,26 +14,20 @@ const SocialMedia = ({ tabName }) => {
       )
       return
     }
-    setSocialMediaTransition({ opacity: 1 })
   }, [tabName])
 
   return (
-    <>
-      <div className='externalLinksContainer'>
-        <div className='externalLinksBlob'></div>
-        <div
-          className='social-media__inset-bubble'
-          style={socialMediaTransition}></div>
-        <a href='https://github.com/OssianN' style={socialMediaTransition}>
-          <img src={images.git} alt='GitHub link' />
-        </a>
-        <a
-          href='https://linkedin.com/in/ossian-nörthen'
-          style={socialMediaTransition}>
-          <img src={images.linkedin} alt='LinkedIn link' />
-        </a>
-      </div>
-    </>
+    <div className='social-media__container'>
+      <div
+        className='social-media__blob'
+        style={socialMediaTransition}></div>
+      <a href='https://github.com/OssianN'>
+        <img src={images.git} alt='GitHub link' />
+      </a>
+      <a href='https://linkedin.com/in/ossian-nörthen'>
+        <img src={images.linkedin} alt='LinkedIn link' />
+      </a>
+    </div>
   )
 }
 

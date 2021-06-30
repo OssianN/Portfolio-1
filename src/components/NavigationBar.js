@@ -5,8 +5,7 @@ import '../styles/navbar.scss'
 const Navigation = props => {
   const navbarRef = useRef(null)
 
-  const isWindowAndNavUndefined = () =>
-    window === 'undefined' || !navbarRef.current
+  const isWindowAndNavUndefined = () => !window || !navbarRef.current
 
   const changeNavBackground = () => {
     if (isWindowAndNavUndefined()) return

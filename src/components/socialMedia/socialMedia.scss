@@ -7,97 +7,69 @@
   }
 }
 
-.externalLinksContainer {
+.social-media__container {
   position: fixed;
   display: flex;
   justify-content: space-between;
+  width: 80px;
+  top: 15px;
+  left: 15px;
+  opacity: 1;
   z-index: 160;
 }
 
-.externalLinksContainer a img {
+.social-media__container a {
+  margin-right: 3%;
+}
+
+.social-media__container a img {
+  width: 30px;
   margin: 0;
   opacity: .7;
 }
 
-.externalLinksBlob {
+.social-media__blob {
   position: absolute;
-}
-
-.social-media__inset-bubble {
-  position: absolute;
-  background-image: linear-gradient(to left top, #ffffffde, #ffffff4d);
-  box-shadow: 0 0 1rem #3d3d3d2c;
+  background-image: linear-gradient(to left top, #ffffff, #ffffffab);
+  box-shadow: 0 0 3px #0000000e;
   transition: 1s;
-  backdrop-filter: blur(2rem);
   border-radius: 50%;
-  width: 290px;
-  height: 250px;
-  top: -160px;
-  right: -100px;
-  opacity: 0;
+  width: 210px;
+  height: 190px;
+  top: -120px;
+  left: -80px;
+  opacity: 1;
 }
 
-.externalLinksContainer a {
-  opacity: 0;
+.social-media__container a {
   transition: 1s;
 }
 
 @media (min-width: 1001px) {
-  .externalLinksContainer {
+  .social-media__container {
     width: 120px;
-    top: 40px;
+    top: 33px;
+    left: auto;
     right: 40px;
   }
 
-  .externalLinksContainer a img {
+  .social-media__blob {
+    width: 290px;
+    height: 250px;
+    top: -160px;
+    left: auto;
+    right: -100px;
+    opacity: 0;
+  }
+
+  .social-media__container a img {
     transition: .3s;
     width: 40px;
   }
 
-  .externalLinksContainer a img:hover {
+  .social-media__container a img:hover {
     opacity: .9;
     transform: scale(1.2)
   }
-
-  .externalLinksBlob {
-    width: 600px;
-    top: -365px;
-    left: -180px;
-    transform: rotate(260deg);
-    z-index: -1;
-  }
 }
 
-@media (max-width: 1000px) {
-  .externalLinksContainer {
-    width: 80px;
-    z-index: 50;
-    display: flex;
-    justify-content: space-between;
-    top: 15px;
-    left: 15px;
-    opacity: 1;
-  }
-
-  .externalLinksContainer a {
-    margin-right: 3%;
-  }
-
-  .externalLinksContainer a img {
-    width: 30px;
-  }
-
-  .social-media__inset-bubble {
-    width: 210px;
-    height: 190px;
-    top: -120px;
-    left: -80px;
-  }
-
-  .externalLinksBlob {
-    width: 600px;
-    top: -440px;
-    left: -320px;
-    transform: rotate(140deg);
-  }
-}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-const FadeInSection = props => {
+const FadeInSection = ({ indexKey, children }) => {
   const [isVisible, setVisible] = useState(false)
   const domRef = useRef()
 
@@ -15,11 +15,12 @@ const FadeInSection = props => {
   }, [])
 
   return (
-    <div
+    <li
+      key={indexKey}
       className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
       ref={domRef}>
-      {props.children}
-    </div>
+      {children}
+    </li>
   )
 }
 

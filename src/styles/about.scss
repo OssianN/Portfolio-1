@@ -3,15 +3,15 @@
 // keyframes
 @keyframes blob {
   0% {
-    fill: #ffffffd7;
+    fill: #39ffbad7;
   }
 
   50% {
-    fill: #ffffff4d;
+    fill: #39ffba4d;
   }
 
   100% {
-    fill: #ffffffd7;
+    fill: #39ffbad7;
   }
 }
 
@@ -24,7 +24,6 @@
   display: flex;
   justify-content: center;
   color: #3b5249;
-  background: linear-gradient($mainYellow 2%, $mainLightGreen);
   overflow: hidden;
 }
 

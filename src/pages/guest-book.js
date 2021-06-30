@@ -68,14 +68,13 @@ const GuestBook = () => {
     if (messages.length === 0) {
       return <h1>loading...</h1>
     }
-console.log(messages)
 
     const messagesCopy = [...messages]
 
     return messagesCopy?.reverse().map(message => {
       const info = message.node || message
       return (
-        <BiggerTextInView key={info._id}>
+        <BiggerTextInView key={info._id} className={'guestbook__messages-li'}>
           <p className='bread-text--standard'>{info.name}</p>
           <p className='message__body-p'>{emphasizeAdjective(info.msg)}</p>
         </BiggerTextInView>
@@ -101,35 +100,33 @@ console.log(messages)
 
   return (
     <Layout tabName='guest-book'>
-      <div className='guestBookContainer'>
-        <div className='guestBook'>
-          <div className='messages'>
-            <h1 className='header-title--standard guestbook-title'>
-              Write something for all visitors to see...
-              <p className='guestbook-form__title-span bread-text--standard'>
-                or just smile and wave!
-              </p>
-            </h1>
-            <div className='mobileMessageButton'>
-              <button onClick={showGuestBookForm} className='showFormButton'>
-                Write a message
-              </button>
-            </div>
-            <ul>{renderMessages()}</ul>
+      <main className='guestbook'>
+        <section className='guestbook__messages-wrapper'>
+          <h1 className='header-title--standard guestbook-title'>
+            Write something for all visitors to see...
+            <p className='guestbook-form__title-span bread-text--standard'>
+              or just smile and wave!
+            </p>
+          </h1>
+          <div className='mobileMessageButton'>
+            <button onClick={showGuestBookForm} className='showFormButton'>
+              Write a message
+            </button>
           </div>
-          <GuestBookForm
-            updateMessages={updateMessages}
-            setUpdateMessages={setUpdateMessages}
-            messages={messages}
-            setMessages={setMessages}
-            showForm={showForm}
-            setShowForm={setShowForm}
-            showGuestBookForm={showGuestBookForm}
-            formDisplay={formDisplay}
-          />
-        </div>
-        <div className='fadeListBottom'></div>
-      </div>
+          <ul className='guestbook__messages-ul'>{renderMessages()}</ul>
+        </section>
+        <GuestBookForm
+          updateMessages={updateMessages}
+          setUpdateMessages={setUpdateMessages}
+          messages={messages}
+          setMessages={setMessages}
+          showForm={showForm}
+          setShowForm={setShowForm}
+          showGuestBookForm={showGuestBookForm}
+          formDisplay={formDisplay}
+        />
+      </main>
+      <div className='fadeListBottom'></div>
     </Layout>
   )
 }

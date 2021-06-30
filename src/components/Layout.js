@@ -8,6 +8,8 @@ const Template = ({ tabName, children }) => {
     <>
       <NavContainer tabName={tabName} />
       <Helmet title='Ossian Nörthen' />
+      <div className='layout__faded-background layout__faded-background--top'></div>
+      <div className='layout__faded-background layout__faded-background--bottom'></div>
       {children}
       <SocialMedia tabName={tabName} />
     </>
