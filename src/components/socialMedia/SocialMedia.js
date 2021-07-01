@@ -9,6 +9,10 @@ const SocialMedia = ({ tabName }) => {
     if (tabName === 'home') {
       setSocialMediaTransition({ display: 'none' })
     }
+
+    if (window && window.innerWidth > 1000) {
+      setSocialMediaTransition({ display: 'block' })
+    }
   }, [tabName])
 
   return (

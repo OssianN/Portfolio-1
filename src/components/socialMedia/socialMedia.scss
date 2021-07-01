@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -31,7 +33,7 @@
 .social-media__blob {
   position: absolute;
   background-image: linear-gradient(to left top, #ffffff, #ffffffab);
-  box-shadow: 0 0 3px #0000000e;
+  box-shadow: 0 0 5px $boxShadow;
   transition: 1s;
   border-radius: 50%;
   width: 210px;
@@ -59,7 +61,6 @@
     top: -160px;
     left: auto;
     right: -100px;
-    opacity: 0;
     display: block;
   }
 
