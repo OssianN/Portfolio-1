@@ -7,8 +7,8 @@ import '../styles/guestBook.scss'
 const GuestBook = () => {
   const [updateMessages, setUpdateMessages] = useState(0)
   const [messages, setMessages] = useState([])
-  const [showForm, setShowForm] = useState(null)
-  const [formDisplay, setFormDisplay] = useState(null)
+  const [showForm, setShowForm] = useState(false)
+  const [formDisplay, setFormDisplay] = useState('display-none')
 
   const adjectiveList = [
     'cool',
@@ -82,30 +82,51 @@ const GuestBook = () => {
     })
   }
 
-  const showOrHideForm = () => {
-    if(window && window.innerWidth > 1000) {
-      return
+  
+  const showFormIfDesktop = () => {
+    if (window && window.innerWidth > 1000) {
+      setShowForm(true)
     }
-
-    if (showForm === 'hide-form') {
-      setFormDisplay('')
-      setShowForm('show-form')
-      return
-    }
-
-    setShowForm('hide-form')
-    setTimeout(() => setFormDisplay('display-none'), 1000)
   }
+
+  const hideFormIfMobile = () => {
+    if (window && window.innerWidth < 1001) {
+      setShowForm(false)
+    }
+  }
+  
+  const showOrHideForm = () => {
+    setShowForm(!showForm)
+  }
+
+  useEffect(() => {
+    if (!window) {
+      return
+    }
+
+    window.addEventListener('resize', () => {
+      showFormIfDesktop()
+      hideFormIfMobile()
+    })
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        showFormIfDesktop()
+        hideFormIfMobile()
+      })
+    }
+  })
+
+  useEffect(() => {
+    showFormIfDesktop()
+    hideFormIfMobile()
+  }, [])
 
   useEffect(() => {
     if (messages.length === 0) {
       fetchDBMessages()
     }
   })
-
-  useEffect(() => {
-    showOrHideForm()
-  }, [])
 
   return (
     <Layout tabName='guest-book'>
@@ -118,7 +139,9 @@ const GuestBook = () => {
             </p>
           </h1>
           <div className='guestbook__show-form-container'>
-            <button onClick={showOrHideForm} className='guestbook__show-form-button'>
+            <button
+              onClick={showOrHideForm}
+              className='guestbook__show-form-button'>
               Write a message
             </button>
           </div>
@@ -130,7 +153,6 @@ const GuestBook = () => {
           setMessages={setMessages}
           showForm={showForm}
           showOrHideForm={showOrHideForm}
-          formDisplay={formDisplay}
         />
       </main>
       <div className='guestbook__messages-fade--bottom'></div>

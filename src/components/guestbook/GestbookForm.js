@@ -62,7 +62,7 @@ const GuestBookForm = props => {
   return (
     <form
       onSubmit={handleSubmitMessage}
-      className={`${props.formDisplay} guestbook-form ${props.showForm}`}
+      className={`guestbook-form ${props.showForm ? 'show-form' : 'hide-form'}`}
       data-netlify-honeypot='bot-field'
       name='guestBook'
       data-netlify-recaptcha='true'>
