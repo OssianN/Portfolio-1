@@ -3,35 +3,31 @@ import '../../styles/guestBook.scss'
 require('dotenv').config()
 
 const GuestBookForm = props => {
-  const [nameData, setNameData] = useState(null)
-  const [msgData, setMsgData] = useState(null)
+  const [formInput, setFormInput] = useState({
+    name: '',
+    msg: '',
+  })
   const [error, setError] = useState(null)
-  const formRef = useRef()
-  const nameValue = useRef('')
-  const messageValue = useRef('')
 
   const resetForm = () => {
-    nameValue.current.value = null
-    messageValue.current.value = null
-  }
-
-  const hideFormIfMobile = () => {
-    if (window === 'undefined') return
-    if (window.innerWidth > 1000) {
-      props.showGuestBookForm()
-    }
+    setFormInput({
+      name: '',
+      msg: '',
+    })
   }
 
   const handleSubmitMessage = async e => {
     e.preventDefault()
-    if (!nameData || !msgData) {
+
+    const { name, msg } = formInput
+
+    if (!name || !msg) {
       return setError('enter a name and a message to send :)')
     }
-    hideFormIfMobile()
 
     const messageData = {
-      name: nameData,
-      msg: msgData,
+      name,
+      msg,
       id: Date.now(),
     }
 
@@ -42,36 +38,37 @@ const GuestBookForm = props => {
     }
 
     resetForm()
-    props.showGuestBookForm()
+    props.showOrHideForm()
     const response = await fetch('/.netlify/functions/mongoDB', fetchData)
     const data = await response.json()
     props.setMessages(data)
     props.setUpdateMessages(props.updateMessages + 1)
   }
 
-  const handleNameChange = e => {
-    setNameData(e.target.value)
-  }
+  const handleInputChange = e => {
+    const { name, value } = e.target
+    console.log(formInput)
 
-  const handleMsgChange = e => {
-    setMsgData(e.target.value)
+    setFormInput({
+      ...formInput,
+      [name]: value,
+    })
   }
 
   const handleCancelForm = () => {
-    props.showGuestBookForm()
+    props.showOrHideForm()
   }
 
   return (
     <form
-      ref={formRef}
-      onSubmit={e => handleSubmitMessage(e)}
+      onSubmit={handleSubmitMessage}
       className={`${props.formDisplay} guestbook-form ${props.showForm}`}
       data-netlify-honeypot='bot-field'
       name='guestBook'
       data-netlify-recaptcha='true'>
-      <input type='hidden' name='form-name' value='guestBook' />
+      <input type='hidden' name='form-name' value='guestbook-form' />
       <button
-        className='cancelFormButton'
+        className='guestbook-form__cancel-form'
         type='button'
         onClick={handleCancelForm}>
         &#10005;
@@ -80,17 +77,19 @@ const GuestBookForm = props => {
       <label htmlFor='nameInput'>Name</label>
       <input
         id='nameInput'
-        ref={nameValue}
-        onChange={handleNameChange}
-        name='guestName'></input>
+        className='guestbook-form__input'
+        name='name'
+        value={formInput.name}
+        onChange={handleInputChange}></input>
       <label htmlFor='messageInput'>Message</label>
       <textarea
         id='messageInput'
-        ref={messageValue}
-        onChange={handleMsgChange}
-        name='guestMessage'></textarea>
+        name='msg'
+        className='guestbook-form__textarea'
+        value={formInput.msg}
+        onChange={handleInputChange}></textarea>
       <div data-netlify-recaptcha='true'></div>
-      <button type='submit' id='sendMessage'>
+      <button type='submit' className='guestbook-form__submit-button'>
         Send It
       </button>
     </form>

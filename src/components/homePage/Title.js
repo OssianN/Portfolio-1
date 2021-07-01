@@ -58,7 +58,7 @@ const Title = () => {
   }
 
   useLayoutEffect(() => {
-    showGlassBackgroundOnDelay(6000)
+    showGlassBackgroundOnDelay(200)
   }, [])
 
   return (

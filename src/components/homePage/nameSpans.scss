@@ -18,10 +18,10 @@
   max-height: 5px;
   min-width: 40px;
   opacity: 0;
-  background: linear-gradient(to right, #fff, #ffffffcb);
+  background: linear-gradient(to right, white, #ffffffc2);
   backdrop-filter: blur(1rem);
   border-radius: .75rem;
-  box-shadow: 0 0 .6rem #a1a1a188;
+  box-shadow: 0 0 10px $boxShadow;
   animation-duration: .5s;
   align-self: center;
   cursor: pointer;

@@ -29,7 +29,7 @@ const BiggerTextInView = ({ className, children }) => {
   }, [])
 
   return (
-    <li className={`${className}`, isVisible ? 'is-visible' : ''} ref={viewRef}>
+    <li className={`guestbook__messages-li ${isVisible ? 'is-visible' : ''}`} ref={viewRef}>
       {children}
     </li>
   )

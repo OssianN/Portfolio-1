@@ -16,10 +16,7 @@ const Hamburger = props => {
 
   return (
     <button className='mobileNavButton' onClick={handleMobileNavToggle}>
-      <div id='nav-icon2' className={navToogleClass}>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div className={`nav-icon ${navToogleClass}`}>
         <span></span>
         <span></span>
       </div>

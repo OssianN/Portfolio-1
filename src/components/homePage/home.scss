@@ -15,6 +15,38 @@
 
 .profile-img__container {
   position: fixed;
+  background: url('../../images/profilePic.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 50vw;
+  right: 0;
+  z-index: 1;
+}
+
+.profile-img__top-background {
+  height: 60px;
+  width: 100%;
+  background: $mainLightGreen;
+  mix-blend-mode: screen;
+  z-index: -1;
+}
+
+.home__glas-box {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: linear-gradient(to left top, #22ffda5b, #22ffda8f);
+  box-shadow: 0 0 1rem $boxShadow;
+  backdrop-filter: blur(2rem);
+  opacity: 0;
+  transition: 1s ease-out;
+  z-index: 10;
+}
+
+@media (min-width: 1000px) {
+  .profile-img__top-background {
+    display: none;
+  }
 }
 
 @media (min-width: 876px) {
@@ -42,8 +74,8 @@
     min-height: 200px;
     min-width: 800px;
     border-radius: .75rem;
-    background-image: linear-gradient(to left top, #ffffffde, #ffffff4d);
-    box-shadow: 0 0 1rem #3d3d3d2c;
+    background-image: linear-gradient(to left top, #22ffda5b, #22ffda8f);
+    box-shadow: 0 0 1rem $boxShadow;
     backdrop-filter: blur(2rem);
     opacity: 0;
     transition: 1s ease-out;
@@ -52,6 +84,9 @@
 }
 
 @media (max-width: 875px) {
+  .profile-img__container {
+    width: 100%;
+  }
   .profile-img__img {
     z-index: 0;
     position: fixed;
@@ -60,27 +95,16 @@
     width: 100vw;
     min-height: 100vh;
     overflow: hidden;
+    animation: profileImg 1s ease;
   }
 
   .home__glas-container {
     z-index: 10;
     margin: auto auto;
     padding: 0;
-    min-width: 95%;
+    min-width: 100%;
     min-height: 200px;
     position: relative;
-  }
-  
-  .home__glas-box {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    border-radius: .75rem;
-    background-image: linear-gradient(to left top, #ffffffde, #ffffff4d);
-    box-shadow: 0 0 1rem #3d3d3d2c;
-    backdrop-filter: blur(2rem);
-    opacity: 0;
-    transition: 1s ease-out;
   }
 
   @media (max-width: 600px) {

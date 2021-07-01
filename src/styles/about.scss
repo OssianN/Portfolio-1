@@ -6,7 +6,11 @@
     fill: #39ffbad7;
   }
 
-  50% {
+  33% {
+    fill: #39ffba4d;
+  }
+
+  66% {
     fill: #39ffba4d;
   }
 
@@ -92,11 +96,21 @@
   pointer-events: none;
 }
 
-.skillBall:nth-child(1) .reactBlob path {
+.reactBlob {
+  pointer-events: none;
+  width: 400px;
+  height: 400px;
+}
+
+.blob__path {
+  animation: blob 3s ease infinite;
+}
+
+.blob__path--delay1 {
   animation-delay: 1s;
 }
 
-.skillBall:nth-child(2) .reactBlob path {
+.blob__path--delay2 {
   animation-delay: 2s;
 }
 
@@ -104,16 +118,6 @@
   position: absolute;
   pointer-events: none;
   z-index: 0;
-}
-
-.reactBlob {
-  pointer-events: none;
-  width: 400px;
-  height: 400px;
-}
-
-.reactBlob path {
-  animation: blob 3s ease infinite;
 }
 
 @media (min-width: 801px) {

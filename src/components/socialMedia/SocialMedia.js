@@ -7,20 +7,13 @@ const SocialMedia = ({ tabName }) => {
 
   useLayoutEffect(() => {
     if (tabName === 'home') {
-      setTimeout(
-        () =>
-          setSocialMediaTransition({ transition: '1s ease-out', opacity: 1 }),
-        6000
-      )
-      return
+      setSocialMediaTransition({ display: 'none' })
     }
   }, [tabName])
 
   return (
     <div className='social-media__container'>
-      <div
-        className='social-media__blob'
-        style={socialMediaTransition}></div>
+      <div className='social-media__blob' style={socialMediaTransition}></div>
       <a href='https://github.com/OssianN'>
         <img src={images.git} alt='GitHub link' />
       </a>

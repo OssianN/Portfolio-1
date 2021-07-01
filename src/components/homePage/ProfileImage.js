@@ -1,26 +1,20 @@
 import React, { useState } from 'react'
 import './home.scss'
-import images from '../../images'
 
 const ProfileImage = () => {
-  const [showImage, setShowImage] = useState({ opacity: 0 })
+  const [showImage, setShowImage] = useState({ opacity: 0, transition: '1s' })
 
-  const handleTitleTransition = () => {
+  const handleShowImage = () => {
     return setTimeout(() => {
-      return setShowImage({ opacity: 1 })
-    }, 5500)
+      return setShowImage({ opacity: 1, transition: '1s' })
+    }, 6000)
   }
 
-  handleTitleTransition()
+  handleShowImage()
 
   return (
-    <div className='profile-img__container'>
-      <img
-        src={images.profilePic}
-        alt='profilePic'
-        className='profile-img__img'
-        style={showImage}
-      />
+    <div className='profile-img__container' style={showImage}>
+      <div className='profile-img__top-background'></div>
     </div>
   )
 }

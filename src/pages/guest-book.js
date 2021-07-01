@@ -7,8 +7,8 @@ import '../styles/guestBook.scss'
 const GuestBook = () => {
   const [updateMessages, setUpdateMessages] = useState(0)
   const [messages, setMessages] = useState([])
-  const [showForm, setShowForm] = useState('hideGuestBookForm')
-  const [formDisplay, setFormDisplay] = useState('displayNoneClass')
+  const [showForm, setShowForm] = useState(null)
+  const [formDisplay, setFormDisplay] = useState(null)
 
   const adjectiveList = [
     'cool',
@@ -74,7 +74,7 @@ const GuestBook = () => {
     return messagesCopy?.reverse().map(message => {
       const info = message.node || message
       return (
-        <BiggerTextInView key={info._id} className={'guestbook__messages-li'}>
+        <BiggerTextInView key={info._id}>
           <p className='bread-text--standard'>{info.name}</p>
           <p className='message__body-p'>{emphasizeAdjective(info.msg)}</p>
         </BiggerTextInView>
@@ -82,14 +82,19 @@ const GuestBook = () => {
     })
   }
 
-  const showGuestBookForm = () => {
-    if (showForm === 'hideGuestBookForm') {
-      setFormDisplay('')
-      setShowForm('showGuestBookForm')
-    } else {
-      setShowForm('hideGuestBookForm')
-      setTimeout(() => setFormDisplay('displayNoneClass'), 1000)
+  const showOrHideForm = () => {
+    if(window && window.innerWidth > 1000) {
+      return
     }
+
+    if (showForm === 'hide-form') {
+      setFormDisplay('')
+      setShowForm('show-form')
+      return
+    }
+
+    setShowForm('hide-form')
+    setTimeout(() => setFormDisplay('display-none'), 1000)
   }
 
   useEffect(() => {
@@ -98,18 +103,22 @@ const GuestBook = () => {
     }
   })
 
+  useEffect(() => {
+    showOrHideForm()
+  }, [])
+
   return (
     <Layout tabName='guest-book'>
       <main className='guestbook'>
         <section className='guestbook__messages-wrapper'>
           <h1 className='header-title--standard guestbook-title'>
             Write something for all visitors to see...
-            <p className='guestbook-form__title-span bread-text--standard'>
+            <p className='guestbook__title-span bread-text--standard'>
               or just smile and wave!
             </p>
           </h1>
-          <div className='mobileMessageButton'>
-            <button onClick={showGuestBookForm} className='showFormButton'>
+          <div className='guestbook__show-form-container'>
+            <button onClick={showOrHideForm} className='guestbook__show-form-button'>
               Write a message
             </button>
           </div>
@@ -118,15 +127,13 @@ const GuestBook = () => {
         <GuestBookForm
           updateMessages={updateMessages}
           setUpdateMessages={setUpdateMessages}
-          messages={messages}
           setMessages={setMessages}
           showForm={showForm}
-          setShowForm={setShowForm}
-          showGuestBookForm={showGuestBookForm}
+          showOrHideForm={showOrHideForm}
           formDisplay={formDisplay}
         />
       </main>
-      <div className='fadeListBottom'></div>
+      <div className='guestbook__messages-fade--bottom'></div>
     </Layout>
   )
 }
