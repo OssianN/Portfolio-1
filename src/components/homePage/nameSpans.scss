@@ -277,7 +277,6 @@
     }
     100% {
       transform: scale(20) rotate(90deg);
-      // transform: scale(20) rotate(300deg);
       opacity: 0;
     }
   }
@@ -287,7 +286,6 @@
       opacity: 1;
     }
     100% {
-      // transform: scale(20) rotate(300deg);
       transform: scale(20);
       opacity: 0;
     }
@@ -298,7 +296,6 @@
       opacity: 1;
     }
     100% {
-      // transform: scale(20), rotate(200deg);
       transform: scale(20);
       opacity: 0;
     }
@@ -311,19 +308,16 @@
     }
     100% {
       transform: scale(1) rotate(90deg);
-      // transform: scale(1);
       opacity: 1;
     }
   }
 
   @keyframes no-change-span--horizontal {
     0% {
-      // transform: scale(20) rotate(300deg);
       transform: scale(20);
       opacity: 0;
     }
     100% {
-      // transform: scale(1);
       transform: scale(1) rotate(0deg);
       opacity: 1;
     }
@@ -331,12 +325,10 @@
 
   @keyframes no-change-span--diagonal {
     0% {
-      // transform: scale(20) rotate(300deg) ;
       transform: scale(20);
       opacity: 0;
     }
     100% {
-      // transform: scale(1);
       transform: scale(1) rotate(45deg);
       opacity: 1;
     }
@@ -360,145 +352,3 @@
       transform: scale(1);
     }
   }
-  
-
-// .nameSpans.change span:nth-child(1) {
-//   margin-left: -153px;
-// }
-
-// .nameSpans.change span:nth-child(2) {
-//   transform: rotate(45deg);
-//   margin-left: -142px;
-//   min-width: 56px;
-//   top: 18.5px;
-// }
-
-// .nameSpans.change span:nth-child(3) {
-//   margin-left: -115px;
-// }
-
-// .nameSpans.change span:nth-child(4) {
-//   transform: rotate(90deg);
-//   margin-left: -64px;
-//   min-width: 40px;
-//   top: 18.5px;
-// }
-
-// //=============Ö================
-// .nameSpans.change span:nth-child(6) {
-//   min-width: 21px;
-//   top: 28px;
-//   margin-left: -99px;
-//   transform: rotate(90deg);
-// }
-
-// //=============R============
-// .nameSpans.change span:nth-child(10) {
-//   top: 0;
-// }
-
-// .nameSpans.change span:nth-child(11) {
-//   margin-left: 89px;
-//   min-width: 21px;
-//   transform: rotate(0deg);
-//   top: 18.5px;
-// }
-
-// .nameSpans.change span:nth-child(12) {
-//   min-width: 21px;
-//   top: 9px;
-// }
-
-// .nameSpans.change span:nth-child(13) {
-//   transform: rotate(45deg);
-//   top: 28px;
-//   margin-left: -29px;
-//   min-width: 28px;
-// }
-
-// //=============T================
-
-// .nameSpans.change span:nth-child(15) {
-//   top: 0;
-//   opacity: 1;
-//   margin-left: 0;
-//   transform: rotate(0deg);
-// }
-
-// .nameSpans.change span:nth-child(16) {
-//   margin-left: -0px;
-//   transform: rotate(90deg);
-//   min-width: 40px;
-// }
-
-// //=============H================
-// .nameSpans.change span:nth-child(17) {
-//   transform: rotate(90deg);
-//   min-width: 40px;
-//   margin-left: 25px;
-// }
-
-// .nameSpans.change span:nth-child(19) {
-//   transform: rotate(90deg);
-//   margin-left: 63px;
-//   min-width: 40px;
-// }
-
-// .nameSpans.change span:nth-child(18) {
-//   top: 0;
-//   margin-left: 89px;
-// }
-
-// .nameSpans.change span:nth-child(20) {
-//   margin-left: 44px;
-// }
-
-// //=============N================
-// .nameSpans.change span:nth-child(21) {
-//   transform: rotate(90deg);
-//   margin-left: 115px;
-//   min-width: 40px;
-// }
-
-// .nameSpans.change span:nth-child(22) {
-//   transform: rotate(45deg);
-//   margin-left: 126px;
-//   min-width: 56px;
-// }
-
-// .nameSpans.change span:nth-child(23) {
-//   transform: rotate(90deg);
-//   margin-left: 153px;
-//   min-width: 40px;
-// }
-
-// .nameSpans span:nth-child(24) {
-//   transform: rotate(90deg);
-//   margin-left: 33px;
-//   min-width: 40px;
-// }
-
-// //=============E================
-// .nameSpans span:nth-child(24),
-// .nameSpans span:nth-child(25),
-// .nameSpans span:nth-child(26) {
-//   opacity: 0;
-// }
-
-// .nameSpans.change span:nth-child(24),
-// .nameSpans.change span:nth-child(25),
-// .nameSpans.change span:nth-child(26) {
-//   opacity: 1;
-// }
-
-// .nameSpans.change span:nth-child(24) {
-//   transform: rotate(90deg);
-//   margin-left: 70px;
-//   min-width: 40px;
-// }
-
-// .nameSpans.change span:nth-child(25) {
-//   margin-left: 89px;
-//   min-width: 40px;
-//   top: 37px;
-// }

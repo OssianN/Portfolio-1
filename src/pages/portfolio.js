@@ -83,7 +83,7 @@ const Portfolio = () => {
                           <div className='project__img-frame--mobile'>
                             <Img
                               className='project__mobile-img'
-                              fluid={project.node.mobileImage?.fluid}
+                              fluid={project.node.mobileImage.fluid}
                               alt={project.node.title}></Img>
                           </div>
                         ) : (

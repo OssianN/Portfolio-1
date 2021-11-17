@@ -47,7 +47,6 @@ const GuestBookForm = props => {
 
   const handleInputChange = e => {
     const { name, value } = e.target
-    console.log(formInput)
 
     setFormInput({
       ...formInput,
