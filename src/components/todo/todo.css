@@ -102,6 +102,7 @@
 .toDoForm input {
   height: 3em;
   padding: 0 1%;
+  margin: 0 10px;
   background-color: transparent;
   border: none;
   -webkit-border-radius: 0;

@@ -1,6 +1,6 @@
 # My portfolio site #1
 
-In this project I use:
+In this project:
 
 * React and Gatsby
 * MongoDB
