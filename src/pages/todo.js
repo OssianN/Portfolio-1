@@ -1,9 +1,8 @@
-import { Link } from 'gatsby'
-import React from 'react'
-import TodoComponent from '../components/todo'
+import React from "react";
+import TodoComponent from "../components/todo";
 
 const Todo = () => {
-  return <TodoComponent />
-}
+  return <TodoComponent />;
+};
 
-export default Todo
+export default Todo;

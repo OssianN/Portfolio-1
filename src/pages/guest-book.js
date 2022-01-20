@@ -8,7 +8,6 @@ const GuestBook = () => {
   const [updateMessages, setUpdateMessages] = useState(0)
   const [messages, setMessages] = useState([])
   const [showForm, setShowForm] = useState(false)
-  const [formDisplay, setFormDisplay] = useState('display-none')
 
   const adjectiveList = [
     'cool',
