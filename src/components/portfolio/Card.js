@@ -1,10 +1,9 @@
-import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Card = ({ project }) => {
-  const desktopImage = getImage(project.node.desktopImage.gatsbyImageData);
-  const mobileImage = getImage(project.node.mobileImage?.gatsbyImageData);
-  console.log(desktopImage);
+  const desktopImage = getImage(project.node.desktopImage.gatsbyImageData)
+  const mobileImage = getImage(project.node.mobileImage?.gatsbyImageData)
 
   return (
     <>
@@ -18,7 +17,7 @@ const Card = ({ project }) => {
         <div className="project__img-container">
           <div
             className={`project__img-frame--desktop ${
-              project.node.mobileImage ? "" : "no-mobile"
+              project.node.mobileImage ? '' : 'no-mobile'
             }`}
           >
             <GatsbyImage
@@ -42,7 +41,7 @@ const Card = ({ project }) => {
         {project.node.description.description}
       </p>
     </>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card
